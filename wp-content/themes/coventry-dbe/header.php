@@ -1,15 +1,3 @@
-<?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package coventry-dbe
- */
-
-?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -22,6 +10,28 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+
+
+<header>
+	page header...
+
+
+	<nav class="siteNav">
+		<?php
+			wp_nav_menu(
+				array(
+					'menu' => 'main-menu',					
+					'container' => 'ul',
+				)
+			);
+			?>
+	</nav>
+
+</header>
+
+
+<? /*
+
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'coventry-dbe' ); ?></a>
 
@@ -41,9 +51,9 @@
 			$coventry_dbe_description = get_bloginfo( 'description', 'display' );
 			if ( $coventry_dbe_description || is_customize_preview() ) :
 				?>
-				<p class="site-description"><?php echo $coventry_dbe_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+				<p class="site-description"><?php echo $coventry_dbe_description; ?></p>
 			<?php endif; ?>
-		</div><!-- .site-branding -->
+		</div>
 
 		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'coventry-dbe' ); ?></button>
@@ -55,5 +65,8 @@
 				)
 			);
 			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+			
+		</nav>
+	</header>
+
+*/ ?>
