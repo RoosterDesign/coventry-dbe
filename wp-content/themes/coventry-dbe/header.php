@@ -10,10 +10,15 @@
 <?php wp_body_open(); ?>
 <header class="siteHeader">
 	<div class="container">
-		page header...
-		<nav class="mainNav">
+		
+		<a href="">
+			<img src="https://via.placeholder.com/150" />
+		</a>
+
+		<nav class="mainNav" role="navigation" aria-label="Main Navigation">
 			<?php wp_nav_menu( array( 'menu' => 'main-menu', 'container' => 'ul', )); ?>
 		</nav>
+
 	</div>
 </header>
 <div id="pageContent">	

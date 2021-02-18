@@ -18,10 +18,13 @@
   },
   "devDependencies": {
     "@wordpress/scripts": "^12.1.0",
+    "autoprefixer": "^10.2.4",
     "dir-archiver": "^1.1.1",
     "node-sass": "^4.14.1",
-    "rtlcss": "^2.5.0",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "postcss": "^8.2.6",
+    "postcss-cli": "^8.3.1",
+    "rtlcss": "^2.5.0"
   },
   "rtlcssConfig": {
     "options": {
@@ -37,7 +40,13 @@
     "map": false
   },
   "scripts": {
-    "css": "node-sass --output-style compressed --include-path scss css/source.scss style.css",
-    "watch": "nodemon -e scss -x \"npm run css\""
-  }
+    "compile": "node-sass --output-style=expanded --source-map=true css/source.scss style.css",
+    "prefix": "postcss style.css --use=autoprefixer --map=false --output=style.css",
+    "minify": "cleancss -O1 --source-map --source-map-inline-sources -o style.css style.css",
+    "dev": "nodemon -e scss -x \"npm run compile && npm run prefix\"",
+    "build": "npm run compile && npm run prefix && npm run minify"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
 }
