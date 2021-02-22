@@ -1,0 +1,14 @@
+.contentPanel {
+  display: flex;
+  
+  &__text {
+    padding: 55px 0 75px;
+  }
+
+  &__img {
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+
+}

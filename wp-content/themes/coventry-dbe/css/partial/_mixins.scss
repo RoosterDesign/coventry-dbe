@@ -1,0 +1,26 @@
+$breakpoints: (mobile-lg: 375px,
+    mobile-xlg: 414px,
+    tablet: 768px,
+    tablet-lg: 992px,
+    desktop: 1366px,
+    desktop-md: 1441px,
+    desktop-lg: 1920px,
+    full: 2560px);
+
+@mixin mq($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        $breakpoint-value: map-get($breakpoints, $breakpoint);
+        @media (min-width: $breakpoint-value) {
+            @content;
+        }
+    }
+    @else {
+        @warn 'Invalid breakpoint: #{$breakpoint}.';
+    }
+}
+
+@mixin laptop-mq() {
+    @media only screen and (min-width: 1366px) and (max-height: 1024px) {
+        @content;
+    }
+}

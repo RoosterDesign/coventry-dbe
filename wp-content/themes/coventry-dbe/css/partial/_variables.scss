@@ -1,7 +1,29 @@
 
 
 // Colours
-
 $white: #fff;
-$purple: rebeccapurple;
 $brandRed: #B50444;
+$brandRedDark: #940338;
+$lightGrey: #f7f7f7;
+$bogyBg: $brandRed;
+$headerBg: #fff;
+$mobileNavBg: $brandRed;
+$contentBg: $lightGrey;
+$footerBg: $brandRed;
+
+// Typography
+$headingFont: 'Asap', sans-serif;
+$bodyFont: 'Lato', sans-serif;
+
+
+// Header
+$mobileHeaderHeight: 70px;
+$desktopHeaderHeight: 100px;
+
+// Nav
+$mainNavHover: $brandRed;
+
+// Buttons
+$buttonBg: $brandRed;
+$buttonBgHover: $brandRedDark;
+$buttonColour: #fff;

@@ -24,6 +24,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import './vendor/normalize';
 @import './vendor/owl.carousel';
 @import './partial/_variables';
+@import './partial/_mixins';
 @import './partial/_base';
+@import './partial/_buttons';
 @import './partial/_header';
+@import './partial/_nav';
 @import './partial/_footer';
+@import './partial/_fwSlider';
+@import './partial/_categoryNav';
+@import './partial/_contentPanel';

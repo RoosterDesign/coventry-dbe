@@ -1,0 +1,100 @@
+.mainNav {
+  background: $mobileNavBg;
+  position: fixed;
+  height: 100%;
+  top: $mobileHeaderHeight;
+  right: -250px;
+  transition: all .3s ease-in-out;
+  width: 250px;
+  @include mq(tablet) {
+    right: -300px;
+    width: 300px;
+  }
+  @include mq(tablet-lg) {
+    background: none;
+    height: auto;
+    position: relative;
+    top: auto;
+    right: auto;
+    width: auto;
+  }
+}
+
+/* Nav Open */
+@media only screen and (max-width: 991px) {
+  body.mobile-nav-open  .mainNav { right: 0 }
+}
+
+
+.mainNav .menu {
+  list-style: none;
+  margin: 0;
+  padding: 10px 0 0;
+  @include mq(mobile-lg) {
+    padding-top: 15px;
+  }
+  @include mq(tablet) {
+    padding-top: 20px;
+  }
+  @include mq(tablet-lg) {
+    padding-top: 0;
+  }
+}
+
+.mainNav .menu-item {
+  font-size: 1.5rem;
+  @include mq(tablet-lg) {
+    display: inline-block;
+    font-size: 1.4rem;
+    margin-right: 20px;
+  }
+  @include mq(desktop) {
+    font-size: 1.5rem;
+    margin-right: 30px;
+  }
+
+  &:last-child {
+    @include mq(tablet-lg) {
+      margin-right: 0;
+    }
+  }
+
+  > a {
+    color: #fff;
+    display: block;
+    padding: 15px 0 15px 20px;
+    text-decoration: none;
+    @include mq(mobile-lg) {
+      padding-left: 25px;
+    }
+    @include mq(tablet) {
+      padding: 20px 0 20px 30px;
+    }
+    @include mq(tablet-lg) {
+      color: black;
+      padding: 0;
+    }
+  }
+  
+  > a:hover {
+    @include mq(tablet-lg) {
+      color: $mainNavHover;
+    }
+  }
+
+  &.current-menu-item > a {
+    font-weight: 700;
+    text-decoration: underline;
+    @include mq(tablet-lg) {
+      color: $mainNavHover;
+      text-decoration: none;
+    }
+  }
+
+}
+
+
+
+
+
+

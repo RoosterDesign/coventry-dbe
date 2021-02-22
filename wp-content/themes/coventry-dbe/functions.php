@@ -145,7 +145,9 @@ function coventry_dbe_scripts() {
 	wp_style_add_data( 'coventry-dbe-style', 'rtl', 'replace' );
 
 	/* Google Fonts */	
-	wp_enqueue_style( 'add_google_fonts', 'https://fonts.googleapis.com/css2?family=Lato&display=swap', false );
+	/*wp_enqueue_style( 'add_google_fonts', 'https://fonts.googleapis.com/css2?family=Asap:wght@400&family=Lato:wght@400;700&display=swap', false );*/
+	
+	
 
 	/* jQuery */
 	wp_enqueue_script( 'coventry-dbe-jquery', get_template_directory_uri() . '/js/vendor/jquery.js', array(), _S_VERSION, true );

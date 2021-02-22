@@ -1,15 +1,36 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
 
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
 body {
-  background: $brandRed;
-  font-family: 'Lato', sans-serif;
+  background: $bogyBg;  
+  font-family: $bodyFont;
+  padding-top: $mobileHeaderHeight;
+  @include mq(tablet-lg) {
+    padding-top: 0;
+  }
 }
 
 #pageContent {
-  background: $white;
+  background: $contentBg;
+  padding: 20px 0;
+  @include mq(desktop) {
+    padding: 40px 0;
+  }
 }
 
-h1, h2, h3, h4, h5, h6, p, li {
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  margin: 0;
+}
+
+p, li {
+  line-height: 1.4;
   margin: 0;
 }
 
@@ -17,4 +38,7 @@ h1, h2, h3, h4, h5, h6, p, li {
   margin: 0 auto;
   max-width: 1200px;
   padding: 0 20px;
+  @include mq(desktop) {
+    padding: 0 40px;
+  }
 }
