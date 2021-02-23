@@ -71,7 +71,7 @@
       padding: 20px 0 20px 30px;
     }
     @include mq(tablet-lg) {
-      color: black;
+      color: $desktopNavLinkColour;
       padding: 0;
     }
   }
@@ -92,9 +92,3 @@
   }
 
 }
-
-
-
-
-
-

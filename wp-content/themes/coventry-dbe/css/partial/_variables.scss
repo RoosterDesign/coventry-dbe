@@ -4,6 +4,7 @@
 $white: #fff;
 $brandRed: #B50444;
 $brandRedDark: #940338;
+$brandRedDark: #940338;
 $lightGrey: #f7f7f7;
 $bogyBg: $brandRed;
 $headerBg: #fff;
@@ -14,6 +15,8 @@ $footerBg: $brandRed;
 // Typography
 $headingFont: 'Asap', sans-serif;
 $bodyFont: 'Lato', sans-serif;
+$titleColour: $brandRed;
+$bodyColour: #333;
 
 
 // Header
@@ -22,6 +25,7 @@ $desktopHeaderHeight: 100px;
 
 // Nav
 $mainNavHover: $brandRed;
+$desktopNavLinkColour: $bodyColour;
 
 // Buttons
 $buttonBg: $brandRed;

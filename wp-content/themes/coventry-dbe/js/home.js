@@ -3,7 +3,7 @@ function homeCarousel() {
 		items: 1,
 		loop: true,
 		itemElement: 'article',
-		autoplay: false,
+		autoplay: true,
 		dots: true,
 	});
 }

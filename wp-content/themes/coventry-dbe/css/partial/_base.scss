@@ -42,3 +42,10 @@ p, li {
     padding: 0 40px;
   }
 }
+
+.block {
+  margin-bottom: 20px;
+  @include mq(desktop) {
+    margin-bottom: 30px;
+  }
+}

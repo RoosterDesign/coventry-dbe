@@ -1,9 +1,10 @@
 .fwSlider {
-  margin: -20px auto 20px;
+  margin-top: -20px;
+  margin-left: auto;
+  margin-right: auto;
   max-width: 1200px;
-  @include mq(desktop) {
+  @media only screen and (min-width: 1200px) {
     margin-top: 0;
-    margin-bottom: 25px;
   }
 
   .owl-carousel .owl-stage {
@@ -145,13 +146,13 @@
     margin-bottom: 10px;
     @include mq(tablet) {
       font-size: 4rem;      
+      line-height: 1.1;
       margin-bottom: 15px;
     }
     @include mq(desktop) {
       font-size: 5rem;
-      line-height: 1.1;
       max-width: 440px;
-    }    
+    }
   }
 
   .btn {

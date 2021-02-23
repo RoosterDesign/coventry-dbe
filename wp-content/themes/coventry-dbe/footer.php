@@ -17,13 +17,31 @@
 */ ?>
 
 </div>
+
 <footer class="siteFooter">
-<div class="container">
-	this is the site footer... 
-	<nav class="footerNav">
-		<?php wp_nav_menu( array( 'menu' => 'main-menu', 'container' => 'ul', )); ?>
-		<?php wp_nav_menu( array( 'menu' => 'footer-menu', 'container' => 'ul', )); ?>
+	<div class="container">
+
+		<div class="siteFooter__col">
+			<a href="/" class="siteFooter__logo">
+				<img src="https://via.placeholder.com/170x65" />
+			</a>
+			<address class="siteFooter__address">
+				Cathedral and Diocesan Offices <br/> 1 Hill Top, Coventry, CV1 5AB
+			</address>
+		</div>
+
+		<div class="siteFooter__col">
+			<h3 class="siteFooter__quote">Enabling flourishing through Christ, educating for life in all its fullness.</h3>
+			<nav class="footerNav">
+				<?php wp_nav_menu( array( 'menu' => 'footer-menu', 'container' => 'ul', )); ?>				
+			</nav>
+			<p>Our Data Protection Officer is Peter Rigby</p>
+		</div>
+	
+		<nav class="footerNav siteFooter__col">
+			<?php wp_nav_menu( array( 'menu' => 'main-menu', 'container' => 'ul', )); ?>		
 		</nav>
+
 	</div>
 </footer>
 

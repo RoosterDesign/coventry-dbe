@@ -1,3 +1,137 @@
-footer {
-  padding: 50px 20px;
+.siteFooter {
+  color: #fff;
+  padding: 30px 0;
+  @include mq(tablet-lg) {
+    padding: 50px 20px;
+  }
+
+  .container {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    @include mq(tablet) {
+      flex-direction: row;
+      justify-content: space-between;      
+    }
+  }
+
+  &__col {
+    margin-bottom: 30px;
+    @include mq(tablet) {
+      margin-bottom: 0;
+      padding-right: 30px;
+      width: 33.333333%;
+    }
+    @include mq(tablet-lg) {
+      width: 300px;
+    }
+  }
+
+  &__col:last-child {
+    margin-bottom: 0;
+    padding-right: 0;
+  }
+
+  &__address {
+    font-size: 1.5rem;
+    font-style: normal;
+    line-height: 1.4;
+    @include mq(tablet-lg) {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__logo {
+    display: block;
+    margin-bottom: 10px;
+    width: 130px;
+    @include mq(tablet) {
+      margin-bottom: 20px;
+    }
+    @include mq(desktop) {
+      width: 170px;
+    }
+  }
+
+  &__logo img {
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+
+  &__quote {
+    font-size: 1.8rem;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    @include mq(tablet) {
+      font-size: 1.6rem;      
+    }
+    @include mq(tablet-lg) {
+      font-size: 2rem;      
+    }
+    @include mq(desktop) {
+      margin-bottom: 20px;
+    }
+  }
+
+  p {
+    margin-top: 10px;
+    font-size: 1.4rem;
+    @include mq(tablet-lg) {
+      font-size: 1.5rem;      
+    }
+    @include mq(desktop) {
+      margin-top: 20px;
+    }
+  }
+
+}
+
+.footerNav {
+
+  .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+}
+  
+.footerNav .menu-item {
+  font-size: 1.4rem;
+  @include mq(tablet-lg) {
+    font-size: 1.5rem;
+  }
+  @include mq(desktop) {
+
+    margin-bottom: 10px;
+  }
+
+  &:last-child {    
+    margin-bottom: 0;    
+  }
+
+  > a {
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 0;
+    @include mq(tablet) {
+      padding: 5px 0;
+    }
+    @include mq(desktop) {
+      padding: 0;
+    }
+  }
+  
+  > a:hover {
+    @include mq(tablet-lg) {
+      text-decoration: underline;
+    }
+  }
+
+  &.current-menu-item > a {
+    font-weight: 700;
+  }
+
 }
