@@ -81,6 +81,24 @@ Template Name: Page - Homepage
     <section class="blogPanel">
       <h1 class="title">Latest news and stories</h1>
 
+      <div style="display: flex">
+        <?php
+
+          $args = array(
+            'posts_per_page' => 3,
+            'post_type' => 'post'
+          );
+
+          $post_query = new WP_Query($args);
+          
+          if($post_query->have_posts() ) { while($post_query->have_posts() ) { $post_query->the_post();
+            include get_theme_file_path("templates/partials/blog-post-card.php");
+          }
+
+        }
+        ?>
+        </div>
+
     </section>
 
 

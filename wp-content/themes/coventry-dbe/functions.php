@@ -201,3 +201,28 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+
+/* Limit number of words in post exceprt */
+
+function get_excerpt($limit){
+	$excerpt = get_the_excerpt();
+	$excerpt = preg_replace(" ([.*?])",'',$excerpt);
+	$excerpt = strip_shortcodes($excerpt);
+	$excerpt = strip_tags($excerpt);
+	$excerpt = substr($excerpt, 0, $limit);
+	$excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+	$excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
+	$excerpt = $excerpt.'...';
+	/*$excerpt = $excerpt.'... <a href="'.get_the_permalink().'">more</a>';*/
+	return $excerpt;
+	}
+
+
+	/* Blog post thumbnails */
+	if ( function_exists( 'add_theme_support' ) ) {
+		set_post_thumbnail_size( 360, 240, true ); // default Featured Image dimensions (cropped)
+
+		// additional image sizes
+		// delete the next line if you do not need additional image sizes
+		// add_image_size( 'category-thumb', 300, 9999 ); // 300 pixels wide (and unlimited height)
+	}
