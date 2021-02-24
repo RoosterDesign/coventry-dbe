@@ -1,0 +1,28 @@
+.socialLinks {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  @include mq(tablet) {
+    margin-top: 0;
+  }
+
+  &__item {
+    display: inline-block;    
+    margin-right: 10px;
+  }
+
+  &__item:last-child {
+    margin-right: 0;
+  }
+
+  &__item a svg {
+    fill: $socialIconLink;
+    height: 17px;
+    width: 17px;
+  }
+
+  &__item a:hover svg {
+    fill: $socialIconLinkHover;
+  }
+
+}

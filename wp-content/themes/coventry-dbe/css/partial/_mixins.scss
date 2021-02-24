@@ -24,3 +24,17 @@ $breakpoints: (mobile-lg: 375px,
         @content;
     }
 }
+
+
+@mixin pStyles() {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    @include mq(tablet) {
+        font-size: 1.6rem;
+    }
+    @include mq(desktop) {
+        font-size: 1.8rem;
+        line-height: 1.6;
+    }
+}

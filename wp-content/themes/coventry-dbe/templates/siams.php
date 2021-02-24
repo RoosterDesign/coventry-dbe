@@ -4,7 +4,7 @@ Template Name: Page - Siams
 */
 ?>
 <?php get_header(); ?>
-  <div class="container">
-    <h1>SIAMS</h1>
-  </div>
+
+<?php include get_theme_file_path("templates/partials/masthead.php"); ?>
+
 <?php get_footer(); ?>

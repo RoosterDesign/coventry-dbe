@@ -1,23 +1,24 @@
-
-
 // Colours
 $white: #fff;
-$brandRed: #B50444;
-$brandRedDark: #940338;
+$black: #000;
+$brandRed: #A80034;
 $brandRedDark: #940338;
 $lightGrey: #f7f7f7;
 $bogyBg: $brandRed;
-$headerBg: #fff;
+$headerBg: $white;
 $mobileNavBg: $brandRed;
 $contentBg: $lightGrey;
 $footerBg: $brandRed;
 
-// Typography
-$headingFont: 'Asap', sans-serif;
-$bodyFont: 'Lato', sans-serif;
-$titleColour: $brandRed;
-$bodyColour: #333;
 
+// Container
+$containerPaddingTablet: 20px;
+$containerPaddingDesktop: 45px;
+
+// Typography
+$bodyFont: 'Poppins', sans-serif;
+$titleColour: $brandRed;
+$bodyColour: #707070;
 
 // Header
 $mobileHeaderHeight: 70px;
@@ -30,4 +31,15 @@ $desktopNavLinkColour: $bodyColour;
 // Buttons
 $buttonBg: $brandRed;
 $buttonBgHover: $brandRedDark;
-$buttonColour: #fff;
+$buttonColour: $white;
+$ghostButtonColour: $brandRed;
+$ghostButtonColourHover: $black;
+$ghostButtonAltColour: $white;
+$ghostButtonAltColourHover: $black;
+
+// Social Icons
+$socialIconLink: $brandRed;
+$socialIconLinkHover: $black;
+
+// Feature News Post
+$featureNewsPostBg: $brandRed;

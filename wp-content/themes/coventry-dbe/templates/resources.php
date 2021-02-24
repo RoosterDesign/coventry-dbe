@@ -4,7 +4,7 @@ Template Name: Page - Resources
 */
 ?>
 <?php get_header(); ?>
-  <div class="container">
-    <h1>Resources</h1>
-  </div>
+
+<?php include get_theme_file_path("templates/partials/masthead.php"); ?>
+
 <?php get_footer(); ?>

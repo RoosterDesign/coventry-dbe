@@ -4,9 +4,9 @@
   color: $buttonColour;
   display: inline-flex;
   font-size: 1.3rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1;
-  padding: 10px 22px;
+  padding: 10px 20px;
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
@@ -23,6 +23,7 @@
   &:hover {
     background: $buttonBgHover;
   }
+
 }
 
 .btn__icon {
@@ -32,39 +33,106 @@
   @include mq(desktop) {
     margin-left: 15px;
   }
-}
 
-.btn__icon {
-
-  &.--plus {
-    height: 10px;
-    @include mq(desktop) {
-      height: 13px;
-    }
-
-    &:before,
-    &:after {
-      background: #fff;
-      content: '';
-      display: block;
-      height: 100%;
-      position: relative;
-      width: 2px;
-    }
-
-    &:before {
-      left: 0;
-    }
-
-    &:after {
-      left: 0;
-      top: -10px;
-      transform: rotate(90deg);
-      @include mq(desktop) {
-        top: -13px;
-      }
-    }
-    
+  &:before,
+  &:after {
+    background: $white;
+    content: '';
+    display: block;
+    position: relative;
   }
 
+}
+
+.btn__icon.-plus {
+  height: 10px;
+  @include mq(desktop) {
+    height: 13px;
+    top: -1px;
+  }
+
+  &:before,
+  &:after {      
+    height: 100%;      
+    width: 2px;
+  }
+
+  &:before {
+    left: 0;
+  }
+
+  &:after {
+    left: 0;
+    top: -10px;
+    transform: rotate(90deg);
+    @include mq(desktop) {
+      top: -13px;
+    }
+  }
+  
+}
+
+.btn__icon.-play {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 0 6px 12px;
+  border-color: transparent transparent transparent #fff;  
+}
+
+.-fw {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  margin-bottom: 30px;
+  @include mq(tablet) {
+    height: 70px;
+    margin-bottom: 40px;
+  }
+  @include mq(desktop) {
+    margin-bottom: 50px;
+  }
+}
+
+.btn.-ghost,
+.btn.-ghostAlt {
+  background: none;
+  padding: 0;
+}
+
+.btn.-ghost {  
+  color: $ghostButtonColour;  
+}
+
+.btn.-ghost:hover {
+  color: $ghostButtonColourHover;
+}
+
+.btn.-ghost .btn__icon:before,
+.btn.-ghost .btn__icon:after {
+  background: $ghostButtonColour;
+}
+
+.btn.-ghost:hover .btn__icon:before,
+.btn.-ghost:hover .btn__icon:after {
+  background: $ghostButtonColourHover;
+}
+
+.btn.-ghostAlt {
+  color: $ghostButtonAltColour;
+}
+
+.btn.-ghostAlt:hover {
+  color: $ghostButtonAltColourHover;
+}
+
+.btn.-ghostAlt .btn__icon:before,
+.btn.-ghostAlt .btn__icon:after {
+  background: $ghostButtonAltColour;
+}
+
+.btn.-ghostAlt:hover .btn__icon:before,
+.btn.-ghostAlt:hover .btn__icon:after {
+  background: $ghostButtonAltColourHover;
 }

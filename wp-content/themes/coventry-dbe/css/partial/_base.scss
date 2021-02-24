@@ -9,6 +9,7 @@ html {
 
 body {
   background: $bogyBg;  
+  color: $bodyColour;
   font-family: $bodyFont;
   padding-top: $mobileHeaderHeight;
   @include mq(tablet-lg) {
@@ -18,9 +19,9 @@ body {
 
 #pageContent {
   background: $contentBg;
-  padding: 20px 0;
+  padding: 0 0 20px;
   @include mq(desktop) {
-    padding: 40px 0;
+    padding-bottom: 40px;
   }
 }
 
@@ -37,15 +38,15 @@ p, li {
 .container {
   margin: 0 auto;
   max-width: 1200px;
-  padding: 0 20px;
+  padding: 0 $containerPaddingTablet;
   @include mq(desktop) {
-    padding: 0 40px;
+    padding: 0 $containerPaddingDesktop;
   }
 }
 
 .block {
   margin-bottom: 20px;
-  @include mq(desktop) {
+  @include mq(tablet) {
     margin-bottom: 30px;
   }
 }

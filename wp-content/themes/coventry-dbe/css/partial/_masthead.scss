@@ -1,0 +1,17 @@
+.masthead {
+  background: $brandRed;
+  padding: 40px 0;
+  @include mq(desktop) {
+    padding-top: 60px;
+  }
+
+  .title {
+    color: $white;
+    margin: 0;
+  }
+
+  .socialLinks__item a svg {
+    fill: $white;
+  }
+
+}

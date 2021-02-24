@@ -28,19 +28,20 @@
 			<address class="siteFooter__address">
 				Cathedral and Diocesan Offices <br/> 1 Hill Top, Coventry, CV1 5AB
 			</address>
-		</div>
-
-		<div class="siteFooter__col">
-			<h3 class="siteFooter__quote">Enabling flourishing through Christ, educating for life in all its fullness.</h3>
-			<nav class="footerNav">
-				<?php wp_nav_menu( array( 'menu' => 'footer-menu', 'container' => 'ul', )); ?>				
-			</nav>
-			<p>Our Data Protection Officer is Peter Rigby</p>
+			<p>Diocesan staff are working from home</p>
 		</div>
 	
 		<nav class="footerNav siteFooter__col">
 			<?php wp_nav_menu( array( 'menu' => 'main-menu', 'container' => 'ul', )); ?>		
 		</nav>
+
+		<div class="siteFooter__col">
+			<h3 class="siteFooter__quote">Worshipping God.<br /> Making new disciples.<br /> Transforming communities.</h3>
+			<nav class="footerNav">
+				<?php wp_nav_menu( array( 'menu' => 'footer-menu', 'container' => 'ul', )); ?>				
+			</nav>
+			
+		</div>
 
 	</div>
 </footer>

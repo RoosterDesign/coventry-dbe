@@ -1,20 +1,24 @@
 .contentPanel {
-  margin-left: -20px;
-  margin-right: -20px;
   display: flex;
   flex-direction: column-reverse;
-  overflow: hidden;
+  @media only screen and (max-width: 767px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
   @include mq(tablet) {
     align-items: flex-start;
     flex-direction: row;
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   &__text {
-    padding: 0 20px;
+    padding: 30px 20px 0;
     @include mq(tablet) {
       padding: 20px 20px 0 0;
+    }
+    @include mq(tablet-lg) {
+      padding-right: 40px;
     }
     @include mq(desktop) {
       padding: 30px 50px 0 0;
@@ -23,13 +27,12 @@
 
   &__img {
     flex: 1 0 auto;
-    margin-bottom: 20px;
     @include mq(tablet) {
-      display: none;
+      display: block;
+      width: 350px;
     }
     @include mq(tablet-lg) {
-      display: block;
-      margin: 0;      
+      width: 500px;
     }
     @include mq(desktop) {
       width: 650px;
@@ -43,14 +46,7 @@
   }
 
   p {
-    color: $bodyColour;
-    font-size: 1.6rem;
-    line-height: 1.4;
-    margin-bottom: 20px;
-    @include mq(desktop) {
-      font-size: 1.8rem;
-      line-height: 1.5;
-    }
+    @include pStyles;
   }
 
   &__signature {
@@ -68,6 +64,12 @@
   &__signature figcaption {
     color: #666666;
     font-size: 1.4rem;
+  }
+
+  .btn {
+    @include mq(tablet-lg) {
+      margin-top: 20px;
+    }
   }
 
 }
