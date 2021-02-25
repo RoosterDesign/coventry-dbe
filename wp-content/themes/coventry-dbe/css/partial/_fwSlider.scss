@@ -1,7 +1,7 @@
 .fwSlider {
   margin: 0 auto 20px;
-  max-width: 1200px;
-  @media only screen and (min-width: 1200px) {
+  max-width: $containerMaxWidth;
+  @media only screen and (min-width: $containerMaxWidth) {
     padding-top: 20px;
   }
   @include mq(tablet) {

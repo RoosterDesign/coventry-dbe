@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column-reverse;    
   margin: 30px auto 0;
-  max-width: 1200px;
+  max-width: $containerMaxWidth;
   @include mq(tablet) {
     align-items: stretch;
     flex-direction: row;

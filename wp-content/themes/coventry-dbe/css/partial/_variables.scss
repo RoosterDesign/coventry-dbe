@@ -12,8 +12,9 @@ $footerBg: $brandRed;
 
 
 // Container
-$containerPaddingTablet: 20px;
+$containerPaddingMobile: 20px;
 $containerPaddingDesktop: 45px;
+$containerMaxWidth: 1200px;
 
 // Typography
 $bodyFont: 'Poppins', sans-serif;
@@ -43,3 +44,6 @@ $socialIconLinkHover: $black;
 
 // Feature News Post
 $featureNewsPostBg: $brandRed;
+
+// Cards
+$cardPadding: 20px;

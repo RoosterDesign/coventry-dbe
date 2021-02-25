@@ -1,32 +1,13 @@
 .latestNewsCards {
-  display: flex;
-  flex-direction: column;
-  @include mq(tablet) {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  @include mq(desktop) {
-    margin-bottom: 10px;
-  }
+  @extend .cardsWrap;
+  margin-bottom: 10px;
 }
 
 .newsCard {
-  background: $white;
-  margin-bottom: 20px;
-  padding: 20px;
-  @include mq(tablet) {
-    margin-right: 20px;
-    width: calc(33.333333% - 14px);
-    /*width: calc(33.333333% - 10px)*/
-  }
-  @include mq(desktop) {
-    // width: calc(33.333333% - 14px)
-  }
-
-  &:nth-child(3n) {
-    @include mq(tablet) {
-      margin-right: 0;
-    }
+  @extend .card;
+  
+  &__inner {
+    @extend .card__inner;
   }
 
   &__thumbnail {
@@ -67,7 +48,7 @@
   }
 
   p {
-   @include pStyles;
+    @include pStyles;
   }
 
   .btn {

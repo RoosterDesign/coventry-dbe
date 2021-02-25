@@ -1444,13 +1444,17 @@ p, li {
 
 @media (min-width: 1366px) {
   .masthead {
-    padding-top: 60px;
+    margin-bottom: 60px;
   }
 }
 
-.masthead .title {
+.masthead .title, .masthead__subTitle {
   color: #fff;
   margin: 0;
+}
+
+.masthead__subTitle {
+  margin: 10px 0 0;
 }
 
 .masthead .socialLinks__item a svg {
@@ -2159,50 +2163,7 @@ p, li {
 }
 
 .latestNewsCards {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-@media (min-width: 768px) {
-  .latestNewsCards {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-}
-
-@media (min-width: 1366px) {
-  .latestNewsCards {
-    margin-bottom: 10px;
-  }
-}
-
-.newsCard {
-  background: #fff;
-  margin-bottom: 20px;
-  padding: 20px;
-}
-
-@media (min-width: 768px) {
-  .newsCard {
-    margin-right: 20px;
-    width: calc(33.333333% - 14px);
-    /*width: calc(33.333333% - 10px)*/
-  }
-}
-
-@media (min-width: 768px) {
-  .newsCard:nth-child(3n) {
-    margin-right: 0;
-  }
+  margin-bottom: 10px;
 }
 
 .newsCard__thumbnail {
@@ -2264,6 +2225,57 @@ p, li {
   .newsCard p {
     font-size: 1.8rem;
     line-height: 1.6;
+  }
+}
+
+.cardsWrap, .latestNewsCards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto -20px;
+  padding: 0 20px;
+  max-width: 1200px;
+  background: red;
+}
+
+@media (min-width: 768px) {
+  .cardsWrap, .latestNewsCards {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 0 0px;
+  }
+}
+
+.card, .newsCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .card, .newsCard {
+    width: 33.333333%;
+  }
+}
+
+.card__inner, .newsCard__inner {
+  background: #fff;
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .card:nth-child(4n), .newsCard:nth-child(4n) {
+    padding-right: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */

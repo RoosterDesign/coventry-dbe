@@ -37,8 +37,8 @@ p, li {
 
 .container {
   margin: 0 auto;
-  max-width: 1200px;
-  padding: 0 $containerPaddingTablet;
+  max-width: $containerMaxWidth;
+  padding: 0 $containerPaddingMobile;
   @include mq(desktop) {
     padding: 0 $containerPaddingDesktop;
   }

@@ -1,0 +1,42 @@
+.cardsWrap {
+  display: flex;
+  flex-direction: column;
+  
+  
+  margin: 0 auto (-$cardPadding);
+  padding: 0 $containerPaddingMobile;
+  max-width: $containerMaxWidth; 
+
+
+  background: red;
+  
+  @include mq(tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 ($containerPaddingMobile - $cardPadding);
+  }
+
+}
+
+.card {
+  display: flex;
+  margin-bottom: $cardPadding;
+  // padding: 0 20px 20px;
+  width: 100%;
+  @include mq(tablet) {
+    width: 33.333333%;
+  }
+
+  &__inner {
+    background: $white;
+    padding: 20px;
+  }
+
+  &:nth-child(4n) {
+    @include mq(tablet) {
+      padding-right: 0;
+    }
+  }
+
+}
+
