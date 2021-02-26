@@ -22,38 +22,19 @@
   width: 100%;
   @include mq(tablet) {
     padding: 0 $cardPadding;
-    // padding-right: $cardPadding;
     width: 50%;
   }
   @include mq(tablet-lg) {
-    // padding-right: $cardPadding;
     width: 33.333333%;
   }
   @include mq(desktop) {
     padding: 0 $cardPadding;
   }
 
-  // &:nth-child(2n) {
-  //   @include mq(tablet) {
-  //     padding-right: 0;
-  //   }
-  //   @include mq(tablet-lg) {
-  //     padding-right: $cardPadding;
-  //   }
-  // }
-
-  // &:nth-child(3n) {
-  //   @include mq(tablet-lg) {
-  //     padding-right: 0;
-  //   }    
-  // }
-
   &__inner {
     background: $white;
     flex: 1 1 auto;
     padding: 20px;
-
-    flex-shrink: 0;
   }
 
   &__title {
@@ -68,14 +49,20 @@
   &__title small {
     display: block;
     font-style: italic;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 400;
     margin-top: 5px;
+    @include mq(desktop) {
+      font-size: 1.5rem;
+    }
   }
 
   p {
     font-size: 1.5rem;
     margin-bottom: 10px;
+    @include mq(desktop) {
+      font-size: 1.6rem;
+    }
   }
 
   ul {
@@ -89,6 +76,9 @@
     position: relative;
     margin-bottom: 10px;
     padding-left: 20px;
+    @include mq(desktop) {
+      font-size: 1.5rem;
+    }
   }
 
   ul li:before {
@@ -129,8 +119,6 @@
     display: block;
     height: auto;
     width: 100%;
-
-
   }
 
   &__footer {
@@ -138,18 +126,29 @@
     background: $cardFooter;
     color: $cardFooterColour;
     font-size: 1.5rem;
-    padding: $cardPadding;
+    padding: 10px 20px;
     max-width: 100%;
     @include mq(tablet) {
-      font-size: 1.4rem;
+      font-size: 1.4rem;      
     }
-
-
+    @include mq(tablet-lg) {
+      font-size: 1.5rem;
+    }
+    @include mq(desktop) {
+      font-size: 1.6rem;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+    
     a {
       align-items: center;
       color: $cardFooterColour;
       display: flex;
       text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     svg {

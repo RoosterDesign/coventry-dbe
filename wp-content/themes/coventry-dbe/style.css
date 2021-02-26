@@ -1457,6 +1457,12 @@ p, li {
   }
 }
 
+@media (min-width: 768px) {
+  .masthead .title {
+    font-size: 3.6rem;
+  }
+}
+
 .masthead .title, .masthead__subTitle {
   color: #fff;
   margin: 0;
@@ -2319,8 +2325,6 @@ p strong {
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   padding: 20px;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
 }
 
 .card__title {
@@ -2338,14 +2342,26 @@ p strong {
 .card__title small {
   display: block;
   font-style: italic;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 400;
   margin-top: 5px;
+}
+
+@media (min-width: 1366px) {
+  .card__title small {
+    font-size: 1.5rem;
+  }
 }
 
 .card p, .newsCard p {
   font-size: 1.5rem;
   margin-bottom: 10px;
+}
+
+@media (min-width: 1366px) {
+  .card p, .newsCard p {
+    font-size: 1.6rem;
+  }
 }
 
 .card ul, .newsCard ul {
@@ -2359,6 +2375,12 @@ p strong {
   position: relative;
   margin-bottom: 10px;
   padding-left: 20px;
+}
+
+@media (min-width: 1366px) {
+  .card ul li, .newsCard ul li {
+    font-size: 1.5rem;
+  }
 }
 
 .card ul li:before, .newsCard ul li:before {
@@ -2409,13 +2431,27 @@ p strong {
   background: #A80034;
   color: #fff;
   font-size: 1.5rem;
-  padding: 10px;
+  padding: 10px 20px;
   max-width: 100%;
 }
 
 @media (min-width: 768px) {
   .card__footer {
     font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .card__footer {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1366px) {
+  .card__footer {
+    font-size: 1.6rem;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 }
 
@@ -2428,6 +2464,10 @@ p strong {
   display: -ms-flexbox;
   display: flex;
   text-decoration: none;
+}
+
+.card__footer a:hover {
+  text-decoration: underline;
 }
 
 .card__footer svg {
