@@ -1,6 +1,6 @@
 <div class="card">
 
-  <img src="https://via.placeholder.com/370x200" class="card__thumbnail" />
+  <img src="https://via.placeholder.com/545" class="card__thumbnail" />
 
   <div class="card__inner">
 

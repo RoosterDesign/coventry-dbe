@@ -1,0 +1,48 @@
+.pagination {
+  border-top: 1px solid $brandRed;
+  display: flex;  
+  justify-content: center;
+  min-height: 40px;
+  margin: 10px 10px 20px;
+  padding-top: 20px;
+  width: 100%;
+  @include mq(tablet-lg ) {
+    justify-content: flex-end;
+  }
+
+  .page-numbers {
+    align-items: center;
+    background: $paginationBg;
+    color: $paginationColour;
+    display: flex;
+    font-size: 1.4rem;
+    font-weight: 500;
+    justify-content: center;
+    height: 40px;
+    text-decoration: none;
+    min-width: 40px;
+    margin-right: 10px;
+    @include mq(tablet-lg ) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .page-numbers:last-child {
+    margin-right: 0;
+  }
+
+  a.page-numbers:hover {
+    background: $paginationHoverBg;
+    color: $paginationHoverColour;
+  }
+
+  .page-numbers.current {
+    background: none;
+  }
+
+  .page-numbers.prev,
+  .page-numbers.next {
+    padding: 0 10px;
+  }
+
+}

@@ -1,13 +1,14 @@
 <article class="newsCard">
-  <div class="newsCard__inner">
 
-    <a href="<?php the_permalink(); ?>" class="newsCard__thumbnail">              
-        <?php if ( has_post_thumbnail() ) { ?>
-          <?php the_post_thumbnail(); ?>                    
-        <?php } else { ?>
-          <img src="https://via.placeholder.com/360x240" alt="<?php the_title(); ?>"/>
-        <?php } ?>
-    </a>
+<a href="<?php the_permalink(); ?>" class="newsCard__thumbnail">              
+      <?php if ( has_post_thumbnail() ) { ?>
+        <?php the_post_thumbnail(); ?>                    
+      <?php } else { ?>
+        <img src="https://via.placeholder.com/650x420" alt="<?php the_title(); ?>"/>
+      <?php } ?>
+  </a>
+
+  <div class="newsCard__inner">   
 
     <span class="newsCard__date"><?php echo get_the_date('jS F Y'); ?></span>
     

@@ -7,17 +7,11 @@
   
   &__inner {
     @extend .card__inner;
-  }
-
-  &__thumbnail {
-    display: block;
-    margin: -20px -20px 20px;
+    border-top: none !important;
   }
 
   &__thumbnail img {
-    display: block;
-    height: auto;
-    width: 100%;
+    @extend .card__thumbnail;
   }
 
   &__date {
@@ -49,10 +43,5 @@
   p {
     @include pStyles;
   }
-
-  .btn {
-
-  }
-
 
 }

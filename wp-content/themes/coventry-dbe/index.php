@@ -58,13 +58,18 @@ get_header();
 			while ( $post_list->have_posts() ):
 				$post_list->the_post();
 				include get_theme_file_path("templates/partials/news-post-card.php");
-			endwhile;
-			echo paginate_links( array(
-					'total'   => $total_pages,
-					'current' => $current_page,
-			) );
-		endif; wp_reset_postdata();
-	?>
+			endwhile; ?>
+
+			<div class="pagination">
+
+				<?php echo paginate_links( array(
+						'total'   => $total_pages,
+						'current' => $current_page,
+				) ); ?>
+
+			</div>
+
+		<?php endif; wp_reset_postdata(); ?>
 </div>
 
 <?php get_footer(); ?>
