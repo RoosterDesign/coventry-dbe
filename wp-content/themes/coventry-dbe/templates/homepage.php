@@ -63,8 +63,8 @@ Template Name: Page - Homepage
       </ul>
     </nav>
 
-    <section class="contentPanel container">      
-      <div class="contentPanel__text">
+    <section class="contentPanel -split container">      
+      <div class="contentPanel__left">
         <h1 class="title">Diocesan Board of Education</h1>
         <p>The DBE empowers others to be courageous, equipping them to deliver excellent Christian education so that all will flourish to achieve their full human potential.</p>
 
@@ -78,7 +78,7 @@ Template Name: Page - Homepage
         */?>
 
       </div>
-      <div class="contentPanel__img">
+      <div class="contentPanel__right">
         <img src="https://picsum.photos/650/425" alt="">
       </div>
     </section>

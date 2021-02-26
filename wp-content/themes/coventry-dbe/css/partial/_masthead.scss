@@ -16,30 +16,34 @@
   }
 
   .title,
-  &__subTitle {
+  .subTitle {
     color: $white;
     margin: 0;
-  }
-
-  &__subTitle {
-    font-size: 1.6rem;
-    margin-top: 5px;
-    @include mq(tablet) {
-      font-size: 1.8rem;
-      margin-top: 8px;
-      // font-size: 2.8rem;
-    }
-    @include mq(tablet-lg) {
-      font-size: 2.2rem;
-      // font-size: 3.6rem;
-    }
-    @include mq(desktop) {
-      // font-size: 3.8rem;
-    }
   }
 
   .socialLinks__item a svg {
     fill: $white;
   }
 
+}
+
+.hero {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  margin: 0 auto;
+  max-width: 1920px;
+  @include mq(tablet) {
+    height: 300px;
+  }
+  @include mq(tablet-lg) {
+    height: 350px;
+  }
+  @include mq(desktop) {
+    height: 400px;
+  }
+  @include mq(desktop-lg) {
+    height: 500px;
+  }
 }

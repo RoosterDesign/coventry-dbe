@@ -38,6 +38,26 @@
 
 }
 
+
+.subTitle {
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 1.3;
+  margin: -10px 0 10px;
+  @include mq(tablet) {
+    font-size: 2rem;
+    margin: -20px 0 20px;
+  }
+  @include mq(tablet-lg) {
+    font-size: 2.4rem;
+  }
+  @include mq(desktop) {
+    font-size: 2.6rem;
+    margin: -15px 0 25px;
+  }
+
+}
+
 .noPosts {
   font-size: 1.8rem;
   margin-bottom: 10px;
