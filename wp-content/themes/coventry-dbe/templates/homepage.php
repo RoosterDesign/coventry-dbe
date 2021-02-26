@@ -114,7 +114,7 @@ Template Name: Page - Homepage
   </div>
 
   <div class="container">
-    <a href="/news" alt="See more articles" class="btn -fw">See more articles<span class="btn__icon -plus"></span></a>
+    <a href="/news" alt="See more articles" class="btn -moreArticles">See more articles<span class="btn__icon -plus"></span></a>
   </div>
 
 

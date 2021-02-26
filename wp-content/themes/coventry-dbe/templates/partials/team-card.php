@@ -1,7 +1,21 @@
 <div class="card">
+
+  <img src="https://via.placeholder.com/370x200" class="card__thumbnail" />
+
   <div class="card__inner">
-    <h3>April Gold – Diocesan Director Education</h3>    
-    <p>In her role, April</p>
+
+    <h3 class="card__title">
+      April Gold
+      <small>
+        Diocesan Director Education
+      </small>
+    </h3>
+    
+    <p>
+      <strong>
+        In her role, April
+      </strong>
+  </p>
     <ul>
       <li>
         Communicates the diocesan vision for schools, churches, cathedral and chaplaincies to work together to communicate the gospel, make new disciples and transform communities.
@@ -15,9 +29,15 @@
       <li>
         Acts as a strategic partner with Local Authorities, the Regional Schools Commissioner, the Department for Education and the Church of England Education Office.
       </li>
-    </ul>
-    <div>
-      <a href="mailto:April.gold@coventrydbe.org">April.gold@coventrydbe.org</a>
-    </div>
+    </ul>       
+
   </div>
+
+  <div class="card__footer">
+    <a href="mailto:April.gold@coventrydbe.org">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/></svg>
+    <span class="card__email--short">Email April Gold</span>
+    <span class="card__email--full">April.gold@coventrydbe.org</span></a>
+  </div>
+    
 </div>

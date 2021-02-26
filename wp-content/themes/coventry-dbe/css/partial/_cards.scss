@@ -1,41 +1,165 @@
 .cardsWrap {
   display: flex;
   flex-direction: column;
-  
-  
   margin: 0 auto (-$cardPadding);
   padding: 0 $containerPaddingMobile;
-  max-width: $containerMaxWidth; 
-
-
-  background: red;
-  
+  max-width: $containerMaxWidth;
   @include mq(tablet) {
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 0 ($containerPaddingMobile - $cardPadding);
+    padding: 0 $cardPadding;
+  }
+  @include mq(desktop) {
+    padding: 0 ($containerPaddingDesktop - $cardPadding);
   }
 
 }
 
 .card {
   display: flex;
-  margin-bottom: $cardPadding;
-  // padding: 0 20px 20px;
+  flex-direction: column;
+  margin-bottom: ($cardPadding * 2);
   width: 100%;
   @include mq(tablet) {
+    padding: 0 $cardPadding;
+    // padding-right: $cardPadding;
+    width: 50%;
+  }
+  @include mq(tablet-lg) {
+    // padding-right: $cardPadding;
     width: 33.333333%;
   }
+  @include mq(desktop) {
+    padding: 0 $cardPadding;
+  }
+
+  // &:nth-child(2n) {
+  //   @include mq(tablet) {
+  //     padding-right: 0;
+  //   }
+  //   @include mq(tablet-lg) {
+  //     padding-right: $cardPadding;
+  //   }
+  // }
+
+  // &:nth-child(3n) {
+  //   @include mq(tablet-lg) {
+  //     padding-right: 0;
+  //   }    
+  // }
 
   &__inner {
     background: $white;
+    flex: 1 1 auto;
     padding: 20px;
+
+    flex-shrink: 0;
   }
 
-  &:nth-child(4n) {
-    @include mq(tablet) {
-      padding-right: 0;
+  &__title {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    @include mq(tablet-lg) {
+      font-size: 2.2rem;
     }
+  }
+
+  &__title small {
+    display: block;
+    font-style: italic;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 5px;
+  }
+
+  p {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    list-style: none;
+    margin-bottom: 10px;
+    padding: 0;
+  }
+
+  ul li {
+    font-size: 1.4rem;
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 20px;
+  }
+
+  ul li:before {
+    background: $brandRed;
+    height: 2px;
+    content: '';
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 8px;
+    width: 8px;
+  }
+
+  ul li:last-child {
+    margin-bottom: 0;
+  }
+
+  &__email {
+    &--short {
+      @include mq(tablet) {
+        display: none;
+      }
+    }
+    &--full {
+      display: none;
+      @include mq(tablet) {
+        display: block;
+        white-space: nowrap;
+        line-height: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+      }
+    }
+  }
+
+  &__thumbnail {
+    display: block;
+    height: auto;
+    width: 100%;
+
+
+  }
+
+  &__footer {
+    align-items: center;
+    background: $cardFooter;
+    color: $cardFooterColour;
+    font-size: 1.5rem;
+    padding: $cardPadding;
+    max-width: 100%;
+    @include mq(tablet) {
+      font-size: 1.4rem;
+    }
+
+
+    a {
+      align-items: center;
+      color: $cardFooterColour;
+      display: flex;
+      text-decoration: none;
+    }
+
+    svg {
+      fill: $cardFooterColour;
+      height: 20px;
+      margin-right: 12px;
+      min-width: 20px;
+      width: 20px;
+    }
+    
   }
 
 }

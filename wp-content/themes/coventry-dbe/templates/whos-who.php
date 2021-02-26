@@ -7,18 +7,15 @@ Template Name: Page - Who's Who
 
 <?php include get_theme_file_path("templates/partials/masthead.php"); ?>
 
-
-<div class="container">
-  <section class="cardsWrap">     
-    <?php include get_theme_file_path("templates/partials/team-card.php"); ?>
-    <?php include get_theme_file_path("templates/partials/team-card.php"); ?>
-    <?php include get_theme_file_path("templates/partials/team-card.php"); ?>
-    <?php include get_theme_file_path("templates/partials/team-card.php"); ?>
-    <?php include get_theme_file_path("templates/partials/team-card.php"); ?>
-    <?php include get_theme_file_path("templates/partials/team-card.php"); ?>
-    <?php include get_theme_file_path("templates/partials/team-card.php"); ?>
-    <?php include get_theme_file_path("templates/partials/team-card.php"); ?>    
-  </section>
-</div>
+<section class="cardsWrap">     
+  <?php include get_theme_file_path("templates/partials/team-card.php"); ?>
+  <?php include get_theme_file_path("templates/partials/team-card.php"); ?>
+  <?php include get_theme_file_path("templates/partials/team-card.php"); ?>
+  <?php include get_theme_file_path("templates/partials/team-card.php"); ?>
+  <?php include get_theme_file_path("templates/partials/team-card.php"); ?>
+  <?php include get_theme_file_path("templates/partials/team-card.php"); ?>
+  <?php include get_theme_file_path("templates/partials/team-card.php"); ?>
+  <?php include get_theme_file_path("templates/partials/team-card.php"); ?>    
+</section>
 
 <?php get_footer(); ?>
