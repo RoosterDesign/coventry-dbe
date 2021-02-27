@@ -28,6 +28,7 @@
 }
 
 .hero {
+  background-color: $heroBg;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -46,4 +47,5 @@
   @include mq(desktop-lg) {
     height: 500px;
   }
+
 }

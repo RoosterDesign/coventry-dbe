@@ -7,8 +7,9 @@ Template Name: Page - Siams
 
   <div style="background-image: url('https://picsum.photos/1920')" class="hero"></div>
 
-  <section class="contentPanel -split container">
-    <div class="contentPanel__left">
+  <div class="container">
+
+    <main class="main">
       <h1 class="title"><?php the_title(); ?></h1>
       <h2 class="subTitle">Statutory Inspection of Anglican and Methodist Schools</h2>
       <p><strong>All SIAMS inspections are currently cancelled until further notice. Please contact <a href="mailto:Natalie.Yu@coventrydbe.org">Natalie.Yu@coventrydbe.org</a> for any SIAMS related queries.</strong></p>
@@ -22,10 +23,11 @@ Template Name: Page - Siams
         <li>SIAMS SEF Desktop Exercise</li>
       </ul>
       <p>Please contact Jen Jenkins with regards to these: <a href="mailto:Jennifer.Jenkins@coventrydbe.org">Jennifer.Jenkins@coventrydbe.org</a></p>
-    </div>
-    <div class="contentPanel__right">
-      <img src="https://picsum.photos/650/425" alt="">
-    </div>
-  </section>
+    </main>
 
+  </div>
+
+  <?php include get_theme_file_path("templates/partials/latest-news-cards.php"); ?>
+  <?php include get_theme_file_path("templates/partials/follow-us.php"); ?>
+  
 <?php get_footer(); ?>

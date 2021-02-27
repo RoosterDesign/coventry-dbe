@@ -4,6 +4,9 @@
 
 .newsCard {
   @extend .card;
+  @include mq(tablet) {
+    
+  }
   
   &__inner {
     @extend .card__inner;

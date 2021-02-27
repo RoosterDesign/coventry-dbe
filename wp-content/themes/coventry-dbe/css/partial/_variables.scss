@@ -4,6 +4,7 @@ $black: #000;
 $brandRed: #A80034;
 $brandRedDark: #940338;
 $lightGrey: #f7f7f7;
+$mediumGrey: #e8e8e8;
 $bogyBg: $brandRed;
 $headerBg: $white;
 $mobileNavBg: $brandRed;
@@ -49,13 +50,26 @@ $featureNewsPostBg: $brandRed;
 
 // Cards
 $cardPadding: 10px;
-$cardFooterBg: $brandRed;
 $cardTitleColour: $brandRed;
 $cardBorderColour: $brandRed;
-$cardFooterColour: $white;
+
+// $cardFooterBg: $brandRed;
+$cardFooterBg: $mediumGrey;
+$cardFooterBorderColour: $brandRed;
+// $cardFooterColour: $white;
+$cardFooterColour: $black;
+$cardFooterLinkColour: $brandRed;
+$cardFooterLinkHoverColour: $black;
+
+$cardFooterIconColour: $brandRed;
+
+$cardRevealBg: $mediumGrey;
 
 // Pagination
 $paginationBg: $white;
 $paginationColour: $bodyColour;
 $paginationHoverBg: $brandRed;
 $paginationHoverColour: $white;
+
+// Hero Masthead
+$heroBg: $brandRed;

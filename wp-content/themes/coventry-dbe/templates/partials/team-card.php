@@ -1,36 +1,29 @@
 <div class="card">
 
-  <img src="https://via.placeholder.com/545" class="card__thumbnail" />
+  <img src="https://placeimg.com/545/545/people" class="card__thumbnail" />
 
   <div class="card__inner">
-
-    <h3 class="card__title">
-      April Gold
-      <small>
-        Diocesan Director Education
-      </small>
-    </h3>
-    
-    <p>
-      <strong>
-        In her role, April
-      </strong>
-  </p>
-    <ul>
-      <li>
-        Communicates the diocesan vision for schools, churches, cathedral and chaplaincies to work together to communicate the gospel, make new disciples and transform communities.
-      </li>
-      <li>
-        Supports Church Schools to develop and live out their vision to see their communities flourish and to educate for life in all its fullness.
-      </li>
-      <li>
-        Challenges Church Schools to recruit passionate Christian leaders, who develop high quality teams, to provide excellent education for the children and young people they serve.
-      </li>
-      <li>
-        Acts as a strategic partner with Local Authorities, the Regional Schools Commissioner, the Department for Education and the Church of England Education Office.
-      </li>
-    </ul>       
-
+    <h3 class="card__title">April Gold <small>Diocesan Director Education</small></h3>
+    <div class="cardReveal">
+      <a class="btn -sml js-open-reveal">View April's Role</a>
+      <div class="cardReveal__content">
+        <p><strong>In her role, April</strong><span class="cardReveal__close js-close-reveal"></span></p>
+        <ul>
+          <li>
+          Communicates the diocesan vision for schools, churches, cathedral and chaplaincies to work together to communicate the gospel, make new disciples and transform communities.
+          </li>
+          <li>
+          Supports Church Schools to develop and live out their vision to see their communities flourish and to educate for life in all its fullness.
+          </li>
+          <li>
+          Challenges Church Schools to recruit passionate Christian leaders, who develop high quality teams, to provide excellent education for the children and young people they serve.
+          </li>
+          <li>
+          Acts as a strategic partner with Local Authorities, the Regional Schools Commissioner, the Department for Education and the Church of England Education Office.
+          </li>
+        </ul>   
+      </div>
+    </div>
   </div>
 
   <div class="card__footer">

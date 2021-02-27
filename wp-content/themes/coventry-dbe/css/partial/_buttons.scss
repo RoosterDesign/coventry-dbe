@@ -2,6 +2,7 @@
   align-items: center;
   background: $buttonBg;
   color: $buttonColour;
+  cursor: pointer;
   display: inline-flex;
   font-size: 1.3rem;
   font-weight: 600;
@@ -22,6 +23,12 @@
 
   &:hover {
     background: $buttonBgHover;
+  }
+
+  &.-sml {
+    padding: 0;
+    font-size: 1.4rem;
+    padding: 10px 15px;
   }
 
 }

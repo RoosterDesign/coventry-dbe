@@ -9,52 +9,13 @@
 
 get_header();
 ?>
-
-	<main id="primary" class="site-main">
-
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'coventry-dbe' ); ?></h1>
-			</header><!-- .page-header -->
-
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'coventry-dbe' ); ?></p>
-
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'coventry-dbe' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$coventry_dbe_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'coventry-dbe' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$coventry_dbe_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
-
-	</main><!-- #main -->
-
-<?php
-get_footer();
+	<!-- TODO - HERO IMAGE -->
+	<div style="background-image: url('https://picsum.photos/1920')" class="hero"></div>
+	<div class="container">
+		<main class="main">
+			<h1 class="title">Error 404</h1>
+			<h2 class="subTitle">Sorry, that page cannot be found.</h2>
+			<p>To return to the homepage, <a href="/" alt="Diocesan Board of Education">click here</a>.</p>
+		</main>
+	</div>
+<?php get_footer(); ?>

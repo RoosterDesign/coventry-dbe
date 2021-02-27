@@ -19,13 +19,11 @@
   display: flex;
   flex-direction: column;
   margin-bottom: ($cardPadding * 2);
-  width: 100%;
+  width: 100%;  
   @include mq(tablet) {
     padding: 0 $cardPadding;
     width: 50%;
-  }
-  @include mq(tablet-lg) {
-    
+    width: 33.333333%;
   }
   @include mq(desktop) {
     padding: 0 $cardPadding;
@@ -40,28 +38,40 @@
 
   &__inner {
     background: $white;
-    border-top: 3px solid $cardBorderColour;
+    // border-top: 3px solid $cardBorderColour;
     flex: 1 1 auto;
     padding: 20px;
+    @include mq(desktop) {
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
   }
 
   &__title {
     color: $cardTitleColour;
     font-size: 2.4rem;
-    // font-weight: 500;
-    margin-bottom: 20px;
+    line-height: 1.2;
     @include mq(tablet-lg) {
       font-size: 2.2rem;
     }
     @include mq(desktop) {
-      font-size: 2.8rem;
+      font-size: 2.4rem;
     }
+  }
+
+  &__title a {
+    color: $linkColour;
+    text-decoration: none;
+  }
+
+  &__title a:hover {
+    color: $linkHoverColour;
+    text-decoration: underline;
   }
 
   &__title small {
     color: $bodyColour;
     display: block;
-    font-style: italic;
     font-size: 1.6rem;
     font-weight: 400;
     margin-top: 5px;
@@ -77,7 +87,7 @@
 
   ul {
     list-style: none;
-    margin-bottom: 10px;
+    margin: 0;
     padding: 0;
   }
 
@@ -130,7 +140,7 @@
     background: $cardFooterBg;
     color: $cardFooterColour;
     font-size: 1.5rem;
-    padding: 10px 20px;
+    padding: 15px 20px;
     max-width: 100%;
     @include mq(tablet) {
       font-size: 1.4rem;      
@@ -146,17 +156,17 @@
     
     a {
       align-items: center;
-      color: $cardFooterColour;
+      color: $cardFooterLinkColour;
       display: flex;
-      text-decoration: none;
     }
 
     a:hover {
+      color: $cardFooterLinkHoverColour;
       text-decoration: underline;
     }
 
     svg {
-      fill: $cardFooterColour;
+      fill: $cardFooterIconColour;
       height: 20px;
       margin-right: 12px;
       min-width: 20px;
@@ -167,3 +177,67 @@
 
 }
 
+.cardReveal {  
+  display: block;
+  padding-top: 10px;
+
+  &__content {
+    background: $cardRevealBg;
+    border-bottom: 2px solid $cardFooterBorderColour;
+    display: none;
+    margin: 0 -20px -20px;
+    padding: 20px;
+    position: relative;
+    @include mq(desktop) {
+      margin-bottom: -25px;
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
+  }
+
+  &__close {
+    cursor: pointer;
+    display: block;
+    height: 16px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 16px;
+    @include mq(desktop) {
+      top: 25px;
+    }
+
+    &:hover:before,
+    &:hover:after {
+      background-color: $brandRed;
+    }
+
+    &:before,
+    &:after {
+      background-color: $black;
+      content: ' ';
+      height: 100%;
+      left: 50%;      
+      position: absolute;
+      width: 3px;
+    }
+
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+
+  }
+
+  &.-isVisible .cardReveal__content {
+    display: block;
+  }
+
+  &.-isVisible .btn {
+    display: none;
+  }
+
+}
