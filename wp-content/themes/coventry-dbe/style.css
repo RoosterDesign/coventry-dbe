@@ -760,6 +760,12 @@ p, li {
   }
 }
 
+.fwImg {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
 .main {
   margin-bottom: 30px;
 }
@@ -912,8 +918,8 @@ p, li {
 @media (min-width: 1366px) {
   .hero + .container > .main {
     background: #fff;
-    -webkit-box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
-            box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.05);
     margin-top: -150px;
     padding: 30px 45px;
     position: relative;
@@ -2313,62 +2319,7 @@ p strong {
   }
 }
 
-.newsCard__inner {
-  border-top: none !important;
-}
-
-.newsCard__date {
-  font-size: 1.4rem;
-}
-
-@media (min-width: 992px) {
-  .newsCard__date {
-    font-size: 1.4rem;
-  }
-}
-
-.newsCard__title {
-  font-size: 2rem;
-  line-height: 1.2;
-  margin: 10px 0 20px;
-}
-
-@media (min-width: 992px) {
-  .newsCard__title {
-    font-size: 2.5rem;
-    margin-top: 15px;
-  }
-}
-
-.newsCard__title a {
-  color: #A80034;
-  text-decoration: none;
-}
-
-.newsCard__title a:hover {
-  color: #000;
-}
-
-.newsCard p {
-  font-size: 1.5rem;
-  line-height: 1.4;
-  margin-bottom: 20px;
-}
-
-@media (min-width: 768px) {
-  .newsCard p {
-    font-size: 1.6rem;
-  }
-}
-
-@media (min-width: 1366px) {
-  .newsCard p {
-    font-size: 1.8rem;
-    line-height: 1.6;
-  }
-}
-
-.cardsWrap, .latestNewsCards {
+.cardsWrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2382,7 +2333,7 @@ p strong {
 }
 
 @media (min-width: 768px) {
-  .cardsWrap, .latestNewsCards {
+  .cardsWrap {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -2394,12 +2345,12 @@ p strong {
 }
 
 @media (min-width: 1366px) {
-  .cardsWrap, .latestNewsCards {
+  .cardsWrap {
     padding: 0 35px;
   }
 }
 
-.card, .newsCard {
+.card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2412,7 +2363,7 @@ p strong {
 }
 
 @media (min-width: 768px) {
-  .card, .newsCard {
+  .card {
     padding: 0 10px;
     width: 50%;
     width: 33.333333%;
@@ -2420,19 +2371,19 @@ p strong {
 }
 
 @media (min-width: 1366px) {
-  .card, .newsCard {
+  .card {
     padding: 0 10px;
     width: 33.333333%;
   }
 }
 
-.card__thumbnail, .newsCard__thumbnail img {
+.card__thumbnail img {
   display: block;
   height: auto;
   width: 100%;
 }
 
-.card__inner, .newsCard__inner {
+.card__inner {
   background: #fff;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
@@ -2441,7 +2392,7 @@ p strong {
 }
 
 @media (min-width: 1366px) {
-  .card__inner, .newsCard__inner {
+  .card__inner {
     padding-top: 25px;
     padding-bottom: 25px;
   }
@@ -2449,8 +2400,14 @@ p strong {
 
 .card__title {
   color: #A80034;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .card__title {
+    font-size: 1.8rem;
+  }
 }
 
 @media (min-width: 992px) {
@@ -2462,6 +2419,16 @@ p strong {
 @media (min-width: 1366px) {
   .card__title {
     font-size: 2.4rem;
+  }
+}
+
+.card__title + p {
+  margin-top: 10px;
+}
+
+@media (min-width: 1366px) {
+  .card__title + p {
+    margin-top: 20px;
   }
 }
 
@@ -2483,24 +2450,61 @@ p strong {
   margin-top: 5px;
 }
 
-.card p, .newsCard p {
+@media (min-width: 768px) {
+  .card__title small {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 1366px) {
+  .card__title small {
+    font-size: 1.6rem;
+  }
+}
+
+.card p {
   font-size: 1.5rem;
   margin-bottom: 10px;
 }
 
 @media (min-width: 1366px) {
-  .card p, .newsCard p {
+  .card p {
     font-size: 1.6rem;
   }
 }
 
-.card ul, .newsCard ul {
+.card__date {
+  display: block;
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+@media (min-width: 1366px) {
+  .card__date {
+    margin-bottom: 10px;
+  }
+}
+
+.card__date svg {
+  fill: #707070;
+  height: 15px;
+  position: relative;
+  margin-right: 3px;
+  top: 2px;
+  width: 15px;
+}
+
+.card .btn {
+  margin-top: 10px;
+}
+
+.card ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.card ul li, .newsCard ul li {
+.card ul li {
   font-size: 1.4rem;
   position: relative;
   margin-bottom: 10px;
@@ -2508,12 +2512,12 @@ p strong {
 }
 
 @media (min-width: 1366px) {
-  .card ul li, .newsCard ul li {
+  .card ul li {
     font-size: 1.5rem;
   }
 }
 
-.card ul li:before, .newsCard ul li:before {
+.card ul li:before {
   background: #A80034;
   height: 2px;
   content: '';
@@ -2524,7 +2528,7 @@ p strong {
   width: 8px;
 }
 
-.card ul li:last-child, .newsCard ul li:last-child {
+.card ul li:last-child {
   margin-bottom: 0;
 }
 
@@ -2604,7 +2608,7 @@ p strong {
 
 .cardReveal {
   display: block;
-  padding-top: 10px;
+  padding-top: 15px;
 }
 
 .cardReveal__content {

@@ -7,7 +7,7 @@
   </h1> 
 </div>
 
-<div class="latestNewsCards">
+<div class="cardsWrap">
   <?php
     $args = array( 'posts_per_page' => 3, 'post_type' => 'post', 'offset' => 1 );
     $post_query = new WP_Query($args);          

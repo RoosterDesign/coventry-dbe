@@ -37,7 +37,7 @@ get_header();
 
 <hr class="hr -no-m-top" />
 
-<div class="latestNewsCards container">
+<div class="cardsWrap container">
 	<?php
 		$current_page = get_query_var('paged');
 		$current_page = max( 1, $current_page );

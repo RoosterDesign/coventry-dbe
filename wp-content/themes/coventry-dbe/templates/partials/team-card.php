@@ -1,6 +1,8 @@
 <div class="card">
 
-  <img src="https://placeimg.com/545/545/people" class="card__thumbnail" />
+  <div class="card__thumbnail">
+    <img src="https://placeimg.com/545/545/people" />
+  </div>  
 
   <div class="card__inner">
     <h3 class="card__title">April Gold <small>Diocesan Director Education</small></h3>
