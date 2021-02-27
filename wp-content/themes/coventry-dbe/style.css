@@ -1003,6 +1003,20 @@ p, li {
   padding: 10px 15px;
 }
 
+svg {
+  fill: #fff;
+  height: 16px;
+  margin-left: 10px;
+  position: relative;
+  top: -1px;
+  width: 16px;
+}
+
+svg.btn__plus {
+  height: 13px;
+  width: 13px;
+}
+
 .btn__icon {
   display: block;
   margin-left: 12px;
@@ -1197,7 +1211,7 @@ p, li {
 
 @media (min-width: 1366px) {
   .siteHeader__logo {
-    width: 170px;
+    width: 160px;
   }
 }
 
@@ -1539,7 +1553,7 @@ p, li {
 
 @media (min-width: 1366px) {
   .siteFooter__logo {
-    width: 170px;
+    width: 160px;
   }
 }
 

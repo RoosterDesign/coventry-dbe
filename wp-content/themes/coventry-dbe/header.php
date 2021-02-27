@@ -14,7 +14,7 @@
 	<div class="container">
 
 		<a href="/" class="siteHeader__logo">
-			<img src="https://via.placeholder.com/170x65" />
+			<img src="<?php echo get_option('site_logo'); ?>" alt="Diocesan Board of Education" />
 		</a>
 
 		<div class="hamburger"><div class="hamburger-box"><div class="hamburger-inner"></div></div></div>

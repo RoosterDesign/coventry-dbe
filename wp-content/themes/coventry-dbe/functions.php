@@ -224,5 +224,186 @@ function get_excerpt($limit){
 
 		// additional image sizes
 		// delete the next line if you do not need additional image sizes
-		// add_image_size( 'category-thumb', 300, 9999 ); // 300 pixels wide (and unlimited height)
+		add_image_size( 'home-intro', 650, 9999 ); // 300 pixels wide (and unlimited height)
 	}
+
+
+/* Custom Post Types */
+
+function wporg_custom_post_type() {
+	register_post_type('wporg_product',
+			array(
+					'labels'      => array(
+							'name'          => __('Products', 'textdomain'),
+							'singular_name' => __('Product', 'textdomain'),
+					),
+							'public'      => true,
+							'has_archive' => true,
+			)
+	);
+}
+add_action('init', 'wporg_custom_post_type');
+
+
+/* Sitewide Options Page */
+
+add_action('admin_menu', 'awesome_page_create');
+function awesome_page_create() {
+    $page_title = 'Sitewide Settings';
+    $menu_title = 'Sitewide Settings';
+    $capability = 'edit_posts';
+    $menu_slug = 'sitewide_settings';
+    $function = 'sitewide_settings_display';
+    $icon_url = '';
+    $position = 30;
+
+    add_menu_page( $page_title, $menu_title, $capability, $menu_slug, $function, $icon_url, $position );
+
+		function sitewide_settings_display() {
+			
+			/* Site Logo */
+			if (isset($_POST['site_logo'])) {
+				$site_logo = $_POST['site_logo'];
+				update_option('site_logo', $site_logo);
+			}
+			$site_logo = get_option('site_logo', '');
+
+			/* Site Logo (White) */
+			if (isset($_POST['site_logo_white'])) {
+				$site_logo = $_POST['site_logo_white'];
+				update_option('site_logo_white', $site_logo);
+			}
+			$site_logo_white = get_option('site_logo_white', '');
+
+			/* Facebook Social Link */
+			if (isset($_POST['facebook_link'])) {
+					$facebook_link = $_POST['facebook_link'];
+					update_option('facebook_link', $facebook_link);
+			}
+			$facebook_link = get_option('facebook_link', '');
+
+			/* Twitter Social Link */
+			if (isset($_POST['twitter_link'])) {
+					$twitter_link = $_POST['twitter_link'];
+					update_option('twitter_link', $twitter_link);
+			}
+			$twitter_link = get_option('twitter_link', '');
+
+			/* Instagram Social Link */
+			if (isset($_POST['instagram_link'])) {
+					$instagram_link = $_POST['instagram_link'];
+					update_option('instagram_link', $instagram_link);
+			}
+			$instagram_link = get_option('instagram_link', '');
+
+			/* Address Label */
+			if (isset($_POST['address_label'])) {
+					$address_label = $_POST['address_label'];
+					update_option('address_label', $address_label);
+			}
+			$address_label = get_option('address_label', '');
+
+			/* Address */
+			if (isset($_POST['address'])) {
+					$address = $_POST['address'];
+					update_option('address', $address);
+			}
+			$address = get_option('address', '');
+
+			/* Message after address (footer) */
+			if (isset($_POST['address_post_msg'])) {
+					$address_post_msg = $_POST['address_post_msg'];
+					update_option('address_post_msg', $address_post_msg);
+			}
+			$address_post_msg = get_option('address_post_msg', '');
+
+			/* Message after address (footer) - 1st Line */
+			if (isset($_POST['footer_strapline'])) {
+				$footer_strapline = $_POST['footer_strapline'];
+				update_option('footer_strapline', $footer_strapline);
+			}
+			$footer_strapline = get_option('footer_strapline', '');
+
+				
+		?>
+
+		<style>
+		.settingsGroup {
+			align-items: center;
+			display: flex;
+			margin-bottom: 30px;
+		}
+
+		.settingsGroup label {
+			margin: 0;
+			width: 150px;
+		}
+
+		.settingsGroup input,
+		.settingsGroup textarea {
+			width: 400px;
+		}
+		.settingsGroup textarea { height: 100px }
+		</style>
+
+			<h1>Sitewide Settings Page</h1>
+			<br>
+			<form method="POST">
+
+					<h2>Branding</h2>
+					<p>Upload to media library first and add link below.</p>
+					<div class="settingsGroup">
+						<label for="site_logo">Logo</label><br>
+						<input type="text" name="site_logo" id="site_logo" value="<?php echo $site_logo; ?>">
+					</div>	
+
+					<div class="settingsGroup">
+						<label for="site_logo_white">Logo White</label><br>
+						<input type="text" name="site_logo_white" id="site_logo_white" value="<?php echo $site_logo_white; ?>">
+					</div>
+
+					<hr />
+
+					<h2>Social</h2>
+					<div class="settingsGroup">
+						<label for="facebook_link">Facebook Link</label><br>
+						<input type="text" name="facebook_link" id="facebook_link" value="<?php echo $facebook_link; ?>">
+					</div>					
+					<div class="settingsGroup">
+						<label for="twitter_link">Twitter Link</label><br>
+						<input type="text" name="twitter_link" id="twitter_link" value="<?php echo $twitter_link; ?>">
+					</div>					
+					<div class="settingsGroup">
+						<label for="facebook_link">Instagram Link</label><br>
+						<input type="text" name="instagram_link" id="instagram_link" value="<?php echo $instagram_link; ?>">
+					</div>
+					
+					<hr />
+
+					<h2>Footer</h2>
+					<div class="settingsGroup">
+						<label for="facebook_link">Address Label</label><br>
+						<input type="text" name="address_label" id="address_label" value="<?php echo $address_label; ?>">
+					</div>
+					<div class="settingsGroup">
+						<label for="facebook_link">Address</label><br>
+						<input type="text" name="address" id="address" value="<?php echo $address; ?>">
+					</div>
+					<div class="settingsGroup">
+						<label for="facebook_link">Text after address</label><br>
+						<input type="text" name="address_post_msg" id="address_post_msg" value="<?php echo $address_post_msg; ?>">
+					</div>
+					<div class="settingsGroup">
+						<label for="facebook_link">Footer Strapline</label><br>
+						
+						<textarea name="footer_strapline" id="footer_strapline" cols="30" rows="10"><?php echo $footer_strapline; ?></textarea>
+					</div>
+
+					<hr />
+
+    			<input type="submit" value="Save" class="button button-primary button-large">
+			</form>
+
+		<?php }
+
+}

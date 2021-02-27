@@ -33,6 +33,20 @@
 
 }
 
+svg {
+  fill: $white;
+  height: 16px;
+  margin-left: 10px;
+  position: relative;
+  top: -1px;
+  width: 16px;
+}
+
+svg.btn__plus {
+  height: 13px;
+  width: 13px;
+}
+
 .btn__icon {
   display: block;
   margin-left: 12px;
