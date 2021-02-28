@@ -5,12 +5,12 @@ Template Name: Page - Governance
 ?>
 <?php get_header(); ?>
 
-  <div style="background-image: url('https://picsum.photos/1920')" class="hero"></div>
+  <?php include get_theme_file_path("templates/partials/masthead.php"); ?>
 
   <div class="container">
     <main class="main">
-      <h1 class="title"><?php the_title(); ?></h1>
-      <img src="https://picsum.photos/1020/600" class="fwImg">
+      <?php include get_theme_file_path("templates/partials/body-masthead.php"); ?>
+      <?php the_field('pageBody'); ?>
     </main>
   </div>
 

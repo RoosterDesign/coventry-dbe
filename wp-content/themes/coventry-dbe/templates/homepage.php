@@ -41,7 +41,7 @@ Template Name: Page - Homepage
   </nav>
 
   <div class="container">
-    <section class="main col-2">
+    <section class="main col-2 -home">
       <div class="main__left">
         <h1 class="title"><?php the_field('homeIntro_title'); ?></h1>
         <p><?php the_field('homeIntro_body'); ?></p>
@@ -55,16 +55,11 @@ Template Name: Page - Homepage
         </figure>
         */?>
       </div>
-      <aside class="main__right">
-        
-        <!-- TODO - POPULATE WITH STOCK IMAGE -->
-        <img src="https://picsum.photos/650/425" alt="">
-        <?php $image = get_field('homeIntro_image');
-          if( $image ): $url = $image['url']; $alt = $image['alt']; $size = 'home-intro'; ?>
-            <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($alt); ?>" />
-        <?php endif; ?>
-
-      </aside>
+      <?php if (get_field('homeIntro_image')) { ?>
+        <aside class="main__right">
+          <?php $image = get_field('homeIntro_image'); $size = 'home-intro'; echo wp_get_attachment_image( $image, $size ); ?>
+        </aside>
+      <?php } ?>
     </section>
   </div>
 

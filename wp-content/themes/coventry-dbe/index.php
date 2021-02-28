@@ -41,7 +41,7 @@ get_header();
 	<?php
 		$current_page = get_query_var('paged');
 		$current_page = max( 1, $current_page );
-		$per_page = 3;
+		$per_page = 9;
 		$offset_start = 1;
 		$offset = ( $current_page - 1 ) * $per_page + $offset_start;
 		$post_list = new WP_Query(array(

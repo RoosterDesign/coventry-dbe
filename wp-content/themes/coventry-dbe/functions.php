@@ -222,9 +222,13 @@ function get_excerpt($limit){
 	if ( function_exists( 'add_theme_support' ) ) {
 		set_post_thumbnail_size( 360, 240, true ); // default Featured Image dimensions (cropped)
 
+
 		// additional image sizes
-		// delete the next line if you do not need additional image sizes
-		add_image_size( 'home-intro', 650, 9999 ); // 300 pixels wide (and unlimited height)
+		add_image_size( 'post-img', 650, 9999 );
+		add_image_size( 'featured-post-thumb', 785, 530 );
+		add_image_size( 'home-intro', 650, 9999 );
+		add_image_size( 'team-photo', 545, 545 );
+		add_image_size( 'masthead-bg', 1920, 500, true );
 	}
 
 

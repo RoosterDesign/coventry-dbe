@@ -1,7 +1,13 @@
 <div class="card">
 
+  <?php if ( has_post_thumbnail() ) {
+    $photo = get_the_post_thumbnail_url(get_the_ID(),'team-photo');
+  } else {
+    $photo = '/wp-content/uploads/2021/02/no-team-photo.jpg';
+  } ?>
+
   <div class="card__thumbnail">
-    <img src="https://placeimg.com/545/545/people" />
+    <img src="<?php echo $photo ?>" alt="<?php the_title(); ?> " />
   </div>  
 
   <div class="card__inner">

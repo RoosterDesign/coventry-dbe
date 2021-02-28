@@ -717,6 +717,16 @@ body {
   }
 }
 
+.cf {
+  overflow: auto;
+}
+
+.cf::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 #pageContent {
   background: #f7f7f7;
   padding: 0 0 20px;
@@ -878,18 +888,28 @@ p, li {
 @media (min-width: 768px) {
   .main__right {
     display: block;
+    width: 50%;
+  }
+}
+
+.main.-home .main__right {
+  background: red;
+}
+
+@media (min-width: 768px) {
+  .main.-home .main__right {
     width: 350px;
   }
 }
 
 @media (min-width: 992px) {
-  .main__right {
+  .main.-home .main__right {
     width: 500px;
   }
 }
 
 @media (min-width: 1366px) {
-  .main__right {
+  .main.-home .main__right {
     width: 650px;
   }
 }
@@ -903,6 +923,30 @@ p, li {
 
 .main__right img:last-child {
   margin-bottom: 0;
+}
+
+.main.post .wp-post-image {
+  display: block;
+  height: auto;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .main.post .wp-post-image {
+    -webkit-box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+    float: right;
+    margin: 0 0 20px 20px;
+    width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .main.post .wp-post-image {
+    margin-bottom: 30px;
+    margin-left: 30px;
+  }
 }
 
 .hero + .container > .main {
@@ -1814,6 +1858,12 @@ svg.btn__plus {
     font-size: 2.6rem;
     margin: -15px 0 25px;
   }
+}
+
+.postDate {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 30px;
 }
 
 .noPosts {

@@ -4,7 +4,7 @@
       <?php if ( has_post_thumbnail() ) { ?>
         <?php the_post_thumbnail(); ?>                    
       <?php } else { ?>
-        <img src="https://via.placeholder.com/650x420" alt="<?php the_title(); ?>"/>
+        <img src="/wp-content/uploads/2021/02/no-img.jpg" alt="<?php the_title(); ?>"/>
       <?php } ?>
   </a>
 

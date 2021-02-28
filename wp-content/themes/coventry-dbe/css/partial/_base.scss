@@ -17,6 +17,16 @@ body {
   }
 }
 
+.cf {
+  overflow: auto;
+}
+
+.cf::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 #pageContent {
   background: $contentBg;
   padding: 0 0 20px;
