@@ -15,14 +15,12 @@ Template Name: Page - Who's Who
   </div>
 
   <section class="cardsWrap">     
-    <?php include get_theme_file_path("templates/partials/team-card.php"); ?>
-    <?php include get_theme_file_path("templates/partials/team-card.php"); ?>
-    <?php include get_theme_file_path("templates/partials/team-card.php"); ?>
-    <?php include get_theme_file_path("templates/partials/team-card.php"); ?>
-    <?php include get_theme_file_path("templates/partials/team-card.php"); ?>
-    <?php include get_theme_file_path("templates/partials/team-card.php"); ?>
-    <?php include get_theme_file_path("templates/partials/team-card.php"); ?>
-    <?php include get_theme_file_path("templates/partials/team-card.php"); ?>    
+    <?php $args = array( 'post_type' => 'team_members', 'posts_per_page' => 999 ); $the_query = new WP_Query( $args );
+      if ( $the_query->have_posts() ) :
+        while ( $the_query->have_posts() ) : $the_query->the_post();
+          include get_theme_file_path("templates/partials/team-card.php");
+      endwhile; wp_reset_postdata();
+    endif; ?>  
   </section>
 
   <?php include get_theme_file_path("templates/partials/latest-news-cards.php"); ?>

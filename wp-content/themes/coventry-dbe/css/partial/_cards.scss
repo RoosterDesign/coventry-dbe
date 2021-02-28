@@ -45,6 +45,8 @@
   &__inner {
     background: $white;
     // border-top: 3px solid $cardBorderColour;
+    display: flex;
+    flex-direction: column;
     flex: 1 1 auto;
     padding: 20px;
     @include mq(desktop) {
@@ -130,6 +132,7 @@
 
   .btn {
     margin-top: 10px;
+    margin-bottom: auto;
   }
 
   ul {
@@ -225,7 +228,8 @@
 }
 
 .cardReveal {  
-  display: block;
+  display: flex;
+  height: 100%;
   padding-top: 15px;
 
   &__content {
