@@ -274,8 +274,8 @@ function awesome_page_create() {
 
 			/* Site Logo (White) */
 			if (isset($_POST['site_logo_white'])) {
-				$site_logo = $_POST['site_logo_white'];
-				update_option('site_logo_white', $site_logo);
+				$site_logo_white = $_POST['site_logo_white'];
+				update_option('site_logo_white', $site_logo_white);
 			}
 			$site_logo_white = get_option('site_logo_white', '');
 
@@ -328,6 +328,25 @@ function awesome_page_create() {
 			}
 			$footer_strapline = get_option('footer_strapline', '');
 
+			/* Professional Development Card Link Icon */
+			if (isset($_POST['prodev_linkIcon'])) {
+				$prodev_linkIcon = stripslashes($_POST['prodev_linkIcon']);
+				update_option('prodev_linkIcon', $prodev_linkIcon);
+			}
+			$prodev_linkIcon = get_option('prodev_linkIcon', '');
+
+			
+
+
+
+			/* Professional Development Card Link Label */
+			if (isset($_POST['prodev_linkText'])) {
+				$prodev_linkText = $_POST['prodev_linkText'];
+				update_option('prodev_linkText', $prodev_linkText);
+			}
+			$prodev_linkText = get_option('prodev_linkText', '');
+
+			
 				
 		?>
 
@@ -378,7 +397,7 @@ function awesome_page_create() {
 						<input type="text" name="twitter_link" id="twitter_link" value="<?php echo $twitter_link; ?>">
 					</div>					
 					<div class="settingsGroup">
-						<label for="facebook_link">Instagram Link</label><br>
+						<label for="instagram_link">Instagram Link</label><br>
 						<input type="text" name="instagram_link" id="instagram_link" value="<?php echo $instagram_link; ?>">
 					</div>
 					
@@ -386,21 +405,32 @@ function awesome_page_create() {
 
 					<h2>Footer</h2>
 					<div class="settingsGroup">
-						<label for="facebook_link">Address Label</label><br>
+						<label for="address_label">Address Label</label><br>
 						<input type="text" name="address_label" id="address_label" value="<?php echo $address_label; ?>">
 					</div>
 					<div class="settingsGroup">
-						<label for="facebook_link">Address</label><br>
+						<label for="address">Address</label><br>
 						<input type="text" name="address" id="address" value="<?php echo $address; ?>">
 					</div>
 					<div class="settingsGroup">
-						<label for="facebook_link">Text after address</label><br>
+						<label for="address_post_msg">Text after address</label><br>
 						<input type="text" name="address_post_msg" id="address_post_msg" value="<?php echo $address_post_msg; ?>">
 					</div>
 					<div class="settingsGroup">
-						<label for="facebook_link">Footer Strapline</label><br>
-						
+						<label for="footer_strapline">Footer Strapline</label><br>						
 						<textarea name="footer_strapline" id="footer_strapline" cols="30" rows="10"><?php echo $footer_strapline; ?></textarea>
+					</div>
+
+					<hr />
+
+					<h2>Professional Development</h2>
+					<div class="settingsGroup">
+						<label for="prodev_linkIcon">Link Icon</label><br>
+						<textarea name="prodev_linkIcon" id="prodev_linkIcon" cols="30" rows="10"><?php echo $prodev_linkIcon; ?></textarea>
+					</div>
+					<div class="settingsGroup">
+						<label for="prodev_linkText">Link text</label><br>
+						<input type="text" name="prodev_linkText" id="prodev_linkText" value="<?php echo $prodev_linkText; ?>">
 					</div>
 
 					<hr />

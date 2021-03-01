@@ -2673,7 +2673,7 @@ p strong {
 .card__footer svg {
   fill: #A80034;
   height: 20px;
-  margin-right: 12px;
+  margin: 0 12px 0 0;
   min-width: 20px;
   width: 20px;
 }
