@@ -226,6 +226,7 @@ function get_excerpt($limit){
 		// additional image sizes
 		add_image_size( 'post-img', 650, 9999 );
 		add_image_size( 'featured-post-thumb', 785, 530 );
+		add_image_size( 'home-carousel', 1200, 500, true );
 		add_image_size( 'home-intro', 650, 9999 );
 		add_image_size( 'team-photo', 545, 545 );
 		add_image_size( 'masthead-bg', 1920, 500, true );
@@ -334,11 +335,7 @@ function awesome_page_create() {
 				update_option('prodev_linkIcon', $prodev_linkIcon);
 			}
 			$prodev_linkIcon = get_option('prodev_linkIcon', '');
-
 			
-
-
-
 			/* Professional Development Card Link Label */
 			if (isset($_POST['prodev_linkText'])) {
 				$prodev_linkText = $_POST['prodev_linkText'];
@@ -346,7 +343,39 @@ function awesome_page_create() {
 			}
 			$prodev_linkText = get_option('prodev_linkText', '');
 
+			/* Resource Card Link Icon */
+			if (isset($_POST['resource_linkIcon'])) {
+				$resource_linkIcon = stripslashes($_POST['resource_linkIcon']);
+				update_option('resource_linkIcon', $resource_linkIcon);
+			}
+			$resource_linkIcon = get_option('resource_linkIcon', '');
 			
+			/* Resource Card Link Label */
+			if (isset($_POST['resource_linkText'])) {
+				$resource_linkText = $_POST['resource_linkText'];
+				update_option('resource_linkText', $resource_linkText);
+			}
+			$resource_linkText = get_option('resource_linkText', '');
+
+			/* Fallback Images */
+
+			if (isset($_POST['staff_fallback_img'])) {
+				$staff_fallback_img = $_POST['staff_fallback_img'];
+				update_option('staff_fallback_img', $staff_fallback_img);
+			}
+			$staff_fallback_img = get_option('staff_fallback_img', '');
+
+			if (isset($_POST['blog_fallback_img'])) {
+				$blog_fallback_img = $_POST['blog_fallback_img'];
+				update_option('blog_fallback_img', $blog_fallback_img);
+			}
+			$blog_fallback_img = get_option('blog_fallback_img', '');
+
+			if (isset($_POST['featBlog_fallback_img'])) {
+				$featBlog_fallback_img = $_POST['featBlog_fallback_img'];
+				update_option('featBlog_fallback_img', $featBlog_fallback_img);
+			}
+			$featBlog_fallback_img = get_option('featBlog_fallback_img', '');
 				
 		?>
 
@@ -432,6 +461,36 @@ function awesome_page_create() {
 						<label for="prodev_linkText">Link text</label><br>
 						<input type="text" name="prodev_linkText" id="prodev_linkText" value="<?php echo $prodev_linkText; ?>">
 					</div>
+
+					<hr />
+
+					<h2>Resources</h2>
+					<div class="settingsGroup">
+						<label for="resource_linkIcon">Link Icon</label><br>
+						<textarea name="resource_linkIcon" id="resource_linkIcon" cols="30" rows="10"><?php echo $resource_linkIcon; ?></textarea>
+					</div>
+					<div class="settingsGroup">
+						<label for="resource_linkText">Link text</label><br>
+						<input type="text" name="resource_linkText" id="resource_linkText" value="<?php echo $resource_linkText; ?>">
+					</div>
+
+					<hr />
+
+					<h2>Fallback Images</h2>
+					<div class="settingsGroup">
+						<label for="staff_fallback_img">Staff Fallback Image</label><br>
+						<input type="text" name="staff_fallback_img" id="staff_fallback_img" value="<?php echo $staff_fallback_img; ?>">
+					</div>	
+
+					<div class="settingsGroup">
+						<label for="blog_fallback_img">Bloc Fallback Image</label><br>
+						<input type="text" name="blog_fallback_img" id="blog_fallback_img" value="<?php echo $blog_fallback_img; ?>">
+					</div>	
+
+					<div class="settingsGroup">
+						<label for="featBlog_fallback_img">Featured Blog Fallback Image</label><br>
+						<input type="text" name="featBlog_fallback_img" id="featBlog_fallback_img" value="<?php echo $featBlog_fallback_img; ?>">
+					</div>	
 
 					<hr />
 

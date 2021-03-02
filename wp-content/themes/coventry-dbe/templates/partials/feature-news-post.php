@@ -20,7 +20,7 @@
   <?php if ( has_post_thumbnail() ) {
     $thumbnail = get_the_post_thumbnail_url(get_the_ID(),'featured-post-thumb');
   } else {
-    $thumbnail = '/wp-content/uploads/2021/02/no-feat-img.jpg';
+    $thumbnail = get_option('featBlog_fallback_img');
   } ?>
   <a class="featureNewsPost__thumbnail" style="background-image: url('<?php echo $thumbnail ?>')" a href="<?php the_permalink() ?>" alt="<?php the_title(); ?>"></a>
 

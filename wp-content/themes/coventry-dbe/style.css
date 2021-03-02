@@ -776,6 +776,10 @@ p, li {
   width: 100%;
 }
 
+#sbi_mod_link, #sbi_mod_error {
+  float: none !important;
+}
+
 .main {
   margin-bottom: 30px;
 }
@@ -890,10 +894,6 @@ p, li {
     display: block;
     width: 50%;
   }
-}
-
-.main.-home .main__right {
-  background: red;
 }
 
 @media (min-width: 768px) {

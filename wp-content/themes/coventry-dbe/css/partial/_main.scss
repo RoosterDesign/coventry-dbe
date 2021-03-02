@@ -70,7 +70,6 @@
   }
 
   &.-home .main__right {
-    background: red;
     @include mq(tablet) {
       width: 350px;
     }    

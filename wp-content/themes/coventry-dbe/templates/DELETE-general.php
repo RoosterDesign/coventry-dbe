@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Page - Governance
+Template Name: Page - General
 */
 ?>
 <?php get_header(); ?>
@@ -14,13 +14,7 @@ Template Name: Page - Governance
     </main>
   </div>
 
-  <section class="cardsWrap">     
-    <?php include get_theme_file_path("templates/partials/resource-card.php"); ?>
-    <?php include get_theme_file_path("templates/partials/resource-card.php"); ?>
-    <?php include get_theme_file_path("templates/partials/resource-card.php"); ?>
-  </section>
-
   <?php include get_theme_file_path("templates/partials/latest-news-cards.php"); ?>
   <?php include get_theme_file_path("templates/partials/follow-us.php"); ?>
-  
+
 <?php get_footer(); ?>

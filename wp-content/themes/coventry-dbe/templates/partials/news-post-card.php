@@ -4,7 +4,7 @@
       <?php if ( has_post_thumbnail() ) { ?>
         <?php the_post_thumbnail(); ?>                    
       <?php } else { ?>
-        <img src="/wp-content/uploads/2021/02/no-img.jpg" alt="<?php the_title(); ?>"/>
+        <img src="<?php echo get_option('blog_fallback_img'); ?>" alt="<?php the_title(); ?>"/>
       <?php } ?>
   </a>
 

@@ -12,8 +12,9 @@ Template Name: Page - Homepage
     <?php if ( $the_query->have_posts() ) :
       while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
-        <!-- TODO - PULL IMAGE FROM CMS -->
-        <div class="fwSlide" style="background-image: url('https://picsum.photos/640/360'); border-top-color: #ee928e;">
+        <?php $image = get_field('homeCarousel_image'); $size = 'home-carousel'; $slideImage = $image['sizes'][ $size ]; ?>	              
+        <div class="fwSlide" style="background-image: url(<?php echo esc_url($slideImage); ?>); border-top-color: <?php the_field('homeCarousel_borderColour'); ?>">
+
           <div class="fwSlide__inner">
             <span class="fwSlide__label"><?php the_field('homeCarousel_subTitle'); ?></span>
             <h1 class="fwSlide__title"><?php the_title(); ?></h1>

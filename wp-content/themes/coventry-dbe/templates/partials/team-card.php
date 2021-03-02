@@ -3,7 +3,7 @@
   <?php if ( has_post_thumbnail() ) {
     $photo = get_the_post_thumbnail_url(get_the_ID(),'team-photo');
   } else {
-    $photo = '/wp-content/uploads/2021/02/no-team-photo.jpg';
+    $photo = get_option('staff_fallback_img');
   } ?>
 
   <div class="card__thumbnail">
