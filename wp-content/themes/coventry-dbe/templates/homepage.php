@@ -46,9 +46,21 @@ Template Name: Page - Homepage
       <div class="main__left">
         <h1 class="title"><?php the_field('homeIntro_title'); ?></h1>
         <p><?php the_field('homeIntro_body'); ?></p>
-        <?php $btn = get_field('homeIntro_button'); if( $btn['label'] ): ?>
-          <a href="<?php echo $btn['link']; ?>" class="btn"><?php echo $btn['label']; ?><?php echo $btn['icon']; ?></a>        
+
+        <?php if(get_field('homeIntro_modalEmbed')): ?>        
+          <?php $btn = get_field('homeIntro_button'); ?>
+          <a href="<?php echo $btn['link']; ?>" class="btn js-open-modal"><?php echo $btn['label']; ?><?php echo $btn['icon']; ?></a>    
+          <div class="modalWrap">
+            <div class="modal">
+              <div class="modal__close js-close-modal"></div>
+              <div class="modal__inner">
+                <?php the_field('homeIntro_modalEmbed') ?>
+              </div>
+            </div>
+          </div>
         <?php endif; ?>
+
+
         <?php /* 
         <figure class="contentPanel__signature">
           <img src="https://via.placeholder.com/170x65" />

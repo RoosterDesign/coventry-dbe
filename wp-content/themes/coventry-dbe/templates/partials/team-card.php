@@ -1,14 +1,13 @@
 <div class="card">
 
-  <?php if ( has_post_thumbnail() ) {
+  <?php /* if ( has_post_thumbnail() ) {
     $photo = get_the_post_thumbnail_url(get_the_ID(),'team-photo');
   } else {
     $photo = get_option('staff_fallback_img');
-  } ?>
-
-  <div class="card__thumbnail">
+  } */ ?>
+  <?php /* <div class="card__thumbnail">
     <img src="<?php echo $photo ?>" alt="<?php the_title(); ?>" />
-  </div>  
+  </div>  */ ?>
 
   <div class="card__inner">
     <h3 class="card__title">

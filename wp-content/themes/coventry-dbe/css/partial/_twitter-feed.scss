@@ -1,0 +1,58 @@
+#ctf {
+  @include pStyles;
+
+  .ctf-item {
+    background: #fff;
+    border: none;
+    margin: 0 0 20px;
+    padding: 20px;
+  }
+
+  a {
+    color: $linkColour;
+  }
+
+  a:hover {
+    color: $linkHoverColour;
+  }
+
+}
+
+
+@media only screen and (max-width: 767px) {
+  #ctf {
+
+    .ctf-item:last-child {
+      margin-bottom: 0;
+    }
+
+    &.ctf-narrow .ctf-context {
+      padding-left: 0;
+    }
+    &.ctf-narrow .ctf-context .ctf-retweet-icon svg {
+      margin-left: 0;
+    }  
+    .ctf-context .ctf-retweet-icon svg {
+      margin-left: 15px;
+    } 
+  }
+}
+
+@media only screen and (min-width: 768px) {  
+  #ctf {  
+    .ctf-tweets {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .ctf-item {
+      box-shadow: 0px 3px 15px rgba(0,0,0,0.05);
+      width: calc(50% - 10px);
+
+      &:nth-child(3),
+      &:nth-child(4) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

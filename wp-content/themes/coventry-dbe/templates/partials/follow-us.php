@@ -3,5 +3,6 @@
       Follow us
     <?php include get_theme_file_path("templates/partials/social-icons.php"); ?>
   </h1> 
-  <?php echo do_shortcode('[instagram-feed]'); ?>
+  <?php /* echo do_shortcode('[instagram-feed]'); */ ?>
+  <?php echo do_shortcode('[custom-twitter-feeds]'); ?>
 </div>

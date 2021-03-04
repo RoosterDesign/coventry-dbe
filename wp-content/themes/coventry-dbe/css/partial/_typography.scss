@@ -75,3 +75,178 @@
 p strong {
   font-weight: 600;
 }
+
+
+.single-post .main,
+.main {
+  p, li {
+    @include pStyles;
+  }
+
+  p a, li a {
+    color: $linkColour;
+    text-decoration: underline;
+  }
+
+  p a:hover, li a:hover {
+    color: $linkHoverColour;    
+  }
+
+  ul {
+    margin-bottom: 20px;    
+  }
+
+  li {
+    margin-bottom: 10px;
+  }
+}
+
+/* Post Text Styles */
+
+.single-post .main {
+
+  h1, h2, h3 {
+    font-weight: 300;
+  }
+
+  h1 {
+    @extend .title;
+    color: $bodyColour;
+  }
+
+  h2 {    
+    font-size: 2.2rem;
+    line-height: 1.3;
+    margin: 40px 0 15px;
+    @include mq(tablet) {
+      font-size: 2.6rem;
+    }
+    @include mq(desktop) {
+      margin-top: 50px;
+    }
+  }
+
+  h3 {
+    font-size: 2rem;
+    line-height: 1.3;
+    margin: 30px 0 15px;
+    @include mq(tablet) {
+      font-size: 2.2rem;
+    }
+    @include mq(desktop) {
+      font-size: 2.4rem;
+      margin-top: 40px;
+    }
+  }
+
+  h4 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.3;
+    margin: 30px 0 15px;
+    @include mq(tablet) {
+      font-size: 2rem;
+    }
+    @include mq(desktop) {
+      font-size: 2.2rem;
+      margin-top: 40px;
+
+    }
+  }
+
+  h5 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 30px 0 15px;
+    @include mq(tablet) {
+      font-size: 1.8rem;
+    }
+  }
+
+  h6 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 30px 0 15px;
+    @include mq(tablet) {
+      font-size: 1.6rem;
+    }
+  }
+
+  blockquote {
+    border-left: 3px solid $brandRed;
+    margin: 30px 0;
+    padding-left: 20px;
+    @include mq(tablet) {
+      margin: 40px 0 40px 40px;
+      padding-left: 30px;
+    }
+  }
+
+  hr {
+    border: none;
+    border-bottom: 1px solid $bodyColour;
+    clear: both;
+    height: 0;
+    margin: 30px 0;  
+    @include mq(tablet-lg) {
+      margin: 0 0 40px;
+	    padding: 40px 0 0;
+    }
+  }
+
+  p + hr {
+    @include mq(tablet-lg) {
+      margin-top: -15px;
+    }
+  }
+
+  img + hr {
+    @include mq(tablet-lg) {
+      margin-top: -30px;
+    }
+  }
+
+  /* Images */
+
+  img {
+
+    &.alignleft,
+    &.aligncenter,
+    &.alignright,
+    &.alignnone {
+      display: block;
+      height: auto;
+      max-width: 100%;
+      @media only screen and (max-width: 991px) {
+        margin: 30px auto;
+      }
+    }
+    
+    &.alignleft {
+      @include mq(tablet-lg) {
+        float: left;
+        margin-right: 30px;
+        max-width: 40%;
+      }
+    }
+
+    &.aligncenter,
+    &.alignnone {
+      @include mq(tablet-lg) {
+        margin: 40px auto;
+      }
+    }
+
+    &.alignright {
+      @include mq(tablet-lg) {
+        float: right;
+        margin-left: 30px;
+        max-width: 40%;
+      }
+    }
+    
+  }    
+
+}
