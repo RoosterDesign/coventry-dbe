@@ -1,0 +1,81 @@
+.download {
+
+  .post-password-form p:first-child {
+    color: $brandRed;
+    font-weight: 500;
+    margin: 0;
+  }
+  
+  .download-wrap,
+  .post-password-form p:last-child {
+    background: #fff;
+    margin: 20px 0 30px;
+    background: $white;
+    padding: 30px;
+    width: 100%;
+    @include mq(tablet) {
+      max-width: 50%;
+    }
+  }
+
+  .custom-password-message {
+    background: $brandRed;
+    color: $white;
+    font-weight: 500;
+    margin: -10px 0 30px;
+    padding: 5px 10px;
+    @include mq(tablet) {
+      max-width: 50%;
+    }
+  }
+
+  .post-password-form {
+
+    label {
+
+      input {
+        border: 1px solid #ccc;
+        color: $bodyColour;
+        box-shadow: 0px 3px 15px rgba(0,0,0,0.1);
+        height: 50px;
+        font-size: 2rem;
+        margin: 10px 0 20px;
+        padding: 0 20px;
+        width: 100%;
+      }
+
+    }
+    
+    .download-wrap .btn,
+    label + input {
+      @extend .btn;
+      border: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      color: $white !important;    
+      font-size: 1.4rem;
+      font-weight: 600;
+      justify-content: center;
+      text-shadow: none !important;
+      margin: 0;
+      padding: 20px 50px;
+      @media only screen and (max-width: 767px) {
+        width: 100%;
+      }
+    }
+
+  }
+
+  .download-wrap {
+    margin-top: 0;
+    max-width: none;
+
+    .btn {
+      justify-content: center;
+      padding: 30px;
+      width: 100%;
+    }
+  }
+  
+
+}

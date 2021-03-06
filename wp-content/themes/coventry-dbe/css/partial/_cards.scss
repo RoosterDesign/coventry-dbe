@@ -80,6 +80,12 @@
   &__title a {
     color: $linkColour;
     text-decoration: none;
+
+    svg {
+      fill: $linkColour;
+      margin-left: 0;
+    }
+
   }
 
   &__title a:hover {

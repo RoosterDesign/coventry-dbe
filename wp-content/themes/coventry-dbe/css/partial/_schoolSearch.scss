@@ -1,0 +1,301 @@
+.page-template-school-search {
+
+  #wpsl-wrap {
+    margin: 0;
+
+    .wpsl-search {
+      background: $mediumGrey;
+      margin: 0 0 20px;
+      padding: 20px;
+      @include mq(tablet) {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+      @include mq(tablet) {
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+    }
+
+
+    #wpsl-search-wrap {    
+
+      form {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;      
+        @include mq(tablet) {
+          justify-content: space-between;
+        }
+      }
+
+      #wpsl-search-btn,
+      div {
+        float: none;
+        margin: 0;
+      }
+
+      .wpsl-input label,
+      #wpsl-radius label,
+      #wpsl-category label {
+        float: none;
+        width: auto;
+        font-size: 1.6rem;
+        font-weight: 500;
+        display: flex;
+        line-height: 1;
+        margin: 0 0 10px;
+        @include mq(tablet) {
+          font-size: 1.4rem;
+          margin-bottom: 0;
+        }
+        @include mq(tablet-lg) {
+          font-size: 1.6rem;
+        }
+      }
+
+      .wpsl-input,
+      .wpsl-select-wrap {            
+        margin: 0 0 20px;
+        @include mq(tablet) {
+          align-items: center;
+          display: flex;
+          flex: 1;
+          margin-bottom: 0;
+        }
+      }
+
+      .wpsl-input {
+        width: 100%;
+        @include mq(tablet) {
+          flex-basis: 60%;
+        }
+        @include mq(tablet-lg) {
+          flex: 1;
+        }
+
+        div {
+          width: 100%;
+          @include mq(tablet) {
+            display: flex;
+            min-width: 110px;
+            width: auto;
+          }
+          @include mq(tablet-lg) {
+            min-width: 130px;
+          }
+        }
+
+      }
+
+      #wpsl-radius-dropdown,
+      .wpsl-selected-item, 
+      #wpsl-search-input {
+        border: 1px solid #ccc;
+        color: $bodyColour;
+        box-shadow: 0px 3px 15px rgba(0,0,0,0.1);
+        height: 50px;
+        font-size: 1.8rem;
+        margin: 0;
+        outline: none;
+        padding: 0 10px;
+        width: 100% !important;
+        @include mq(tablet) {
+          height: 40px;        
+        }
+        @include mq(tablet-lg) {
+          height: 50px;
+          padding: 0 20px;
+        }
+      }
+
+      .wpsl-select-wrap {
+        margin-right: auto;
+        @include mq(tablet) {
+          flex-basis: 40%;
+        }
+        @include mq(tablet-lg) {
+          flex: 1;
+          padding-left: 10px;
+        }
+      }
+
+      #wpsl-radius-dropdown {
+        @include mq(tablet-lg) {
+          max-width: 125px;
+        }
+      }
+
+      #wpsl-radius {
+        @include mq(tablet) {
+          align-items: center;
+          display: flex;
+          padding-left: 20px;
+          width: 100%;
+        }
+
+        label {
+          @include mq(tablet) {
+            min-width: 115px;
+          }
+          @include mq(tablet-lg) {
+            margin-right: 15px;
+          }
+
+          .wpsl-dropdown {
+            width: 100%;
+            @include mq(tablet) {
+              width: 110px;
+            }
+          }
+
+        }
+
+      }
+
+      .wpsl-search-btn-wrap {
+        width: 100%;
+        @include mq(tablet) {
+          margin-top: 20px
+        }
+        @include mq(tablet-lg) {
+          margin-top: 0;
+          width: 150px;
+        }
+      }
+
+      #wpsl-search-btn {
+        @extend .btn;
+        border: none;
+        border-radius: 0;
+        height: 50px;
+        justify-content: center;
+        margin: 0;
+        outline: none;
+        text-align: center;
+        transition: none;
+        width: 100%;
+      }
+
+    }
+
+    #wpsl-gmap {
+      height: 400px !important;
+      @include mq(tablet) {
+        height: 600px !important;
+      }
+      @include mq(tablet-lg) {
+        height: 600px !important;
+      }
+      @include mq(desktop) {
+        height: 750px !important;
+      }
+    }
+
+    #wpsl-stores {
+      height: auto !important;
+      @include mq(tablet) {
+        height: 600px !important;
+      }
+      @include mq(tablet-lg) {
+        // height: 600px !important;
+      }
+      @include mq(desktop) {
+        // height: 750px !important;
+      }
+    }
+
+
+    #wpsl-gmap.wpsl-gmap-canvas .wpsl-infobox {
+      min-width: 100px !important;
+      max-width: 200px !important;
+
+      a {
+        color: $brandRed;
+      }
+
+    }
+
+
+    #wpsl-gmap {
+      @include mq(tablet) {
+        width: 60%;
+      }
+      @include mq(tablet-lg) {
+        width: 63%;
+      }  
+      @include mq(desktop) {
+        width: 66%;
+      }  
+    }
+
+    #wpsl-result-list {
+      @include mq(tablet) {
+        margin-right: 2%;
+        width: 38%;
+      }
+      @include mq(tablet-lg) {
+        width: 35%;
+      }
+      @include mq(desktop) {
+        width: 32%;
+      }
+
+      #wpsl-stores {
+
+        li {
+          background: $white;
+          border: none;
+          margin-bottom: 20px;
+          padding: 15px;      
+          @include mq(desktop) {            
+            border: 1px solid #e8e8e8;
+            box-shadow: 0px 3px 15px rgba(0,0,0,0.05);
+          }
+        }
+
+        li:not(.wpsl-no-results-msg):hover {
+          @include mq(desktop) {
+            border-color: $brandRed;
+          }
+        }
+
+        li:last-child {
+          margin-bottom: 0;
+        }
+
+        .wpsl-direction-wrap {
+          margin: 15px -20px -20px;
+          background: $mediumGrey;
+          padding: 15px 20px;
+        }
+
+
+        .wpsl-store-location p {
+          word-break: break-word;
+          margin: 0 0 5px;
+          @include mq(tablet-lg) {
+            font-size: 1.5rem;
+          }
+        }
+
+        .wpsl-store-location > p > strong {
+          color: $brandRed;
+          display: block;
+          font-size: 2rem;
+          font-weight: 400;
+          margin-bottom: 5px;
+        }
+
+        .wpsl-store-details.wpsl-store-listing.wpsl-active-details:before,
+        .wpsl-store-details.wpsl-store-listing:before {
+          border-top-color: $brandRed;
+        }
+
+      }
+
+    }
+
+  }
+
+}

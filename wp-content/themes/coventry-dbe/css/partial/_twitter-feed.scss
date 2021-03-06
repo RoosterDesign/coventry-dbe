@@ -8,6 +8,10 @@
     padding: 20px;
   }
 
+  .ctf-tweet-text {
+    word-break: break-word; 
+  }
+
   a {
     color: $linkColour;
   }

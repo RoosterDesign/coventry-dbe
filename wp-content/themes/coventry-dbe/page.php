@@ -65,7 +65,7 @@ get_header();
 				$args = array( 'post_type' => 'governance_resources', 'posts_per_page' => 999 ); $the_query = new WP_Query( $args );
 				if ( $the_query->have_posts() ) :
 					while ( $the_query->have_posts() ) : $the_query->the_post();
-						include get_theme_file_path("templates/partials/resource-card.php");
+						include get_theme_file_path("templates/partials/governance-resource-card.php");
 				endwhile; wp_reset_postdata();
 				endif;
 

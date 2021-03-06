@@ -376,6 +376,13 @@ function awesome_page_create() {
 				update_option('featBlog_fallback_img', $featBlog_fallback_img);
 			}
 			$featBlog_fallback_img = get_option('featBlog_fallback_img', '');
+
+			if (isset($_POST['download_body'])) {
+				$download_body = $_POST['download_body'];
+				update_option('download_body', $download_body);
+			}
+			$download_body = get_option('download_body', '');
+			
 				
 		?>
 
@@ -494,6 +501,14 @@ function awesome_page_create() {
 
 					<hr />
 
+					<h2>Download page</h2>
+					<div class="settingsGroup">
+						<label for="download_body">Download body</label><br>
+						<textarea name="download_body" id="download_body" cols="30" rows="10"><?php echo $download_body; ?></textarea>
+					</div>	
+
+					<hr />
+
     			<input type="submit" value="Save" class="button button-primary button-large">
 			</form>
 
@@ -522,3 +537,52 @@ function filter_ptags_on_images($content)
 
 // we want it to be run after the autop stuff... 10 is default.
 add_filter('the_content', 'filter_ptags_on_images');
+
+
+
+/**
+* Removes or edits the 'Protected:' part from posts titles
+*/
+ 
+add_filter( 'protected_title_format', 'remove_protected_text' );
+function remove_protected_text() {
+return __('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18 10v-4c0-3.313-2.687-6-6-6s-6 2.687-6 6v4h-3v14h18v-14h-3zm-10 0v-4c0-2.206 1.794-4 4-4s4 1.794 4 4v4h-8z"/></svg> %s');
+}
+
+
+
+function mind_set_cookie_expire( $time ) {
+	
+	/* TODO - CHANGE TO 1 MIN */
+  return time() + 1;
+  // Some other examples:
+  // 1 Minute would be:   
+  // return time() + 60; 
+  // return 0; to set the cookie to expire at the end of the session. 
+}
+add_filter( 'post_password_expires', 'mind_set_cookie_expire' );
+
+
+add_filter( 'the_password_form', 'wpse_71284_custom_post_password_msg' );
+
+/**
+ * Add a message to the password form.
+ *
+ * @wp-hook the_password_form
+ * @param   string $form
+ * @return  string
+ */
+function wpse_71284_custom_post_password_msg( $form )
+{
+    // No cookie, the user has not sent anything until now.
+    if ( ! isset ( $_COOKIE[ 'wp-postpass_' . COOKIEHASH ] ) )
+        return $form;
+
+    // Translate and escape.
+    $msg = esc_html__( 'Sorry, your password is incorrect.', 'your_text_domain' );
+
+    // We have a cookie, but it doesn’t match the password.
+    $msg = "<p class='custom-password-message'>$msg</p>";
+
+    return $form . $msg;
+}
