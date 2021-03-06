@@ -16,7 +16,7 @@ get_header();
 			<?php if (! post_password_required() ) { ?>
 				<p>Click below to download this resource.</p>
 				<div class="download-wrap">
-    			<a href="<?php the_field('download_file'); ?>" target="_blank" class="btn">Download File</a>
+    			<a href="<?php the_field('download_file'); ?>" target="_blank" class="btn" title="Download File">Download File</a>
 				</div>
 			<?php
 					} else {
@@ -25,7 +25,7 @@ get_header();
 					}
 			?>
 
-			<p><a href="/resources/">Back to resources</a></p>
+			<p><a href="/resources/" title="Back to resources">Back to resources</a></p>
 		</main>		
 	</div>
 

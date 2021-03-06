@@ -18,7 +18,7 @@ get_header();
 			<?php if ( has_post_thumbnail() ) { the_post_thumbnail('post-img'); } ?>	
 			<?php the_content() ?>		
 			<br />
-			<p><a href="/news">Back to news page</a></p>
+			<p><a href="/news" title="Back to news page">Back to news page</a></p>
 		</main>		
   </div>
 

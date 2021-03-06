@@ -4,7 +4,7 @@
 	<div class="container">
 
 		<div class="siteFooter__col">
-			<a href="/" class="siteFooter__logo">
+			<a href="/" class="siteFooter__logo" title="Diocesan Board of Education">
 				<img src="<?php echo get_option('site_logo_white'); ?>" alt="Diocesan Board of Education" />
 			</a>
 			<address class="siteFooter__address">

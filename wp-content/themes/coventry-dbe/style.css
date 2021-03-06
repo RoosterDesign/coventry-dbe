@@ -3656,12 +3656,6 @@ p strong {
   }
 }
 
-@media (min-width: 992px) {
-  .page-template-school-search #wpsl-wrap #wpsl-gmap {
-    height: 600px !important;
-  }
-}
-
 @media (min-width: 1366px) {
   .page-template-school-search #wpsl-wrap #wpsl-gmap {
     height: 750px !important;
@@ -3675,6 +3669,12 @@ p strong {
 @media (min-width: 768px) {
   .page-template-school-search #wpsl-wrap #wpsl-stores {
     height: 600px !important;
+  }
+}
+
+@media (min-width: 1366px) {
+  .page-template-school-search #wpsl-wrap #wpsl-stores {
+    height: 750px !important;
   }
 }
 

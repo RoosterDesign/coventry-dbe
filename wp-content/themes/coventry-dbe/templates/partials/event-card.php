@@ -7,7 +7,7 @@
   <?php } ?>
   </div>
   <div class="card__footer">
-  <a href="<?php the_field('prodev_link'); ?>" target="_blank">
+  <a href="<?php the_field('prodev_link'); ?>" target="_blank" title="<?php echo get_option('prodev_linkText'); ?>">
     <?php echo get_option('prodev_linkIcon'); ?>
     <?php echo get_option('prodev_linkText'); ?>
   </a>

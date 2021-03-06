@@ -7,14 +7,14 @@
     </span>
 
     <h1 class="title -white">
-      <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+      <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
     </h1>
 
     <p>
       <?php if ( has_excerpt() ) { echo get_excerpt(200); } else { echo ''; } ?>
     </p>
 
-    <a href="<?php the_permalink() ?>" class="btn -ghostAlt">Read more<span class="btn__icon -plus"></span></a>
+    <a href="<?php the_permalink() ?>" class="btn -ghostAlt" title="Read more">Read more<span class="btn__icon -plus"></span></a>
   </div>
 
   <?php if ( has_post_thumbnail() ) {

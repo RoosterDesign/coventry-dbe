@@ -184,9 +184,6 @@
       @include mq(tablet) {
         height: 600px !important;
       }
-      @include mq(tablet-lg) {
-        height: 600px !important;
-      }
       @include mq(desktop) {
         height: 750px !important;
       }
@@ -197,11 +194,8 @@
       @include mq(tablet) {
         height: 600px !important;
       }
-      @include mq(tablet-lg) {
-        // height: 600px !important;
-      }
       @include mq(desktop) {
-        // height: 750px !important;
+        height: 750px !important;
       }
     }
 

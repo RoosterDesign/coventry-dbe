@@ -22,7 +22,7 @@ Template Name: Page - Homepage
               <p><?php the_field('homeCarousel_body'); ?></p>
             <?php } ?>
             <?php if (get_field('homeCarousel_link')) { ?>
-              <a href="<?php the_field('homeCarousel_link'); ?>" class="btn">Find out more<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="btn__plus"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg></a>
+              <a href="<?php the_field('homeCarousel_link'); ?>" class="btn" title="Find out more">Find out more<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="btn__plus"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg></a>
             <?php } ?>
           </div>
         </div>
@@ -34,10 +34,10 @@ Template Name: Page - Homepage
 
   <nav class="catNav container">
     <ul class="catNavList">
-      <li class="catNavList__item" style="background-color: <?php the_field('link_1_colour'); ?>"><a href="<?php the_field('link_1_link'); ?>" class="catNavList__link"><?php the_field('link_1_text'); ?></a></li>
-      <li class="catNavList__item" style="background-color: <?php the_field('link_2_colour'); ?>"><a href="<?php the_field('link_2_link'); ?>" class="catNavList__link"><?php the_field('link_2_text'); ?></a></li>
-      <li class="catNavList__item" style="background-color: <?php the_field('link_3_colour'); ?>"><a href="<?php the_field('link_3_link'); ?>" class="catNavList__link"><?php the_field('link_3_text'); ?></a></li>
-      <li class="catNavList__item" style="background-color: <?php the_field('link_4_colour'); ?>"><a href="<?php the_field('link_4_link'); ?>" class="catNavList__link"><?php the_field('link_4_text'); ?></a></li>
+      <li class="catNavList__item" style="background-color: <?php the_field('link_1_colour'); ?>"><a href="<?php the_field('link_1_link'); ?>" class="catNavList__link" title="<?php the_field('link_1_text'); ?>"><?php the_field('link_1_text'); ?></a></li>
+      <li class="catNavList__item" style="background-color: <?php the_field('link_2_colour'); ?>"><a href="<?php the_field('link_2_link'); ?>" class="catNavList__link" title="<?php the_field('link_2_text'); ?>"><?php the_field('link_2_text'); ?></a></li>
+      <li class="catNavList__item" style="background-color: <?php the_field('link_3_colour'); ?>"><a href="<?php the_field('link_3_link'); ?>" class="catNavList__link" title="<?php the_field('link_3_text'); ?>"><?php the_field('link_3_text'); ?></a></li>
+      <li class="catNavList__item" style="background-color: <?php the_field('link_4_colour'); ?>"><a href="<?php the_field('link_4_link'); ?>" class="catNavList__link" title="<?php the_field('link_4_text'); ?>"><?php the_field('link_4_text'); ?></a></li>
     </ul>
   </nav>
 

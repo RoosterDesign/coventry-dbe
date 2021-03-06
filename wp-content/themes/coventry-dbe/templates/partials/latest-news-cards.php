@@ -18,5 +18,5 @@
 </div>
 
 <div class="container">
-  <a href="/news" alt="See more articles" class="btn -moreArticles">See more articles<span class="btn__icon -plus"></span></a>
+  <a href="/news" alt="See more articles" class="btn -moreArticles" title="See more articles">See more articles<span class="btn__icon -plus"></span></a>
 </div>
