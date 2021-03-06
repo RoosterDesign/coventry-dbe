@@ -5,7 +5,7 @@ function homeCarousel() {
 		itemElement: 'article',
 		autoplay: true,
 		dots: true,
-		autoplayTimeout: 70000,
+		autoplayTimeout: 7000,
 	});
 }
 

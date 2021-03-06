@@ -11,11 +11,11 @@ function reveal() {
 	document.addEventListener(
 		'click',
 		function (event) {
-			if (event.target.matches('.js-open-reveal')) {
+			if (event.target.classList.contains('js-open-reveal')) {
 				var reveal = event.target.parentElement;
 				reveal.classList.add('-isVisible');
 			}
-			if (event.target.matches('.js-close-reveal')) {
+			if (event.target.classList.contains('js-close-reveal')) {
 				var reveal = event.target.parentElement.parentElement.parentElement;
 				reveal.classList.remove('-isVisible');
 			}

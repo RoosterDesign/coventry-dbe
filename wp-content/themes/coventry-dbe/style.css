@@ -2795,6 +2795,7 @@ p strong {
   margin-top: 10px;
   margin-bottom: auto;
   margin-right: auto;
+  max-height: 34px;
 }
 
 .card ul {
@@ -3071,7 +3072,17 @@ p strong {
 }
 
 #ctf .ctf-tweet-text {
-  word-break: break-word;
+  white-space: pre-wrap;
+  /* CSS3 */
+  white-space: -moz-pre-wrap;
+  /* Firefox */
+  white-space: -pre-wrap;
+  /* Opera 7 */
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+  word-wrap: break-word;
+  /* IE */
+  word-break: break-all;
 }
 
 #ctf a {
@@ -3555,6 +3566,7 @@ p strong {
 
 .page-template-school-search #wpsl-wrap #wpsl-search-wrap .wpsl-select-wrap {
   margin-right: auto;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -3604,12 +3616,12 @@ p strong {
   }
 }
 
-.page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-radius label .wpsl-dropdown {
+.page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-radius .wpsl-dropdown {
   width: 100%;
 }
 
 @media (min-width: 768px) {
-  .page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-radius label .wpsl-dropdown {
+  .page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-radius .wpsl-dropdown {
     width: 110px;
   }
 }

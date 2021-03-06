@@ -111,6 +111,7 @@
 
       .wpsl-select-wrap {
         margin-right: auto;
+        width: 100%;
         @include mq(tablet) {
           flex-basis: 40%;
         }
@@ -141,14 +142,13 @@
           @include mq(tablet-lg) {
             margin-right: 15px;
           }
+        }
 
-          .wpsl-dropdown {
-            width: 100%;
-            @include mq(tablet) {
-              width: 110px;
-            }
+        .wpsl-dropdown {
+          width: 100%;
+          @include mq(tablet) {
+            width: 110px;
           }
-
         }
 
       }
