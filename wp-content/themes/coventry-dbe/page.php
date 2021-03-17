@@ -83,11 +83,6 @@ get_header();
 		</section>
 	<?php } ?>
 
-
-
-
-	
-
 	<?php include get_theme_file_path("templates/partials/latest-news-cards.php"); ?>
 	<?php include get_theme_file_path("templates/partials/follow-us.php"); ?>
 

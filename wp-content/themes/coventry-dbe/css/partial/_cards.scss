@@ -122,9 +122,17 @@
     @include mq(desktop) {
       margin-bottom: 10px;
     }
-    // display: block;
-    // margin: 8px 0 25px;
-    // text-transform: uppercase;
+  }
+
+  &__date--large {
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+    margin: 10px 0 15px;
+    @include mq(desktop) {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
   }
 
   &__date svg {
