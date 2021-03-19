@@ -3,14 +3,21 @@
   #wpsl-wrap {
     margin: 0;
 
+    .wpsl-store-details.wpsl-store-listing,
+    .wpsl-more-info-listings {
+      display: none !important;
+    }
+
     .wpsl-search {
       background: $mediumGrey;
       margin: 0 0 20px;
       padding: 20px;
+
       @include mq(tablet) {
         padding-top: 20px;
         padding-bottom: 20px;
       }
+
       @include mq(tablet) {
         padding-top: 15px;
         padding-bottom: 15px;
@@ -18,12 +25,13 @@
     }
 
 
-    #wpsl-search-wrap {    
+    #wpsl-search-wrap {
 
       form {
         align-items: center;
         display: flex;
-        flex-wrap: wrap;      
+        flex-wrap: wrap;
+
         @include mq(tablet) {
           justify-content: space-between;
         }
@@ -45,18 +53,21 @@
         display: flex;
         line-height: 1;
         margin: 0 0 10px;
+
         @include mq(tablet) {
           font-size: 1.4rem;
           margin-bottom: 0;
         }
+
         @include mq(tablet-lg) {
           font-size: 1.6rem;
         }
       }
 
       .wpsl-input,
-      .wpsl-select-wrap {            
+      .wpsl-select-wrap {
         margin: 0 0 20px;
+
         @include mq(tablet) {
           align-items: center;
           display: flex;
@@ -67,20 +78,24 @@
 
       .wpsl-input {
         width: 100%;
+
         @include mq(tablet) {
           flex-basis: 60%;
         }
+
         @include mq(tablet-lg) {
           flex: 1;
         }
 
         div {
           width: 100%;
+
           @include mq(tablet) {
             display: flex;
             min-width: 110px;
             width: auto;
           }
+
           @include mq(tablet-lg) {
             min-width: 130px;
           }
@@ -89,20 +104,22 @@
       }
 
       #wpsl-radius-dropdown,
-      .wpsl-selected-item, 
+      .wpsl-selected-item,
       #wpsl-search-input {
         border: 1px solid #ccc;
         color: $bodyColour;
-        box-shadow: 0px 3px 15px rgba(0,0,0,0.1);
+        box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
         height: 50px;
         font-size: 1.8rem;
         margin: 0;
         outline: none;
         padding: 0 10px;
         width: 100% !important;
+
         @include mq(tablet) {
-          height: 40px;        
+          height: 40px;
         }
+
         @include mq(tablet-lg) {
           height: 50px;
           padding: 0 20px;
@@ -112,9 +129,11 @@
       .wpsl-select-wrap {
         margin-right: auto;
         width: 100%;
+
         @include mq(tablet) {
           flex-basis: 40%;
         }
+
         @include mq(tablet-lg) {
           flex: 1;
           padding-left: 10px;
@@ -139,6 +158,7 @@
           @include mq(tablet) {
             min-width: 115px;
           }
+
           @include mq(tablet-lg) {
             margin-right: 15px;
           }
@@ -146,6 +166,7 @@
 
         .wpsl-dropdown {
           width: 100%;
+
           @include mq(tablet) {
             width: 110px;
           }
@@ -155,9 +176,11 @@
 
       .wpsl-search-btn-wrap {
         width: 100%;
+
         @include mq(tablet) {
           margin-top: 20px
         }
+
         @include mq(tablet-lg) {
           margin-top: 0;
           width: 150px;
@@ -181,9 +204,11 @@
 
     #wpsl-gmap {
       height: 400px !important;
+
       @include mq(tablet) {
         height: 600px !important;
       }
+
       @include mq(desktop) {
         height: 750px !important;
       }
@@ -191,9 +216,11 @@
 
     #wpsl-stores {
       height: auto !important;
+
       @include mq(tablet) {
         height: 600px !important;
       }
+
       @include mq(desktop) {
         height: 750px !important;
       }
@@ -215,12 +242,14 @@
       @include mq(tablet) {
         width: 60%;
       }
+
       @include mq(tablet-lg) {
         width: 63%;
-      }  
+      }
+
       @include mq(desktop) {
         width: 66%;
-      }  
+      }
     }
 
     #wpsl-result-list {
@@ -228,9 +257,11 @@
         margin-right: 2%;
         width: 38%;
       }
+
       @include mq(tablet-lg) {
         width: 35%;
       }
+
       @include mq(desktop) {
         width: 32%;
       }
@@ -241,10 +272,11 @@
           background: $white;
           border: none;
           margin-bottom: 20px;
-          padding: 15px;      
-          @include mq(desktop) {            
+          padding: 15px;
+
+          @include mq(desktop) {
             border: 1px solid #e8e8e8;
-            box-shadow: 0px 3px 15px rgba(0,0,0,0.05);
+            box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.05);
           }
         }
 
@@ -268,12 +300,13 @@
         .wpsl-store-location p {
           word-break: break-word;
           margin: 0 0 5px;
+
           @include mq(tablet-lg) {
             font-size: 1.5rem;
           }
         }
 
-        .wpsl-store-location > p > strong {
+        .wpsl-store-location>p>strong {
           color: $brandRed;
           display: block;
           font-size: 2rem;
