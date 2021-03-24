@@ -59,20 +59,28 @@ Template Name: Page - Homepage
             </div>
           </div>
         <?php endif; ?>
-
-
-        <?php /* 
-        <figure class="contentPanel__signature">
-          <img src="https://via.placeholder.com/170x65" />
-          <figcaption>April Gold - Diocesan Director of Education</figcaption>
-        </figure>
-        */?>
       </div>
       <?php if (get_field('homeIntro_image')) { ?>
         <aside class="main__right">
           <?php $image = get_field('homeIntro_image'); $size = 'home-intro'; echo wp_get_attachment_image( $image, $size ); ?>
         </aside>
       <?php } ?>
+    </section>
+  </div>
+
+  <hr class="hr"/>
+
+  <div class="container">
+    <section class="main trusts">
+    <?php if (get_field('homeTrusts_image')) { ?>
+        <aside class="trusts__left">
+          <?php $image = get_field('homeTrusts_image'); $size = 'home-intro'; echo wp_get_attachment_image( $image, $size ); ?>
+        </aside>
+      <?php } ?>
+      <div class="trusts__right">
+        <h1 class="title"><?php the_field('homeTrusts_title'); ?></h1>
+        <p><?php the_field('homeTrusts_body'); ?></p>
+      </div>     
     </section>
   </div>
 

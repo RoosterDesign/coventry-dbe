@@ -1,14 +1,14 @@
 .main {
   margin-bottom: 30px;
+
   @include mq(tablet) {
     margin-bottom: 40px;
-  } 
+  }
 
   &.col-2 {
     display: flex;
     flex-direction: column-reverse;
-    @media only screen and (max-width: 767px) {
-    }
+
     @include mq(tablet) {
       align-items: flex-start;
       flex-direction: row;
@@ -17,12 +17,15 @@
 
   &__left {
     padding-top: 30px;
+
     @include mq(tablet) {
-      padding: 20px 20px 0 0;
+      padding: 10px 20px 0 0;
     }
+
     @include mq(tablet-lg) {
       padding-right: 40px;
     }
+
     @include mq(desktop) {
       padding: 30px 50px 0 0;
     }
@@ -37,23 +40,27 @@
 
   &__right {
     flex: 1 0 auto;
+
     @media only screen and (max-width: 767px) {
       margin-right: -20px;
       margin-left: -20px;
     }
+
     @include mq(tablet) {
-      display: block;      
+      display: block;
       width: 50%;
-    }    
+    }
   }
 
   &.-home .main__right {
     @include mq(tablet) {
       width: 350px;
-    }    
+    }
+
     @include mq(tablet-lg) {
       width: 500px;
     }
+
     @include mq(desktop) {
       width: 650px;
     }
@@ -68,66 +75,115 @@
 
   &__right img:last-child {
     margin-bottom: 0;
-  }  
+  }
+
+
+  /* Home Reverse 2 Col */
+
+  &.trusts {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include mq(tablet) {
+      align-items: flex-start;
+      flex-direction: row;
+    }
+  }
+
+  .trusts__left {
+    flex: 1 0 auto;
+
+    @media only screen and (max-width: 767px) {
+      margin-right: -20px;
+      margin-left: -20px;
+    }
+
+    @include mq(tablet) {
+      display: block;
+      width: 350px;
+    }
+
+    @include mq(tablet-lg) {
+      width: 500px;
+    }
+
+    @include mq(desktop) {
+      width: 650px;
+    }
+  }
+
+  .trusts__left img {
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+
+  .trusts__right {
+    padding-bottom: 30px;
+
+    @include mq(tablet) {
+      padding: 10px 0 0 20px;
+    }
+
+    @include mq(tablet-lg) {
+      padding-left: 40px;
+    }
+
+    @include mq(desktop) {
+      padding: 30px 0 0 50px;
+    }
+
+  }
+
+
+
 
   &.post .wp-post-image {
     display: block;
     height: auto;
     margin-bottom: 20px;
     width: 100%;
+
     @include mq(tablet) {
-      box-shadow: 0px 3px 15px rgba(0,0,0,0.1);
-      float: right;      
+      box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+      float: right;
       margin: 0 0 20px 20px;
       width: 50%;
     }
+
     @include mq(tablet-lg) {
       margin-bottom: 30px;
       margin-left: 30px;
     }
   }
 
-    // &__signature {
-  //   margin: 0;
-  //   padding: 0;
-  // }
-
-  // &__signature img {
-  //   display: block;
-  //   height: auto;
-  //   margin-bottom: 10px;
-  //   max-width: 100%;
-  // }
-
-  // &__signature figcaption {
-  //   color: #666666;
-  //   font-size: 1.4rem;
-  // }
-
 }
 
 
-.hero + .container > .main {
+.hero+.container>.main {
   padding-top: 20px;
+
   @include mq(tablet) {
     padding-top: 30px;
   }
+
   @include mq(desktop) {
     background: $white;
-    box-shadow: 0px 3px 15px rgba(0,0,0,0.05);
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.05);
     margin-top: -150px;
     padding: 30px $containerPaddingDesktop;
     position: relative;
-    z-index: 1;    
+    z-index: 1;
   }
 }
 
-.hero + .container > .main.col-2 {
+.hero+.container>.main.col-2 {
   flex-direction: column;
+
   @include mq(tablet) {
     flex-direction: row;
   }
-  
+
   .main__left {
     padding-top: 0;
   }
@@ -136,6 +192,7 @@
     @include mq(tablet) {
       width: 40%;
     }
+
     @include mq(tablet-lg) {
       width: 50%;
     }
