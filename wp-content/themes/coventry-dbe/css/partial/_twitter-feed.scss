@@ -15,6 +15,11 @@
     white-space: -o-pre-wrap;   /* Opera 7 */    
     word-wrap: break-word;      /* IE */
     word-break: break-all;
+
+    br {
+      display: none;
+    }
+
   }
 
   a {
@@ -49,7 +54,8 @@
 
 @media only screen and (min-width: 768px) {  
   #ctf {  
-    .ctf-tweets {
+    .ctf-tweets,
+    .ctf-tweet-items {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;

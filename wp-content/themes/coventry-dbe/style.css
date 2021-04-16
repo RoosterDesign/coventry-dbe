@@ -3182,6 +3182,10 @@ p strong {
   word-break: break-all;
 }
 
+#ctf .ctf-tweet-text br {
+  display: none;
+}
+
 #ctf a {
   color: #A80034;
 }
@@ -3206,7 +3210,8 @@ p strong {
 }
 
 @media only screen and (min-width: 768px) {
-  #ctf .ctf-tweets {
+  #ctf .ctf-tweets,
+  #ctf .ctf-tweet-items {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
