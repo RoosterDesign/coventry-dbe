@@ -286,23 +286,8 @@ class CtfOauthConnect
             case 'file_get_contents':
                 $this->json = $this->fileGetContentsRequest( $url );
                 break;
-            case 'wp_http':
-                $this->json = $this->wpHttpRequest( $url );
-                break;
             default:
-                if ( is_callable( 'curl_init' ) ) {
-                    $this->json = $this->curlRequest( $url );
-
-                    if ( $this->api_error_no ){
-                        $this->json = $this->fileGetContentsRequest( $url );
-                    }
-                } elseif ( ( ini_get( 'allow_url_fopen' ) == 1 ||
-                        ini_get( 'allow_url_fopen' ) === TRUE ) &&
-                        in_array( 'https', stream_get_wrappers() ) ) {
-                    $this->json = $this->fileGetContentsRequest( $url );
-                } else {
-                    $this->json = $this->wpHttpRequest( $url );
-                }
+	            $this->json = $this->wpHttpRequest( $url );
         }
 
         return $this;

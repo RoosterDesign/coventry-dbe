@@ -748,14 +748,14 @@ p, li {
   margin: 0;
 }
 
-.container {
+.container, .wpdm-list form {
   margin: 0 auto;
   max-width: 1200px;
   padding: 0 20px;
 }
 
 @media (min-width: 1366px) {
-  .container {
+  .container, .wpdm-list form {
     padding: 0 45px;
   }
 }
@@ -837,7 +837,7 @@ p, li {
 
 @media (min-width: 992px) {
   .main__left .btn, .main__left .download .post-password-form .download-wrap .btn, .download .post-password-form .download-wrap .main__left .btn,
-  .main__left .download .post-password-form label + input, .download .post-password-form .main__left label + input, .main__left .page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-search-btn, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .main__left #wpsl-search-btn {
+  .main__left .download .post-password-form label + input, .download .post-password-form .main__left label + input, .main__left .page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-search-btn, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .main__left #wpsl-search-btn, .main__left .wpdm-list .wpdm-download-link, .wpdm-list .main__left .wpdm-download-link {
     margin-top: 20px;
   }
 }
@@ -997,18 +997,18 @@ p, li {
   }
 }
 
-.hero + .container > .main {
+.hero + .container > .main, .wpdm-list .hero + form > .main {
   padding-top: 20px;
 }
 
 @media (min-width: 768px) {
-  .hero + .container > .main {
+  .hero + .container > .main, .wpdm-list .hero + form > .main {
     padding-top: 30px;
   }
 }
 
 @media (min-width: 1366px) {
-  .hero + .container > .main {
+  .hero + .container > .main, .wpdm-list .hero + form > .main {
     background: #fff;
     -webkit-box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.05);
             box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.05);
@@ -1019,7 +1019,7 @@ p, li {
   }
 }
 
-.hero + .container > .main.col-2 {
+.hero + .container > .main.col-2, .wpdm-list .hero + form > .main.col-2 {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -1027,7 +1027,7 @@ p, li {
 }
 
 @media (min-width: 768px) {
-  .hero + .container > .main.col-2 {
+  .hero + .container > .main.col-2, .wpdm-list .hero + form > .main.col-2 {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -1035,24 +1035,24 @@ p, li {
   }
 }
 
-.hero + .container > .main.col-2 .main__left {
+.hero + .container > .main.col-2 .main__left, .wpdm-list .hero + form > .main.col-2 .main__left {
   padding-top: 0;
 }
 
 @media (min-width: 768px) {
-  .hero + .container > .main.col-2 .main__right {
+  .hero + .container > .main.col-2 .main__right, .wpdm-list .hero + form > .main.col-2 .main__right {
     width: 40%;
   }
 }
 
 @media (min-width: 992px) {
-  .hero + .container > .main.col-2 .main__right {
+  .hero + .container > .main.col-2 .main__right, .wpdm-list .hero + form > .main.col-2 .main__right {
     width: 50%;
   }
 }
 
 .btn, .download .post-password-form .download-wrap .btn,
-.download .post-password-form label + input, .page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-search-btn {
+.download .post-password-form label + input, .page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-search-btn, .wpdm-list .wpdm-download-link {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1073,7 +1073,7 @@ p, li {
 
 @media (min-width: 768px) {
   .btn, .download .post-password-form .download-wrap .btn,
-  .download .post-password-form label + input, .page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-search-btn {
+  .download .post-password-form label + input, .page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-search-btn, .wpdm-list .wpdm-download-link {
     font-size: 1.4rem;
     padding-top: 12px;
     padding-bottom: 12px;
@@ -1082,19 +1082,23 @@ p, li {
 
 @media (min-width: 1366px) {
   .btn, .download .post-password-form .download-wrap .btn,
-  .download .post-password-form label + input, .page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-search-btn {
+  .download .post-password-form label + input, .page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-search-btn, .wpdm-list .wpdm-download-link {
     font-size: 1.6rem;
     padding: 15px 25px;
   }
 }
 
-.btn:hover, .download .post-password-form .download-wrap .btn:hover,
-.download .post-password-form label + input:hover, .page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-search-btn:hover {
+.btn:hover, .download .post-password-form .download-wrap .btn:hover, .download .post-password-form .download-wrap .wpdm-list .wpdm-download-link:hover, .wpdm-list .download .post-password-form .download-wrap .wpdm-download-link:hover,
+.download .post-password-form .download-wrap .wpdm-list .wpdm-download-link:active, .wpdm-list .download .post-password-form .download-wrap .wpdm-download-link:active,
+.download .post-password-form .download-wrap .wpdm-list .wpdm-download-link:focus, .wpdm-list .download .post-password-form .download-wrap .wpdm-download-link:focus,
+.download .post-password-form label + input:hover, .page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-search-btn:hover, .wpdm-list .wpdm-download-link:hover,
+.wpdm-list .wpdm-download-link:active,
+.wpdm-list .wpdm-download-link:focus {
   background: #940338;
 }
 
 .btn.-sml, .download .post-password-form .download-wrap .-sml.btn,
-.download .post-password-form label + input.-sml, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .-sml#wpsl-search-btn {
+.download .post-password-form label + input.-sml, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .-sml#wpsl-search-btn, .wpdm-list .-sml.wpdm-download-link {
   padding: 0;
   font-size: 1.4rem;
   padding: 10px 15px;
@@ -1204,37 +1208,44 @@ svg.btn__plus {
 }
 
 .btn.-ghost, .download .post-password-form .download-wrap .-ghost.btn,
-.download .post-password-form label + input.-ghost, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .-ghost#wpsl-search-btn,
+.download .post-password-form label + input.-ghost, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .-ghost#wpsl-search-btn, .wpdm-list .-ghost.wpdm-download-link,
 .btn.-ghostAlt,
 .download .post-password-form .download-wrap .-ghostAlt.btn,
 .download .post-password-form label + input.-ghostAlt,
-.page-template-school-search #wpsl-wrap #wpsl-search-wrap .-ghostAlt#wpsl-search-btn {
+.page-template-school-search #wpsl-wrap #wpsl-search-wrap .-ghostAlt#wpsl-search-btn,
+.wpdm-list .-ghostAlt.wpdm-download-link {
   background: none;
   padding: 0;
 }
 
 .btn.-ghost, .download .post-password-form .download-wrap .-ghost.btn,
-.download .post-password-form label + input.-ghost, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .-ghost#wpsl-search-btn {
+.download .post-password-form label + input.-ghost, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .-ghost#wpsl-search-btn, .wpdm-list .-ghost.wpdm-download-link {
   color: #A80034;
 }
 
 .btn.-ghost:hover, .download .post-password-form .download-wrap .-ghost.btn:hover,
-.download .post-password-form label + input.-ghost:hover, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .-ghost#wpsl-search-btn:hover {
+.download .post-password-form label + input.-ghost:hover, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .-ghost#wpsl-search-btn:hover, .wpdm-list .-ghost.wpdm-download-link:hover,
+.wpdm-list .-ghost.wpdm-download-link:active,
+.wpdm-list .-ghost.wpdm-download-link:focus {
   color: #000;
 }
 
-.btn.-ghost .btn__icon:before, .download .post-password-form .download-wrap .-ghost.btn .btn__icon:before, .download .post-password-form label + input.-ghost .btn__icon:before, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .-ghost#wpsl-search-btn .btn__icon:before,
+.btn.-ghost .btn__icon:before, .download .post-password-form .download-wrap .-ghost.btn .btn__icon:before, .download .post-password-form label + input.-ghost .btn__icon:before, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .-ghost#wpsl-search-btn .btn__icon:before, .wpdm-list .-ghost.wpdm-download-link .btn__icon:before,
 .btn.-ghost .btn__icon:after,
 .download .post-password-form .download-wrap .-ghost.btn .btn__icon:after,
 .download .post-password-form label + input.-ghost .btn__icon:after,
-.page-template-school-search #wpsl-wrap #wpsl-search-wrap .-ghost#wpsl-search-btn .btn__icon:after {
+.page-template-school-search #wpsl-wrap #wpsl-search-wrap .-ghost#wpsl-search-btn .btn__icon:after,
+.wpdm-list .-ghost.wpdm-download-link .btn__icon:after {
   background: #A80034;
 }
 
-.btn.-ghost:hover .btn__icon:before, .download .post-password-form label + input.-ghost:hover .btn__icon:before, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .-ghost#wpsl-search-btn:hover .btn__icon:before,
+.btn.-ghost:hover .btn__icon:before, .download .post-password-form label + input.-ghost:hover .btn__icon:before, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .-ghost#wpsl-search-btn:hover .btn__icon:before, .wpdm-list .-ghost.wpdm-download-link:hover .btn__icon:before, .wpdm-list .-ghost.wpdm-download-link:active .btn__icon:before, .wpdm-list .-ghost.wpdm-download-link:focus .btn__icon:before,
 .btn.-ghost:hover .btn__icon:after,
 .download .post-password-form label + input.-ghost:hover .btn__icon:after,
-.page-template-school-search #wpsl-wrap #wpsl-search-wrap .-ghost#wpsl-search-btn:hover .btn__icon:after {
+.page-template-school-search #wpsl-wrap #wpsl-search-wrap .-ghost#wpsl-search-btn:hover .btn__icon:after,
+.wpdm-list .-ghost.wpdm-download-link:hover .btn__icon:after,
+.wpdm-list .-ghost.wpdm-download-link:active .btn__icon:after,
+.wpdm-list .-ghost.wpdm-download-link:focus .btn__icon:after {
   background: #000;
 }
 
@@ -1242,27 +1253,34 @@ svg.btn__plus {
 .btn.-ghostAlt,
 .download .post-password-form .download-wrap .-ghostAlt.btn,
 .download .post-password-form label + input.-ghostAlt,
-.page-template-school-search #wpsl-wrap #wpsl-search-wrap .-ghostAlt#wpsl-search-btn {
+.page-template-school-search #wpsl-wrap #wpsl-search-wrap .-ghostAlt#wpsl-search-btn,
+.wpdm-list .-ghostAlt.wpdm-download-link {
   color: #fff;
 }
 
 .btn.-ghostAlt:hover, .download .post-password-form .download-wrap .-ghostAlt.btn:hover,
-.download .post-password-form label + input.-ghostAlt:hover, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .-ghostAlt#wpsl-search-btn:hover {
+.download .post-password-form label + input.-ghostAlt:hover, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .-ghostAlt#wpsl-search-btn:hover, .wpdm-list .-ghostAlt.wpdm-download-link:hover,
+.wpdm-list .-ghostAlt.wpdm-download-link:active,
+.wpdm-list .-ghostAlt.wpdm-download-link:focus {
   color: #000;
 }
 
-.btn.-ghostAlt .btn__icon:before, .download .post-password-form .download-wrap .-ghostAlt.btn .btn__icon:before, .download .post-password-form label + input.-ghostAlt .btn__icon:before, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .-ghostAlt#wpsl-search-btn .btn__icon:before,
+.btn.-ghostAlt .btn__icon:before, .download .post-password-form .download-wrap .-ghostAlt.btn .btn__icon:before, .download .post-password-form label + input.-ghostAlt .btn__icon:before, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .-ghostAlt#wpsl-search-btn .btn__icon:before, .wpdm-list .-ghostAlt.wpdm-download-link .btn__icon:before,
 .btn.-ghostAlt .btn__icon:after,
 .download .post-password-form .download-wrap .-ghostAlt.btn .btn__icon:after,
 .download .post-password-form label + input.-ghostAlt .btn__icon:after,
-.page-template-school-search #wpsl-wrap #wpsl-search-wrap .-ghostAlt#wpsl-search-btn .btn__icon:after {
+.page-template-school-search #wpsl-wrap #wpsl-search-wrap .-ghostAlt#wpsl-search-btn .btn__icon:after,
+.wpdm-list .-ghostAlt.wpdm-download-link .btn__icon:after {
   background: #fff;
 }
 
-.btn.-ghostAlt:hover .btn__icon:before, .download .post-password-form label + input.-ghostAlt:hover .btn__icon:before, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .-ghostAlt#wpsl-search-btn:hover .btn__icon:before,
+.btn.-ghostAlt:hover .btn__icon:before, .download .post-password-form label + input.-ghostAlt:hover .btn__icon:before, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .-ghostAlt#wpsl-search-btn:hover .btn__icon:before, .wpdm-list .-ghostAlt.wpdm-download-link:hover .btn__icon:before, .wpdm-list .-ghostAlt.wpdm-download-link:active .btn__icon:before, .wpdm-list .-ghostAlt.wpdm-download-link:focus .btn__icon:before,
 .btn.-ghostAlt:hover .btn__icon:after,
 .download .post-password-form label + input.-ghostAlt:hover .btn__icon:after,
-.page-template-school-search #wpsl-wrap #wpsl-search-wrap .-ghostAlt#wpsl-search-btn:hover .btn__icon:after {
+.page-template-school-search #wpsl-wrap #wpsl-search-wrap .-ghostAlt#wpsl-search-btn:hover .btn__icon:after,
+.wpdm-list .-ghostAlt.wpdm-download-link:hover .btn__icon:after,
+.wpdm-list .-ghostAlt.wpdm-download-link:active .btn__icon:after,
+.wpdm-list .-ghostAlt.wpdm-download-link:focus .btn__icon:after {
   background: #000;
 }
 
@@ -1309,7 +1327,7 @@ svg.btn__plus {
   }
 }
 
-.siteHeader .container {
+.siteHeader .container, .siteHeader .wpdm-list form, .wpdm-list .siteHeader form {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1597,7 +1615,7 @@ svg.btn__plus {
   }
 }
 
-.siteFooter .container {
+.siteFooter .container, .siteFooter .wpdm-list form, .wpdm-list .siteFooter form {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -1611,7 +1629,7 @@ svg.btn__plus {
 }
 
 @media (min-width: 768px) {
-  .siteFooter .container {
+  .siteFooter .container, .siteFooter .wpdm-list form, .wpdm-list .siteFooter form {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -1796,18 +1814,18 @@ svg.btn__plus {
 }
 
 @media (min-width: 768px) {
-  .masthead .title, .masthead .single-post .main h1, .single-post .main .masthead h1 {
+  .masthead .title, .masthead .single-post .main h1, .single-post .main .masthead h1, .masthead .wpdm-list .wpdm-shortcode-toolbar h3, .wpdm-list .wpdm-shortcode-toolbar .masthead h3 {
     font-size: 3.6rem;
   }
 }
 
-.masthead .title svg, .masthead .single-post .main h1 svg, .single-post .main .masthead h1 svg {
+.masthead .title svg, .masthead .single-post .main h1 svg, .single-post .main .masthead h1 svg, .masthead .wpdm-list .wpdm-shortcode-toolbar h3 svg, .wpdm-list .wpdm-shortcode-toolbar .masthead h3 svg {
   height: 30px;
   margin-left: 0;
   width: 30px;
 }
 
-.masthead .title, .masthead .single-post .main h1, .single-post .main .masthead h1,
+.masthead .title, .masthead .single-post .main h1, .single-post .main .masthead h1, .masthead .wpdm-list .wpdm-shortcode-toolbar h3, .wpdm-list .wpdm-shortcode-toolbar .masthead h3,
 .masthead .subTitle {
   color: #fff;
   margin: 0;
@@ -1851,7 +1869,7 @@ svg.btn__plus {
   }
 }
 
-.title, .single-post .main h1 {
+.title, .single-post .main h1, .wpdm-list .wpdm-shortcode-toolbar h3 {
   color: #A80034;
   font-size: 2.8rem;
   font-weight: 300;
@@ -1860,7 +1878,7 @@ svg.btn__plus {
 }
 
 @media (min-width: 768px) {
-  .title, .single-post .main h1 {
+  .title, .single-post .main h1, .wpdm-list .wpdm-shortcode-toolbar h3 {
     font-size: 3.2rem;
     line-height: 1.3;
     margin-bottom: 20px;
@@ -1868,28 +1886,29 @@ svg.btn__plus {
 }
 
 @media (min-width: 992px) {
-  .title, .single-post .main h1 {
+  .title, .single-post .main h1, .wpdm-list .wpdm-shortcode-toolbar h3 {
     font-size: 3.6rem;
   }
 }
 
 @media (min-width: 1366px) {
-  .title, .single-post .main h1 {
+  .title, .single-post .main h1, .wpdm-list .wpdm-shortcode-toolbar h3 {
     font-size: 3.8rem;
   }
 }
 
-.title a, .single-post .main h1 a {
+.title a, .single-post .main h1 a, .wpdm-list .wpdm-shortcode-toolbar h3 a {
   color: #A80034;
 }
 
-.title.-white, .single-post .main h1.-white,
+.title.-white, .single-post .main h1.-white, .wpdm-list .wpdm-shortcode-toolbar h3.-white,
 .title.-white a,
-.single-post .main h1.-white a {
+.single-post .main h1.-white a,
+.wpdm-list .wpdm-shortcode-toolbar h3.-white a {
   color: #fff;
 }
 
-.title.-hasIcons, .single-post .main h1.-hasIcons {
+.title.-hasIcons, .single-post .main h1.-hasIcons, .wpdm-list .wpdm-shortcode-toolbar h3.-hasIcons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1900,7 +1919,7 @@ svg.btn__plus {
 }
 
 @media (min-width: 768px) {
-  .title.-hasIcons, .single-post .main h1.-hasIcons {
+  .title.-hasIcons, .single-post .main h1.-hasIcons, .wpdm-list .wpdm-shortcode-toolbar h3.-hasIcons {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -2400,13 +2419,13 @@ p strong {
 }
 
 .fwSlide .btn, .fwSlide .download .post-password-form .download-wrap .btn, .download .post-password-form .download-wrap .fwSlide .btn,
-.fwSlide .download .post-password-form label + input, .download .post-password-form .fwSlide label + input, .fwSlide .page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-search-btn, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .fwSlide #wpsl-search-btn {
+.fwSlide .download .post-password-form label + input, .download .post-password-form .fwSlide label + input, .fwSlide .page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-search-btn, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .fwSlide #wpsl-search-btn, .fwSlide .wpdm-list .wpdm-download-link, .wpdm-list .fwSlide .wpdm-download-link {
   margin-top: 15px;
 }
 
 @media (min-width: 768px) {
   .fwSlide .btn, .fwSlide .download .post-password-form .download-wrap .btn, .download .post-password-form .download-wrap .fwSlide .btn,
-  .fwSlide .download .post-password-form label + input, .download .post-password-form .fwSlide label + input, .fwSlide .page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-search-btn, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .fwSlide #wpsl-search-btn {
+  .fwSlide .download .post-password-form label + input, .download .post-password-form .fwSlide label + input, .fwSlide .page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-search-btn, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .fwSlide #wpsl-search-btn, .fwSlide .wpdm-list .wpdm-download-link, .wpdm-list .fwSlide .wpdm-download-link {
     margin-top: 25px;
   }
 }
@@ -2640,23 +2659,23 @@ p strong {
   font-size: 1.4rem;
 }
 
-.featureNewsPost .title, .featureNewsPost .single-post .main h1, .single-post .main .featureNewsPost h1 {
+.featureNewsPost .title, .featureNewsPost .single-post .main h1, .single-post .main .featureNewsPost h1, .featureNewsPost .wpdm-list .wpdm-shortcode-toolbar h3, .wpdm-list .wpdm-shortcode-toolbar .featureNewsPost h3 {
   margin: 20px 0;
 }
 
 @media (min-width: 768px) {
-  .featureNewsPost .title, .featureNewsPost .single-post .main h1, .single-post .main .featureNewsPost h1 {
+  .featureNewsPost .title, .featureNewsPost .single-post .main h1, .single-post .main .featureNewsPost h1, .featureNewsPost .wpdm-list .wpdm-shortcode-toolbar h3, .wpdm-list .wpdm-shortcode-toolbar .featureNewsPost h3 {
     margin-bottom: 30px;
   }
 }
 
 @media (min-width: 1366px) {
-  .featureNewsPost .title, .featureNewsPost .single-post .main h1, .single-post .main .featureNewsPost h1 {
+  .featureNewsPost .title, .featureNewsPost .single-post .main h1, .single-post .main .featureNewsPost h1, .featureNewsPost .wpdm-list .wpdm-shortcode-toolbar h3, .wpdm-list .wpdm-shortcode-toolbar .featureNewsPost h3 {
     margin-bottom: 40px;
   }
 }
 
-.featureNewsPost .title a, .featureNewsPost .single-post .main h1 a, .single-post .main .featureNewsPost h1 a {
+.featureNewsPost .title a, .featureNewsPost .single-post .main h1 a, .single-post .main .featureNewsPost h1 a, .featureNewsPost .wpdm-list .wpdm-shortcode-toolbar h3 a, .wpdm-list .wpdm-shortcode-toolbar .featureNewsPost h3 a {
   text-decoration: none;
 }
 
@@ -2681,12 +2700,12 @@ p strong {
 
 @media (min-width: 992px) {
   .featureNewsPost .btn, .featureNewsPost .download .post-password-form .download-wrap .btn, .download .post-password-form .download-wrap .featureNewsPost .btn,
-  .featureNewsPost .download .post-password-form label + input, .download .post-password-form .featureNewsPost label + input, .featureNewsPost .page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-search-btn, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .featureNewsPost #wpsl-search-btn {
+  .featureNewsPost .download .post-password-form label + input, .download .post-password-form .featureNewsPost label + input, .featureNewsPost .page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-search-btn, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .featureNewsPost #wpsl-search-btn, .featureNewsPost .wpdm-list .wpdm-download-link, .wpdm-list .featureNewsPost .wpdm-download-link {
     margin-top: 30px;
   }
 }
 
-.cardsWrap {
+.cardsWrap, .wpdm-list .row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2700,7 +2719,7 @@ p strong {
 }
 
 @media (min-width: 768px) {
-  .cardsWrap {
+  .cardsWrap, .wpdm-list .row {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -2712,12 +2731,12 @@ p strong {
 }
 
 @media (min-width: 1366px) {
-  .cardsWrap {
+  .cardsWrap, .wpdm-list .row {
     padding: 0 35px;
   }
 }
 
-.card {
+.card, .wpdm-list .row > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2730,7 +2749,7 @@ p strong {
 }
 
 @media (min-width: 768px) {
-  .card {
+  .card, .wpdm-list .row > div {
     padding: 0 10px;
     width: 50%;
     width: 33.333333%;
@@ -2738,7 +2757,7 @@ p strong {
 }
 
 @media (min-width: 1366px) {
-  .card {
+  .card, .wpdm-list .row > div {
     padding: 0 10px;
     width: 33.333333%;
   }
@@ -2841,13 +2860,13 @@ p strong {
   }
 }
 
-.card p {
+.card p, .wpdm-list .row > div p {
   font-size: 1.5rem;
   margin-bottom: 10px;
 }
 
 @media (min-width: 1366px) {
-  .card p {
+  .card p, .wpdm-list .row > div p {
     font-size: 1.6rem;
   }
 }
@@ -2887,21 +2906,22 @@ p strong {
   width: 15px;
 }
 
-.card .btn, .card .download .post-password-form .download-wrap .btn, .download .post-password-form .download-wrap .card .btn,
-.card .download .post-password-form label + input, .download .post-password-form .card label + input, .card .page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-search-btn, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .card #wpsl-search-btn {
+.card .btn, .wpdm-list .row > div .btn, .card .download .post-password-form .download-wrap .btn, .download .post-password-form .download-wrap .card .btn, .wpdm-list .row > div .download .post-password-form .download-wrap .btn, .download .post-password-form .download-wrap .wpdm-list .row > div .btn,
+.card .download .post-password-form label + input, .download .post-password-form .card label + input,
+.wpdm-list .row > div .download .post-password-form label + input, .download .post-password-form .wpdm-list .row > div label + input, .card .page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-search-btn, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .card #wpsl-search-btn, .wpdm-list .row > div .page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-search-btn, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .wpdm-list .row > div #wpsl-search-btn, .card .wpdm-list .wpdm-download-link, .wpdm-list .card .wpdm-download-link, .wpdm-list .row > div .wpdm-download-link {
   margin-top: 10px;
   margin-bottom: auto;
   margin-right: auto;
   max-height: 34px;
 }
 
-.card ul {
+.card ul, .wpdm-list .row > div ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.card ul li {
+.card ul li, .wpdm-list .row > div ul li {
   font-size: 1.4rem;
   position: relative;
   margin-bottom: 10px;
@@ -2909,12 +2929,12 @@ p strong {
 }
 
 @media (min-width: 1366px) {
-  .card ul li {
+  .card ul li, .wpdm-list .row > div ul li {
     font-size: 1.5rem;
   }
 }
 
-.card ul li:before {
+.card ul li:before, .wpdm-list .row > div ul li:before {
   background: #A80034;
   height: 2px;
   content: '';
@@ -2925,7 +2945,7 @@ p strong {
   width: 8px;
 }
 
-.card ul li:last-child {
+.card ul li:last-child, .wpdm-list .row > div ul li:last-child {
   margin-bottom: 0;
 }
 
@@ -3072,7 +3092,7 @@ p strong {
 }
 
 .cardReveal.-isVisible .btn, .cardReveal.-isVisible .download .post-password-form .download-wrap .btn, .download .post-password-form .download-wrap .cardReveal.-isVisible .btn,
-.cardReveal.-isVisible .download .post-password-form label + input, .download .post-password-form .cardReveal.-isVisible label + input, .cardReveal.-isVisible .page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-search-btn, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .cardReveal.-isVisible #wpsl-search-btn {
+.cardReveal.-isVisible .download .post-password-form label + input, .download .post-password-form .cardReveal.-isVisible label + input, .cardReveal.-isVisible .page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-search-btn, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .cardReveal.-isVisible #wpsl-search-btn, .cardReveal.-isVisible .wpdm-list .wpdm-download-link, .wpdm-list .cardReveal.-isVisible .wpdm-download-link {
   display: none;
 }
 
@@ -3455,7 +3475,7 @@ p strong {
 }
 
 .download .post-password-form .download-wrap .btn,
-.download .post-password-form .download-wrap label + input, .download .post-password-form .download-wrap .page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-search-btn, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .download .post-password-form .download-wrap #wpsl-search-btn,
+.download .post-password-form .download-wrap label + input, .download .post-password-form .download-wrap .page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-search-btn, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .download .post-password-form .download-wrap #wpsl-search-btn, .download .post-password-form .download-wrap .wpdm-list .wpdm-download-link, .wpdm-list .download .post-password-form .download-wrap .wpdm-download-link,
 .download .post-password-form label + input {
   border: none !important;
   border-radius: 0 !important;
@@ -3474,7 +3494,7 @@ p strong {
 
 @media only screen and (max-width: 767px) {
   .download .post-password-form .download-wrap .btn,
-  .download .post-password-form .download-wrap label + input, .download .post-password-form .download-wrap .page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-search-btn, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .download .post-password-form .download-wrap #wpsl-search-btn,
+  .download .post-password-form .download-wrap label + input, .download .post-password-form .download-wrap .page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-search-btn, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .download .post-password-form .download-wrap #wpsl-search-btn, .download .post-password-form .download-wrap .wpdm-list .wpdm-download-link, .wpdm-list .download .post-password-form .download-wrap .wpdm-download-link,
   .download .post-password-form label + input {
     width: 100%;
   }
@@ -3486,7 +3506,7 @@ p strong {
 }
 
 .download .download-wrap .btn, .download .post-password-form .download-wrap .btn,
-.download .download-wrap .post-password-form label + input, .download .post-password-form .download-wrap label + input, .download .download-wrap .page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-search-btn, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .download .download-wrap #wpsl-search-btn {
+.download .download-wrap .post-password-form label + input, .download .post-password-form .download-wrap label + input, .download .download-wrap .page-template-school-search #wpsl-wrap #wpsl-search-wrap #wpsl-search-btn, .page-template-school-search #wpsl-wrap #wpsl-search-wrap .download .download-wrap #wpsl-search-btn, .download .download-wrap .wpdm-list .wpdm-download-link, .wpdm-list .download .download-wrap .wpdm-download-link {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -3896,5 +3916,93 @@ p strong {
 .page-template-school-search #wpsl-wrap #wpsl-result-list #wpsl-stores .wpsl-store-details.wpsl-store-listing.wpsl-active-details:before,
 .page-template-school-search #wpsl-wrap #wpsl-result-list #wpsl-stores .wpsl-store-details.wpsl-store-listing:before {
   border-top-color: #A80034;
+}
+
+.wpdm-list {
+  padding-top: 10px;
+}
+
+.wpdm-list .row {
+  border-bottom: 1px solid #A80034;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+}
+
+@media (min-width: 1366px) {
+  .wpdm-list .row {
+    margin-bottom: 50px;
+    padding-bottom: 40px;
+  }
+}
+
+.wpdm-list .wpdm-shortcode-toolbar {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: auto !important;
+}
+
+.wpdm-list .wpdm-shortcode-toolbar h3 {
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 1366px) {
+  .wpdm-list .wpdm-shortcode-toolbar h3 {
+    font-size: 2.8rem;
+  }
+}
+
+.wpdm-list .panel-footer.card-footer {
+  display: none;
+}
+
+.wpdm-list .w3eden:last-child .cardsWrap, .wpdm-list .w3eden:last-child .row {
+  border: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.wpdm-list .w3eden .card h3.card__title, .wpdm-list .w3eden .row > div h3.card__title {
+  color: #000;
+  font-size: 2.2rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .wpdm-list .w3eden .card h3.card__title, .wpdm-list .w3eden .row > div h3.card__title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .wpdm-list .w3eden .card h3.card__title, .wpdm-list .w3eden .row > div h3.card__title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (min-width: 1366px) {
+  .wpdm-list .w3eden .card h3.card__title, .wpdm-list .w3eden .row > div h3.card__title {
+    font-size: 2.4rem;
+  }
+}
+
+.wpdm-list .wpdm-download-link {
+  border-radius: 0 !important;
+  margin: 0 !important;
+  max-height: none !important;
+}
+
+.wpdm-list .wpdm-download-link:hover,
+.wpdm-list .wpdm-download-link:active,
+.wpdm-list .wpdm-download-link:focus {
+  background: #940338 !important;
+}
+
+.w3eden.modal-open {
+  background: red;
 }
 /*# sourceMappingURL=style.css.map */

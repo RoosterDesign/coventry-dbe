@@ -1,0 +1,87 @@
+.wpdm-list {
+  padding-top: 10px;
+
+  form {
+    @extend .container;
+  }
+
+  .row {
+    @extend .cardsWrap;
+    border-bottom: 1px solid $brandRed;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    @include mq(desktop) {
+      margin-bottom: 50px;
+      padding-bottom: 40px;
+    }
+
+    & > div {
+      @extend .card;
+    }
+
+  }
+
+  .wpdm-shortcode-toolbar {
+    box-shadow: none !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: auto !important;
+
+    h3 {
+      @extend .title;
+      font-size: 2.4rem;
+      margin-bottom: 30px;
+      @include mq(desktop) {
+        font-size: 2.8rem;
+      }
+    }
+
+  }
+
+  .panel-footer.card-footer {
+    display: none;
+  }
+
+  .w3eden:last-child .cardsWrap {
+      border: none;      
+      margin-bottom: 0;
+      padding-bottom: 0;
+  }
+
+  .w3eden .card h3.card__title {
+    color: #000;
+    font-size: 2.2rem;
+    font-weight: 300;
+    line-height: 1.2;
+    @include mq(tablet) {
+      font-size: 1.8rem;
+    }
+    @include mq(tablet-lg) {
+      font-size: 2.2rem;
+    }
+    @include mq(desktop) {
+      font-size: 2.4rem;
+    }
+  }
+
+  .wpdm-download-link {
+    @extend .btn;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    max-height: none !important;
+  }
+
+  .wpdm-download-link:hover,
+  .wpdm-download-link:active,
+  .wpdm-download-link:focus {
+    @extend .btn:hover;
+    background: $buttonBgHover !important;
+  }
+
+}
+
+
+.w3eden.modal-open {
+  background: red;
+}

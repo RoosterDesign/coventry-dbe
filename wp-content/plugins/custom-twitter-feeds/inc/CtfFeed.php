@@ -1369,6 +1369,17 @@ class CtfFeed
 		return $twitter_connect->performRequest();
 	}
 
+	public function feedID() {
+		if ( $this->feed_options['persistentcache'] ) {
+			$feed_id = substr( 'ctf_!_' . $this->feed_options['feed_term'], 0, 45 );
+			$feed_id = str_replace( ' -filter:retweets', '', $feed_id );
+		} else {
+			$feed_id = $this->transient_name;
+		}
+
+		return $feed_id;
+	}
+
     /**
      * If the feed runs out of tweets to display for some reason,
      * this function creates a graceful failure message
@@ -1413,13 +1424,23 @@ class CtfFeed
         $ctf_feed_classes = apply_filters( 'ctf_feed_classes', $ctf_feed_classes ); //add_filter( 'ctf_feed_classes', function( $ctf_feed_classes ) { return $ctf_feed_classes . ' new-class'; }, 10, 1 );
         $ctf_feed_html = '';
 
-        $gdpr_att = '';
+	    $flags_att = '';
+	    $flags = array();
 	    if ( CTF_GDPR_Integrations::doing_gdpr( $feed_options ) ) {
-		    $gdpr_att = ' ctf-gdpr="1"';
+		    $flags[] = 'gdpr';
 	    }
+	    if ( ! is_admin()
+	         && CTF_Feed_Locator::should_do_ajax_locating( $this->feedID(), get_the_ID() ) ) {
+		    $flags[] = 'locator';
+	    }
+	    if ( ! empty( $flags ) ) {
+		    $flags_att = ' data-ctf-flags="' . implode( ',', $flags ) . '"';
+	    }
+	    $post_id_att = ' data-postid="' . esc_attr( get_the_ID() ) . '"';
+	    $feed_id_att = ' data-feed-id="' . $this->feedID() . '"';
 
         $ctf_feed_html .= '<!-- Custom Twitter Feeds by Smash Balloon -->';
-        $ctf_feed_html .= '<div id="ctf" class="' . $ctf_feed_classes . '" style="' . $feed_options['width'] . $feed_options['height'] . $feed_options['bgcolor'] . '" data-ctfshortcode="' . $this->getShortCodeJSON() . '"' .$ctf_data_disablelinks . $ctf_data_linktextcolor . $ctf_enable_intents . $gdpr_att .' data-ctfneeded="'. $ctf_data_needed .'">';
+        $ctf_feed_html .= '<div id="ctf" class="' . $ctf_feed_classes . '" style="' . $feed_options['width'] . $feed_options['height'] . $feed_options['bgcolor'] . '" data-ctfshortcode="' . $this->getShortCodeJSON() . '"' .$ctf_data_disablelinks . $ctf_data_linktextcolor . $ctf_enable_intents . $flags_att . $post_id_att . $feed_id_att .' data-ctfneeded="'. $ctf_data_needed .'">';
         $tweet_set = $this->tweet_set;
 
         // dynamically include header
@@ -1496,7 +1517,7 @@ class CtfFeed
 	            $ctf_header_html .= '<span class="ctf-verified">' . ctf_get_fa_el( 'fa-check-circle' ) . '</span>';
             }
 
-	        $ctf_header_html .= '<span class="ctf-header-follow">' . ctf_get_fa_el( 'fa-twitter' ) . 'Follow</span>';
+	        $ctf_header_html .= '<span class="ctf-header-follow">' . ctf_get_fa_el( 'fa-twitter' ) . __( 'Follow', 'custom-twitter-feeds' ) . '</span>';
             $ctf_header_html .= '</p>';
 
             if ( $feed_options['showbio'] && !empty($tweet_set[0]['user']['description']) ) {
@@ -1654,7 +1675,7 @@ class CtfFeed
                 if ( isset( $retweeter ) && ctf_show( 'retweeter', $feed_options ) ) {
                     $tweet_html .= '<div class="ctf-context">';
                     $tweet_html .= '<a href="https://twitter.com/intent/user?screen_name=' . $retweeter['screen_name'] . '" target="_blank" rel="noopener noreferrer" class="ctf-retweet-icon">' . ctf_get_fa_el( 'fa-retweet' ) . '<span class="ctf-screenreader">'.__( 'Retweet on Twitter', 'custom-twitter-feeds' ).'</span></a>';
-                    $tweet_html .= '<a href="https://twitter.com/' . $retweeter['screen_name'] . '" target="_blank" rel="noopener noreferrer" class="ctf-retweet-text" style="' . $feed_options['authortextsize'] . $feed_options['authortextweight'] . $feed_options['textcolor'] . '">' . $retweeter['name'] . ' ' . $feed_options['retweetedtext'] . '</a>';
+                    $tweet_html .= '<a href="https://twitter.com/' . $retweeter['screen_name'] . '" target="_blank" rel="noopener noreferrer" class="ctf-retweet-text" style="' . $feed_options['authortextsize'] . $feed_options['authortextweight'] . $feed_options['textcolor'] . '">' . $retweeter['name'] . ' ' . __( $feed_options['retweetedtext'], 'custom-twitter-feeds' ) . '</a>';
                     $tweet_html .= '</div>';
                 }
 

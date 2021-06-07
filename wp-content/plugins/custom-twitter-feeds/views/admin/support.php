@@ -90,6 +90,33 @@ if ( ! is_wp_error( $twitter_api->json ) ) {
 
 ?>
 
+## Location Summary: ##
+<?php
+$locator_summary = CTF_Feed_Locator::summary();
+$condensed_shortcode_atts = array( 'search', 'screenname', 'hashtag', 'hometimeline', 'mentionstimeline', 'lists', 'layout', 'whitelist', 'includewords' );
+
+if ( ! empty( $locator_summary) ) {
+
+	foreach ( $locator_summary as $locator_section ) {
+		if ( ! empty( $locator_section['results'] ) ) {
+			$first_five = array_slice( $locator_section['results'], 0, 5 );
+			foreach ( $first_five as $result ) {
+				$condensed_shortcode_string = '[custom-twitter-feeds';
+				$shortcode_atts             = json_decode( $result['shortcode_atts'], true );
+				$shortcode_atts             = is_array( $shortcode_atts ) ? $shortcode_atts : array();
+				foreach ( $shortcode_atts as $key => $value ) {
+					if ( in_array( $key, $condensed_shortcode_atts, true ) ) {
+						$condensed_shortcode_string .= ' ' . esc_html( $key ). '="' . esc_html( $value ) . '"';
+					}
+				}
+				$condensed_shortcode_string .= ']';
+				echo esc_url( get_the_permalink( $result['post_id'] ) ) . ' ' . $condensed_shortcode_string . "\n";
+			}
+
+		}
+	}
+}?>
+
 ## Twitter API RESPONSE: ##
 <?php
 echo 'Screen Name:   ' . $screen_name."\n";

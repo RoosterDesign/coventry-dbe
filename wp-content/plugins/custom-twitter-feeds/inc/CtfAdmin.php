@@ -47,7 +47,63 @@ class CtfAdmin
             'custom-twitter-feeds-style',
             array( $this, 'create_submenu_page_style' )
         );
+
+        //Show a Instagram plugin menu item if it isn't already installed
+        if( !is_plugin_active( 'instagram-feed/instagram-feed.php' ) && !is_plugin_active( 'instagram-feed-pro/instagram-feed.php' ) ){
+            add_submenu_page(
+                'custom-twitter-feeds',
+                __( 'Instagram Feed', 'ctf' ),
+                '<span class="ctf_get_sbi"><svg style="height: 14px; margin: 0 8px 0 0; position: relative; top: 2px;" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-instagram fa-w-14 fa-2x"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" class=""></path></svg>' . __( 'Instagram Feed', 'ctf' ) . '</span>',
+                'manage_options',
+                'admin.php?page=custom-twitter-feeds&tab=more',
+                ''
+            );
+        }
+
+        //Show a Instagram plugin menu item if it isn't already installed
+        if( !is_plugin_active( 'custom-facebook-feed/custom-facebook-feed.php' ) && !is_plugin_active( 'custom-facebook-feed-pro/custom-facebook-feed.php' ) ){
+            add_submenu_page(
+                'custom-twitter-feeds',
+                __( 'Facebook Feed', 'ctf' ),
+                '<span class="ctf_get_cff"><svg style="height: 14px; margin: 0 8px 0 0; position: relative; top: 2px;" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-facebook fa-w-16 fa-2x"><path fill="currentColor" d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" class=""></path></svg>' . __( 'Facebook Feed', 'ctf' ) . '</span>',
+                'manage_options',
+                'admin.php?page=custom-twitter-feeds&tab=more',
+                ''
+            );
+        }
+
+        //Show a YouTube plugin menu item if it isn't already installed
+        if( !is_plugin_active( 'feeds-for-youtube/youtube-feed.php' ) && !is_plugin_active( 'youtube-feed-pro/youtube-feed.php' ) ){
+            add_submenu_page(
+                'custom-twitter-feeds',
+                __( 'YouTube Feed', 'ctf' ),
+                '<span class="ctf_get_yt"><svg style="height: 14px; margin: 0 8px 0 0; position: relative; top: 2px;" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="youtube" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-youtube fa-w-18 fa-2x"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" class=""></path></svg>' . __( 'YouTube Feed', 'ctf' ) . '</span>',
+                'manage_options',
+                'admin.php?page=custom-twitter-feeds&tab=more',
+                ''
+            );
+        }
+
+        add_submenu_page(
+            'custom-twitter-feeds',
+            __( 'Social Wall', 'ctf' ),
+            '<span><svg style="height: 14px; margin: 0 8px 0 0; position: relative; top: 2px;" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="th" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-th fa-w-16 fa-2x"><path fill="currentColor" d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z" class=""></path></svg>' . __( 'Social Wall', 'ctf' ) . '</span>',
+            'manage_options',
+            'ctf-sw',
+	        array( $this, 'social_wall_page' )
+        );
+
+        add_submenu_page(
+            'custom-twitter-feeds',
+            __( 'Try the Pro Demo', 'ctf' ),
+            __( '<span class="ctf_get_pro">Try the Pro Demo</span>', 'custom-twitter-feeds' ),
+            'manage_options',
+            'https://smashballoon.com/custom-twitter-feeds/demo/?utm_campaign=twitter-free&utm_source=menu-link&utm_medium=upgrade-link',
+            ''
+        );
+
     }
+    
 
     public static function get_active_tab( $tab = '' )
     {
@@ -60,6 +116,10 @@ class CtfAdmin
                 return 'display';
             case 'support':
                 return 'support';
+	        case 'allfeeds':
+		        return 'allfeeds';
+	        case 'more':
+		        return 'more';
             default:
                 return 'configure';
         }
@@ -83,6 +143,11 @@ class CtfAdmin
 
         require_once CTF_URL . '/views/admin/main.php';
     }
+
+
+public function social_wall_page() {
+		require_once CTF_URL .'views/admin/social-wall.php';
+	}
 
     public function general_section_text()
     {
@@ -217,13 +282,20 @@ class CtfAdmin
             'ctf_options_feed_settings' // matches the section name
         );
 
+	    $locator_html = '';
+	    if ( CTF_Feed_Locator::count_unique() > 1 ) {
+		    $locator_html .= '<div class="ctf_locations_link">';
+		    $locator_html .= '<a href="?page=custom-twitter-feeds&amp;tab=allfeeds"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-search fa-w-16 fa-2x"><path fill="currentColor" d="M508.5 468.9L387.1 347.5c-2.3-2.3-5.3-3.5-8.5-3.5h-13.2c31.5-36.5 50.6-84 50.6-136C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c52 0 99.5-19.1 136-50.6v13.2c0 3.2 1.3 6.2 3.5 8.5l121.4 121.4c4.7 4.7 12.3 4.7 17 0l22.6-22.6c4.7-4.7 4.7-12.3 0-17zM208 368c-88.4 0-160-71.6-160-160S119.6 48 208 48s160 71.6 160 160-71.6 160-160 160z" class=""></path></svg> ' . __( 'Feed Finder', 'custom-twitter-feeds' ) . '</a>';
+		    $locator_html .= '</div>';
+	    }
+
         // User Timeline Radio
         $this->create_settings_field( array(
             'name' => 'usertimeline',
-            'title' => '<label for="ctf_feed_type">Feed Type</label><code class="ctf_shortcode">type
+            'title' => '<label for="ctf_feed_type">Select a Feed Type</label><code class="ctf_shortcode">type
                             Eg: screenname=gopro
                             Eg: home=true
-                            Eg: hashtag=#cats</code>', // label for the input field
+                            Eg: hashtag=#cats</code>' . $locator_html, // label for the input field
             'callback'  => 'feed_settings_radio', // name of the function that outputs the html
             'page' => 'ctf_options_feed_settings', // matches the section name
             'section' => 'ctf_options_feed_settings', // matches the section name
