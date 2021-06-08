@@ -30,6 +30,8 @@ $pack->Prepare(get_the_ID());
     \WPDM\libs\Apply::googleFont();
     ?>
     <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300;1,400;0,500;0,600;1,400&display=swap');
+
         html, body{
             overflow: visible;
             height: 100%;
@@ -37,17 +39,16 @@ $pack->Prepare(get_the_ID());
             padding: 0;
             margin: 0;
             font-weight: 300;
-            font-size: 10pt;
-            font-family: var(--wpdm-font);
+            /* font-family: var(--wpdm-font); */
+            font-family: 'Poppins', sans-serif;
         }
         h4.modal-title{
-            font-weight: 700;
+            font-weight: 400;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #555555;
-            font-size: 11pt;
+            color: #000;
             display: inline-block;
             font-family: var(--wpdm-font);
+            font-family: 'Poppins', sans-serif;
         }
 
         .w3eden label{
@@ -136,16 +137,23 @@ $pack->Prepare(get_the_ID());
 
 
         .w3eden .card-default {
-            border-radius: 3px;
             margin-top: 10px !important;
         }
         .w3eden .card-default:last-child{
             margin-bottom: 0 !important;
         }
-        .w3eden .card-default .card-header{
-            letter-spacing: 0.5px;
-            font-weight: 500;
+        
+        .w3eden .card-header,
+        .w3eden .card-default .card-header {
+            border-radius: 0 !important;
+            font-weight: 400;
             background-color: #f6f8f9;
+            letter-spacing: 0 !important;
+        }
+        
+        .w3eden .card,
+        .w3eden .card-body {
+            border-radius: 0 !important;
         }
 
         .w3eden .card-default .card-footer{
@@ -164,7 +172,6 @@ $pack->Prepare(get_the_ID());
         .w3eden .modal-content{
             box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
             border: 0;
-            border-radius: 6px;
             background: rgb(255,255,255);
             overflow: hidden;
             max-width: 100%;
@@ -175,10 +182,73 @@ $pack->Prepare(get_the_ID());
             padding-top: 0 !important;
         }
 
+        .w3eden .input-group input {
+            border-radius: 0 !important;
+            font-size: 16px !important;
+            font-weight: 300;
+        }
+
+        .w3eden .input-group-btn .wpdm_submit,
+        .w3eden .btn-danger,
+        .w3eden .btn-info,
+        .w3eden .btn-success {
+            align-items: center;
+            background: var(--color-primary);
+            border: none;
+            border-radius: 0 !important; !important
+            color: #fff;
+            cursor: pointer;
+            display: inline-flex;
+            font-family: 'Poppins', sans-serif;
+            justify-content: center;
+            font-size: 13px !important;
+            font-weight: 600;
+            line-height: 1;
+            height: 42px;
+            padding: 0 20px !important;
+            position: relative;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .w3eden .input-group-btn .wpdm_submit:hover,
+        .w3eden .input-group-btn .wpdm_submit:active,
+        .w3eden .input-group-btn .wpdm_submit:focus {
+            background: #940338 !important;
+        }
+
+        .w3eden .btn-danger .fas {
+            display: none !important;
+        }
+
+        .w3eden .btn-danger span {
+            color: #fff !important;
+            font-size: 13px !important;
+            margin: 0 auto !important;
+        }
+
+        .w3eden .input-group input::-webkit-input-placeholder {
+            color: #666666;
+            /* font-size: 16px; */
+        }
+        
+        .w3eden .input-group input::-moz-placeholder {
+            color: #666666;
+            /* font-size: 16px; */
+        }
+        
+        .w3eden .input-group input:-ms-input-placeholder {
+            color: #666666;
+            /* font-size: 16px; */
+        }
+        
+        .w3eden .input-group input:-moz-placeholder {
+            color: #666666;
+            /* font-size: 16px; */
+        }
 
         .w3eden .input-group-lg .input-group-btn .btn{
-            border-top-right-radius: 4px !important;
-            border-bottom-right-radius: 4px !important;
+            
         }
         .w3eden .wpforms-field-medium{
             max-width: 100% !important;
@@ -208,7 +278,8 @@ $pack->Prepare(get_the_ID());
         }
 
         .modal-content{
-            padding-top: 36px !important;
+            /* padding-top: 36px !important; */
+            padding-top: 15px !important;
         }
         .close{
             position: absolute;
@@ -256,10 +327,13 @@ $pack->Prepare(get_the_ID());
             border-radius: 500px;
         }
         .w3eden h4.download-h{
-            font-size: 12pt;
+            color: var(--color-primary);
+            font-size: 26px;
+            font-weight: 400;
         }
         .package-title{
-            color: var(--color-primary);
+            color: #000;
+            padding: 5px 10px;
         }
         .card-footer .wpdm-download-link{
             display: block !important;
@@ -279,15 +353,17 @@ $pack->Prepare(get_the_ID());
 
 <div class="modal fade" id="wpdm-locks" tabindex="-1" role="dialog" aria-labelledby="wpdm-optinmagicLabel">
     <div class="modal-dialog" role="document" style="width: <?php echo isset($pack->PackageData['terms_lock']) && $pack->PackageData['terms_lock'] == 1?395:365; ?>px;max-width: calc(100% - 20px);">
+        <?php /*
         <div class="modal-icon">
             <?php the_post_thumbnail('thumbnail'); ?>
             <?php //echo $pack->PackageData['icon']; ?>
         </div>
+        */ ?>
         <div class="modal-content">
             <div class="text-center mt-3 mb-3">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="far fa-times-circle"></i></span></button>
                 <h4 class="d-block download-h"><?php echo ($pack->PackageData['base_price'] > 0)? __('Buy','download-manager'): __('Download','download-manager'); ?></h4>
-                <div style="letter-spacing: 1px;font-weight: 400;margin-top: 5px" class="package-title d-block"><?php echo $pack->PackageData['title']; ?></div>
+                <div class="package-title d-block"><?php echo $pack->PackageData['title']; ?></div>
             </div>
             <div class="modal-body">
                 <?php

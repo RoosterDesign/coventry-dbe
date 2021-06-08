@@ -24,7 +24,18 @@ function reveal() {
 	);
 }
 
+// Add target blank to resources download buttons
+function resourceDownloadLinks() {
+	var downloadLinks = document.querySelectorAll('.wpdm-download-link');
+	for (var i = 0; i < downloadLinks.length; i++) {
+		const link = downloadLinks[i];
+		link.setAttribute('target', '_blank');
+	}
+}
+
+
 document.addEventListener('DOMContentLoaded', function () {
 	toggleMobileNav();
 	reveal();
+	resourceDownloadLinks();
 });

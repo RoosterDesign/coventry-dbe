@@ -43,7 +43,6 @@ $pid = wpdm_query_var('__wpdmxp');
             font-family: 'Josefin Sans', sans-serif;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 1px;
             color: #555555;
             font-size: 11pt;
             display: inline-block;
@@ -142,7 +141,6 @@ $pid = wpdm_query_var('__wpdmxp');
             margin-bottom: 0 !important;
         }
         .w3eden .card-default .card-header{
-            letter-spacing: 0.5px;
             font-weight: 600;
             background-color: #f6f8f9;
         }
