@@ -41,6 +41,20 @@ Template Name: Page - Homepage
     </ul>
   </nav>
 
+
+
+
+  <!-- Text/Image Block -->
+  <?php
+    if (get_field('textImage_isVisible') == 'yes') {
+      include get_theme_file_path("templates/partials/text-image-block.php");
+    }
+  ?>
+  <!-- end: Text/Image Block -->
+
+
+
+
   <div class="container">
     <section class="main col-2 -home">
       <div class="main__left">
@@ -66,10 +80,10 @@ Template Name: Page - Homepage
         </aside>
       <?php } ?>
     </section>
-  </div>
+  </div> 
 
-  <hr class="hr"/>
-
+  <?php include get_theme_file_path("templates/partials/latest-news-cards-feature.php"); ?>
+  
   <div class="container">
     <section class="main trusts">
     <?php if (get_field('homeTrusts_image')) { ?>
@@ -84,7 +98,8 @@ Template Name: Page - Homepage
     </section>
   </div>
 
-  <?php include get_theme_file_path("templates/partials/latest-news-cards-feature.php"); ?>
+  <hr class="hr"/>
+  
   <?php include get_theme_file_path("templates/partials/follow-us.php"); ?>
   
 <?php get_footer(); ?>
