@@ -14,7 +14,7 @@
 		</div>
 	
 		<nav class="footerNav siteFooter__col">
-			<?php wp_nav_menu( array( 'menu' => 'main-menu', 'container' => 'ul', )); ?>		
+			<?php wp_nav_menu( array( 'menu' => 'main-menu', 'container' => 'ul', 'depth' => 1 )); ?>		
 		</nav>
 
 		<div class="siteFooter__col">

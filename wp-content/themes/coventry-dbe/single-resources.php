@@ -11,22 +11,37 @@ get_header();
 ?>
 
 <?php include get_theme_file_path("templates/partials/masthead.php"); ?>
-	<div class="container">
-		<main class="main download cf">			
-			<?php if (! post_password_required() ) { ?>
-				<p>Click below to download this resource.</p>
-				<div class="download-wrap">
-    			<a href="<?php the_field('download_file'); ?>" target="_blank" class="btn" title="Download File">Download File</a>
-				</div>
-			<?php
-					} else {
-						echo get_option('download_body');
-						echo get_the_password_form($post->ID);
-					}
-			?>
 
-			<p><a href="/resources/" title="Back to resources">Back to resources</a></p>
-		</main>		
+
+	<div class="container resource">
+
+		<?php if (! post_password_required() ) { ?>
+
+			<main class="main">
+					<?php include get_theme_file_path("templates/partials/body-masthead.php"); ?>
+					<?php the_field('pageBody'); ?>
+					
+			</main>
+			
+			<div class="resources-downloads">
+				<h2>Downloads</h2>
+				<?php the_field('downloads'); ?>
+			</div>
+
+		<?php
+				} else { ?>
+				<main class="main">
+					<h1 class="title"><?php the_title(); ?></h1>
+
+					<div class="resource-password-form">
+						<?php echo get_option('download_body');
+						echo get_the_password_form($post->ID); ?>
+					</div>
+				</main>
+			<?php } ?>
+
+		<p class="back-link"><a href="/resources/" title="Back to resources">Back to resources</a></p>		
+	
 	</div>
 
 <?php get_footer(); ?>

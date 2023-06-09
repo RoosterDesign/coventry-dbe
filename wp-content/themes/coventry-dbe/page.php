@@ -39,6 +39,25 @@ get_header();
 			echo '</section>';
 		} ?>
 
+<?php
+		/* Board */
+		if (get_field('select_card_type') === 'board') {
+			echo '<section class="cardsWrap">';
+				$args = array( 'post_type' => 'board_members', 'posts_per_page' => 999 );
+				$the_query = new WP_Query( $args );
+				if ( $the_query->have_posts() ) :
+					while ( $the_query->have_posts() ) : $the_query->the_post();
+						include get_theme_file_path("templates/partials/team-card.php");
+					endwhile; wp_reset_postdata();
+				endif;
+			echo '</section>';
+			if ( get_the_content() ) {
+				echo '<div class="container"><div class="body-content">';
+					the_content();
+				echo '</div></div>';
+			}
+		} ?>
+
 
 		<?php
 		/* Events */
@@ -84,22 +103,41 @@ get_header();
 
 		<?php
 		/* Resources */
-		if (get_field('select_card_type') === 'resources') {
+		if (get_field('select_card_type') === 'resources') { ?>
 
+		<!-- START OF NEW RESOURCES -->
+			<?php /* 
+			<section class="cardsWrap">
+				<?php
+					$args = array(
+						'hide_empty' => false
+					);
+					$categories = get_terms( 'resource_category', $args );				
+					foreach( $categories as $category ): ?>					
+					
+					<h2 class="resource-category" id="<?php echo $category->slug; ?>"><?php echo $category->name; ?></h2>				
+						<?php $posts = get_posts(array(
+							'post_type' => 'resources',
+							'taxonomy' => $category->taxonomy,
+							'term' => $category->slug,
+							'nopaging' => true
+						));
+						if ($posts) {						
+							foreach($posts as $post): setup_postdata($post);
+								include get_theme_file_path("templates/partials/resource-card.php");		
+							endforeach;						
+						} else { ?>
+							<p class="no-resources">We currently have no resources for this category, please check back again soon.</p>
+						<?php };						
+						?>			
+				<?php endforeach; ?>
+			</section>
 
-			/* OLD PLUGIN
-			echo '<section class="cardsWrap">';
-				$args = array( 'post_type' => 'resources', 'posts_per_page' => 999 ); $the_query = new WP_Query( $args );
-				if ( $the_query->have_posts() ) :
-					while ( $the_query->have_posts() ) : $the_query->the_post();
-						include get_theme_file_path("templates/partials/resource-card.php");
-					endwhile; wp_reset_postdata();
-				endif;
-			echo '</section>';
-			/*
+			*/?>
+			<!-- END OF NEW RESOURCES -->
 
-
-			/* NEW PLUGIN */
+			<!-- START OF OLD RESOURCES -->
+			<?php
 			echo '<section class="wpdm-list">';
 				$args = array(
 					'post_type' => 'wpdmpro',
@@ -118,9 +156,11 @@ get_header();
 						wp_reset_postdata();
 				endforeach;
 			echo '</section>';
+			 ?>
+			 <!-- END OF OLD RESOURCES -->
 			
 
-		} ?>
+		<?php } ?>
 
 
 	<?php include get_theme_file_path("templates/partials/latest-news-cards.php"); ?>

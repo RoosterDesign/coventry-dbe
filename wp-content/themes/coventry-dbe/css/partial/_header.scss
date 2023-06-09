@@ -7,8 +7,10 @@
   top: 0;
   width: 100%;
   z-index: 99;
+
   @include mq(tablet-lg) {
     height: 100px;
+    padding: 0;
     position: relative;
   }
 
@@ -22,6 +24,11 @@
   &__logo {
     display: block;
     width: 130px;
+
+    @include mq(tablet-lg) {
+      width: 110px;
+    }
+
     @include mq(desktop) {
       width: 160px;
     }
@@ -37,7 +44,6 @@
 
 
 /* Mobile Hamburger Icon */
-
 .hamburger {
   padding: 22px 20px 18px;
   display: inline-block;
@@ -52,6 +58,7 @@
   border: 0;
   margin: 0 -20px 0 0;
   overflow: visible;
+
   @include mq(tablet-lg) {
     display: none;
   }

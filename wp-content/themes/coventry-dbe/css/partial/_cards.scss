@@ -4,11 +4,13 @@
   margin: 0 auto (-$cardPadding);
   padding: 0 $containerPaddingMobile;
   max-width: $containerMaxWidth;
+
   @include mq(tablet) {
     flex-direction: row;
     flex-wrap: wrap;
     padding: 0 $cardPadding;
   }
+
   @include mq(desktop) {
     padding: 0 ($containerPaddingDesktop - $cardPadding);
   }
@@ -19,12 +21,14 @@
   display: flex;
   flex-direction: column;
   margin-bottom: ($cardPadding * 2);
-  width: 100%;  
+  width: 100%;
+
   @include mq(tablet) {
     padding: 0 $cardPadding;
     width: 50%;
     width: 33.333333%;
   }
+
   @include mq(desktop) {
     padding: 0 $cardPadding;
     width: 33.333333%;
@@ -49,6 +53,7 @@
     flex-direction: column;
     flex: 1 1 auto;
     padding: 20px;
+
     @include mq(desktop) {
       padding-top: 25px;
       padding-bottom: 25px;
@@ -59,19 +64,23 @@
     color: $cardTitleColour;
     font-size: 2.2rem;
     line-height: 1.2;
+
     @include mq(tablet) {
       font-size: 1.8rem;
     }
+
     @include mq(tablet-lg) {
       font-size: 2.2rem;
     }
+
     @include mq(desktop) {
       font-size: 2.4rem;
     }
   }
 
-  &__title + p {
+  &__title+p {
     margin-top: 10px;
+
     @include mq(desktop) {
       margin-top: 20px;
     }
@@ -99,9 +108,11 @@
     font-size: 1.6rem;
     font-weight: 400;
     margin-top: 5px;
+
     @include mq(tablet) {
       font-size: 1.4rem;
     }
+
     @include mq(desktop) {
       font-size: 1.6rem;
     }
@@ -110,6 +121,7 @@
   p {
     font-size: 1.5rem;
     margin-bottom: 10px;
+
     @include mq(desktop) {
       font-size: 1.6rem;
     }
@@ -119,6 +131,7 @@
     display: block;
     font-size: 1.4rem;
     margin-bottom: 8px;
+
     @include mq(desktop) {
       margin-bottom: 10px;
     }
@@ -129,6 +142,7 @@
     font-size: 1.6rem;
     margin-bottom: 8px;
     margin: 10px 0 15px;
+
     @include mq(desktop) {
       font-size: 1.8rem;
       margin-bottom: 20px;
@@ -162,6 +176,7 @@
     position: relative;
     margin-bottom: 10px;
     padding-left: 20px;
+
     @include mq(desktop) {
       font-size: 1.5rem;
     }
@@ -188,8 +203,10 @@
         display: none;
       }
     }
+
     &--full {
       display: none;
+
       @include mq(tablet) {
         display: block;
         white-space: nowrap;
@@ -208,18 +225,21 @@
     font-size: 1.5rem;
     padding: 15px 20px;
     max-width: 100%;
+
     @include mq(tablet) {
-      font-size: 1.4rem;      
+      font-size: 1.4rem;
     }
+
     @include mq(tablet-lg) {
       font-size: 1.5rem;
     }
+
     @include mq(desktop) {
       font-size: 1.6rem;
       padding-top: 15px;
       padding-bottom: 15px;
     }
-    
+
     a {
       align-items: center;
       color: $cardFooterLinkColour;
@@ -238,12 +258,19 @@
       min-width: 20px;
       width: 20px;
     }
-    
+
+    .btn,
+    .btn:hover {
+      color: #fff;
+      display: inline-flex;
+      text-decoration: none;
+    }
+
   }
 
 }
 
-.cardReveal {  
+.cardReveal {
   display: flex;
   height: 100%;
   padding-top: 15px;
@@ -255,6 +282,7 @@
     margin: 0 -20px -20px;
     padding: 20px;
     position: relative;
+
     @include mq(desktop) {
       margin-bottom: -25px;
       padding-top: 25px;
@@ -270,6 +298,7 @@
     right: 20px;
     top: 20px;
     width: 16px;
+
     @include mq(desktop) {
       top: 25px;
     }
@@ -284,7 +313,7 @@
       background-color: $black;
       content: ' ';
       height: 100%;
-      left: 50%;      
+      left: 50%;
       position: absolute;
       width: 3px;
     }

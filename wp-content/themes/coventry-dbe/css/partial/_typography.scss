@@ -1,24 +1,43 @@
-
 .title {
   color: $titleColour;
   font-size: 2.8rem;
   font-weight: 300;
   line-height: 1.3;
   margin-bottom: 10px;
+
   @include mq(tablet) {
     font-size: 3.2rem;
     line-height: 1.3;
     margin-bottom: 20px;
   }
+
   @include mq(tablet-lg) {
     font-size: 3.6rem;
   }
+
   @include mq(desktop) {
     font-size: 3.8rem;
   }
 
   a {
     color: $titleColour;
+  }
+
+  .padlock {
+    fill: $brandRed;
+    top: 1px;
+    height: auto;
+    margin: 0;
+    width: 20px;
+
+    @include mq(tablet) {
+      width: 25px;
+    }
+
+    @include mq(tablet-lg) {
+      width: 30px;
+    }
+
   }
 
   &.-white,
@@ -28,7 +47,8 @@
 
   &.-hasIcons {
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
+
     @include mq(tablet) {
       align-items: center;
       flex-direction: row;
@@ -44,13 +64,16 @@
   font-weight: 300;
   line-height: 1.3;
   margin: -5px 0 20px;
+
   @include mq(tablet) {
     font-size: 2rem;
     margin: -15px 0 25px;
   }
+
   @include mq(tablet-lg) {
     font-size: 2.2rem;
   }
+
   @include mq(desktop) {
     font-size: 2.6rem;
     margin: -15px 0 25px;
@@ -67,6 +90,7 @@
 .noPosts {
   font-size: 1.8rem;
   margin-bottom: 10px;
+
   @include mq(tablet) {
     margin-bottom: 20px;
   }
@@ -77,23 +101,126 @@ p strong {
 }
 
 
+.body-content {
+  background: $white;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.05);
+  margin-block: 10px;
+  padding: 20px;
+
+  @include mq(tablet) {
+    margin-block: 20px;
+  }
+
+  @include mq(desktop) {
+    margin-block: 40px;
+    padding: 40px $containerPaddingDesktop;
+  }
+
+  h1,
+  h2 {
+    color: $titleColour;
+    font-size: 2.8rem;
+    font-weight: 300;
+    line-height: 1.3;
+    margin-bottom: 10px;
+
+    @include mq(tablet) {
+      font-size: 3.2rem;
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+
+    @include mq(tablet-lg) {
+      font-size: 3.6rem;
+    }
+
+    @include mq(desktop) {
+      font-size: 3.8rem;
+    }
+  }
+
+  h3,
+  h4,
+  h5 {
+    font-weight: 300;
+    line-height: 1.3;
+    margin: 20px 0 10px;
+
+    @include mq(desktop) {
+      margin: 30px 0 15px;
+    }
+  }
+
+  h3 {
+    font-size: 1.8rem;
+
+    @include mq(tablet) {
+      font-size: 2rem;
+    }
+
+    @include mq(tablet-lg) {
+      font-size: 2.2rem;
+    }
+
+    @include mq(desktop) {
+      font-size: 2.6rem;
+    }
+  }
+
+  h4 {
+    font-size: 1.8rem;
+
+    @include mq(tablet-lg) {
+      font-size: 2rem;
+    }
+
+    @include mq(desktop) {
+      font-size: 2.4rem;
+    }
+  }
+
+  h5,
+  h6 {
+    font-size: 1.6rem;
+
+    @include mq(tablet-lg) {
+      font-size: 1.8rem;
+    }
+
+    @include mq(desktop) {
+      font-size: 2rem;
+    }
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+}
+
+
 .single-post .main,
-.main {
-  p, li {
+.main,
+.body-content {
+
+  p,
+  li {
     @include pStyles;
   }
 
-  p a, li a {
+  p a,
+  li a {
     color: $linkColour;
     text-decoration: underline;
   }
 
-  p a:hover, li a:hover {
-    color: $linkHoverColour;    
+  p a:hover,
+  li a:hover {
+    color: $linkHoverColour;
   }
 
   ul {
-    margin-bottom: 20px;    
+    margin-bottom: 20px;
   }
 
   li {
@@ -103,9 +230,12 @@ p strong {
 
 /* Post Text Styles */
 
-.single-post .main {
+.single-post .main,
+.single-post .body-content {
 
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     font-weight: 300;
   }
 
@@ -114,13 +244,15 @@ p strong {
     color: $bodyColour;
   }
 
-  h2 {    
+  h2 {
     font-size: 2.2rem;
     line-height: 1.3;
     margin: 40px 0 15px;
+
     @include mq(tablet) {
       font-size: 2.6rem;
     }
+
     @include mq(desktop) {
       margin-top: 50px;
     }
@@ -130,9 +262,11 @@ p strong {
     font-size: 2rem;
     line-height: 1.3;
     margin: 30px 0 15px;
+
     @include mq(tablet) {
       font-size: 2.2rem;
     }
+
     @include mq(desktop) {
       font-size: 2.4rem;
       margin-top: 40px;
@@ -144,9 +278,11 @@ p strong {
     font-weight: 500;
     line-height: 1.3;
     margin: 30px 0 15px;
+
     @include mq(tablet) {
       font-size: 2rem;
     }
+
     @include mq(desktop) {
       font-size: 2.2rem;
       margin-top: 40px;
@@ -159,6 +295,7 @@ p strong {
     font-weight: 400;
     line-height: 1.4;
     margin: 30px 0 15px;
+
     @include mq(tablet) {
       font-size: 1.8rem;
     }
@@ -169,6 +306,7 @@ p strong {
     font-weight: 400;
     line-height: 1.4;
     margin: 30px 0 15px;
+
     @include mq(tablet) {
       font-size: 1.6rem;
     }
@@ -178,6 +316,7 @@ p strong {
     border-left: 3px solid $brandRed;
     margin: 30px 0;
     padding-left: 20px;
+
     @include mq(tablet) {
       margin: 40px 0 40px 40px;
       padding-left: 30px;
@@ -189,20 +328,21 @@ p strong {
     border-bottom: 1px solid $bodyColour;
     clear: both;
     height: 0;
-    margin: 30px 0;  
+    margin: 30px 0;
+
     @include mq(tablet-lg) {
       margin: 0 0 40px;
-	    padding: 40px 0 0;
+      padding: 40px 0 0;
     }
   }
 
-  p + hr {
+  p+hr {
     @include mq(tablet-lg) {
       margin-top: -15px;
     }
   }
 
-  img + hr {
+  img+hr {
     @include mq(tablet-lg) {
       margin-top: -30px;
     }
@@ -219,11 +359,12 @@ p strong {
       display: block;
       height: auto;
       max-width: 100%;
+
       @media only screen and (max-width: 991px) {
         margin: 30px auto;
       }
     }
-    
+
     &.alignleft {
       @include mq(tablet-lg) {
         float: left;
@@ -246,7 +387,56 @@ p strong {
         max-width: 40%;
       }
     }
-    
-  }    
 
+  }
+
+}
+
+
+/* Resource Categories */
+
+.resource-category {
+
+  @extend .title;
+  border-top: 1px solid $brandRed;
+  font-size: 2.4rem;
+  flex-basis: 100%;
+  padding-top: 20px;
+  margin: 10px 0 20px;
+
+  @include mq(tablet) {
+    margin: 10px 10px 20px;
+    padding-top: 30px;
+  }
+
+  @include mq(tablet-lg) {
+    margin-block: 20px 30px;
+  }
+
+  @include mq(desktop) {
+    font-size: 2.8rem;
+    padding-top: 40px;
+    margin-block: 40px 30px;
+  }
+
+  &:first-of-type {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+}
+
+.no-resources {
+  @include pStyles;
+  flex-basis: 100%;
+  margin: -10px 0 10px;
+
+  @include mq(tablet) {
+    margin-inline: 10px;
+  }
+
+  @include mq(desktop) {
+    margin-bottom: 0;
+  }
 }

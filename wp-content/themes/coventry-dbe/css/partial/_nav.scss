@@ -1,94 +1,283 @@
 .mainNav {
+  --nav-width: 275px;
+
+  @include mq(tablet) {
+    --nav-width: 300px;
+  }
+
   background: $mobileNavBg;
   position: fixed;
   height: 100%;
   top: $mobileHeaderHeight;
-  right: -250px;
+  right: calc(var(--nav-width) * -1);
   transition: all .3s ease-in-out;
-  width: 250px;
-  @include mq(tablet) {
-    right: -300px;
-    width: 300px;
-  }
+  width: var(--nav-width);
+
   @include mq(tablet-lg) {
     background: none;
-    height: auto;
+    display: flex;
     position: relative;
     top: auto;
     right: auto;
     width: auto;
   }
+
+  .menu {
+    list-style: none;
+    margin: 0;
+    padding: 10px 0 0;
+
+    @include mq(mobile-lg) {
+      padding-top: 15px;
+    }
+
+    @include mq(tablet) {
+      padding-top: 20px;
+    }
+
+    @include mq(tablet-lg) {
+      display: flex;
+      padding-top: 0;
+    }
+  }
+
+  .menu-item {
+    font-size: 1.4rem;
+
+    @include mq(tablet) {
+      font-size: 1.5rem;
+    }
+
+    @include mq(tablet-lg) {
+      font-size: 1.4rem;
+      display: flex;
+    }
+
+    @include mq(desktop) {
+      font-size: 1.5rem;
+    }
+
+    &.menu-item-has-children {
+
+      @media only screen and (max-width: 991px) {
+        align-items: center;
+        display: flex;
+      }
+
+      @include mq(tablet-lg) {
+        position: relative;
+      }
+
+      a {
+        @media only screen and (max-width: 991px) {
+          flex: 1;
+        }
+      }
+
+      .menu-item-chevron {
+        display: none;
+
+        @media only screen and (max-width: 991px) {
+          align-items: center;
+          display: flex;
+          justify-content: flex-end;
+          margin-left: auto;
+          padding: 12px 12px 12px 0;
+          width: 50px;
+        }
+
+        svg {
+          margin: 0;
+          top: auto;
+        }
+
+      }
+
+      &:hover {
+
+        >a {
+          background: $mainNavHover;
+          color: $desktopNavLinkHoverColour;
+        }
+
+        >.sub-menu {
+          @include mq(tablet-lg) {
+            display: block;
+          }
+        }
+
+      }
+
+    }
+
+    >a {
+      color: $white;
+      display: block;
+      padding: 12px 0 12px 20px;
+      text-decoration: none;
+
+      @include mq(tablet) {
+        padding: 20px 0 20px 30px;
+      }
+
+      @include mq(tablet-lg) {
+        align-items: center;
+        color: $desktopNavLinkColour;
+        display: flex;
+        padding: 0 10px;
+      }
+
+      @include mq(desktop) {
+        padding: 0 12px;
+      }
+
+    }
+
+    >a:hover {
+      @include mq(tablet-lg) {
+        background: $mainNavHover;
+        color: $desktopNavLinkHoverColour;
+      }
+    }
+
+    &.current-menu-item {
+
+      .sub-menu li a {
+        color: $bodyColour;
+        font-weight: 400;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+
+      >a {
+        font-weight: 600;
+
+        @include mq(tablet-lg) {
+          color: $mainNavHover;
+        }
+
+        &:hover {
+          @include mq(tablet-lg) {
+            color: $desktopNavLinkHoverColour;
+          }
+        }
+
+      }
+    }
+
+  }
+
+  .menu>.menu-item:last-child {
+
+    >.sub-menu {
+      @include mq(tablet-lg) {
+        left: auto;
+        right: 0;
+      }
+
+      @media only screen and (min-width: 1400px) {
+        left: 0;
+        right: auto;
+      }
+    }
+
+  }
+
+  .sub-menu {
+    display: none;
+
+    @media only screen and (max-width: 991px) {
+      background: $brandRed;
+      height: 100%;
+      list-style: none;
+      margin: 0;
+      padding: 15px 0 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+    }
+
+    @include mq(tablet-lg) {
+      background: #fff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      width: 220px;
+    }
+
+    // 2nd+ tiers
+    .sub-menu {
+      @include mq(tablet-lg) {
+        display: none;
+        box-shadow: 20px 0 20px rgba(0, 0, 0, 0.15);
+        left: 100%;
+        top: 0;
+      }
+    }
+
+    &.-isVisible {
+      @media only screen and (max-width: 991px) {
+        display: block;
+      }
+    }
+
+    li {
+      font-size: 1.4rem;
+
+      @include mq(tablet) {
+        display: block;
+        font-size: 1.4rem;
+      }
+
+      >a {
+        display: block;
+        padding: 12px 0 12px 20px;
+        text-decoration: none;
+
+        @media only screen and (max-width: 991px) {
+          color: #fff;
+          padding: 12px 0 12px 20px;
+        }
+
+      }
+
+      &.menu-item--back {
+        display: none;
+
+        @media only screen and (max-width: 991px) {
+          display: block;
+        }
+
+        a {
+          @media only screen and (max-width: 991px) {
+            align-items: center;
+            display: flex;
+            font-weight: 600;
+          }
+        }
+
+        svg {
+          margin: 0 12px 0 0;
+          top: auto;
+        }
+
+      }
+
+    }
+
+  }
+
 }
 
 /* Nav Open */
 @media only screen and (max-width: 991px) {
-  body.mobile-nav-open  .mainNav { right: 0 }
-}
-
-
-.mainNav .menu {
-  list-style: none;
-  margin: 0;
-  padding: 10px 0 0;
-  @include mq(mobile-lg) {
-    padding-top: 15px;
+  body.mobile-nav-open .mainNav {
+    right: 0
   }
-  @include mq(tablet) {
-    padding-top: 20px;
-  }
-  @include mq(tablet-lg) {
-    padding-top: 0;
-  }
-}
-
-.mainNav .menu-item {
-  font-size: 1.4rem;
-  @include mq(tablet-lg) {
-    display: inline-block;    
-    margin-right: 18px;
-  }
-  @include mq(tablet) {
-    font-size: 1.5rem;
-  }
-  @include mq(tablet-lg) {
-    font-size: 1.4rem;
-  }
-  @include mq(desktop) {
-    font-size: 1.5rem;
-    margin-right: 25px;
-  }
-
-  &:last-child {
-    @include mq(tablet-lg) {
-      margin-right: 0;
-    }
-  }
-
-  > a {
-    color: $white;
-    display: block;
-    padding: 12px 0 12px 20px;
-    text-decoration: none;
-    @include mq(tablet) {
-      padding: 20px 0 20px 30px;
-    }
-    @include mq(tablet-lg) {
-      color: $desktopNavLinkColour;
-      padding: 0;
-    }
-  }
-  
-  > a:hover {
-    @include mq(tablet-lg) {
-      color: $mainNavHover;
-    }
-  }
-
-  &.current-menu-item > a {
-    font-weight: 600;
-    @include mq(tablet-lg) {
-      color: $mainNavHover;
-    }
-  }
-
 }

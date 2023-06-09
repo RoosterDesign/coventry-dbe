@@ -5,6 +5,6 @@
     </h3>
   </div>
   <div class="card__footer">    
-  <a href="<?php the_permalink(); ?>" title="<?php echo get_option('resource_linkText'); ?>"><?php echo get_option('resource_linkIcon'); ?><?php echo get_option('resource_linkText'); ?></a>
+    <a href="<?php the_permalink(); ?>" title="<?php echo get_option('resource_linkText'); ?>" class="btn btn-primary">View Resource</a>
   </div>  
 </div>

@@ -546,7 +546,7 @@ add_filter('the_content', 'filter_ptags_on_images');
  
 add_filter( 'protected_title_format', 'remove_protected_text' );
 function remove_protected_text() {
-return __('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18 10v-4c0-3.313-2.687-6-6-6s-6 2.687-6 6v4h-3v14h18v-14h-3zm-10 0v-4c0-2.206 1.794-4 4-4s4 1.794 4 4v4h-8z"/></svg> %s');
+return __('<svg xmlns="http://www.w3.org/2000/svg" class="padlock" width="24" height="24" viewBox="0 0 24 24"><path d="M18 10v-4c0-3.313-2.687-6-6-6s-6 2.687-6 6v4h-3v14h18v-14h-3zm-10 0v-4c0-2.206 1.794-4 4-4s4 1.794 4 4v4h-8z"/></svg> %s');
 }
 
 
@@ -586,3 +586,16 @@ function wpse_71284_custom_post_password_msg( $form )
 
     return $form . $msg;
 }
+
+
+/**
+ * Add Response code to video embeds in WordPress
+ *
+ * @refer  http://alxmedia.se/code/2013/10/make-wordpress-default-video-embeds-responsive/
+ */
+function abl1035_alx_embed_html( $html ) {
+  
+  return '<div class="video-container">' . $html . '</div>';
+}
+add_filter( 'embed_oembed_html', 'abl1035_alx_embed_html', 10, 3 );
+add_filter( 'video_embed_html', 'abl1035_alx_embed_html' ); // Jetpack
